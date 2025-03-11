@@ -1,0 +1,26 @@
+2025-03-11 09:13:11,913 - INFO - Created/verified model directory: models/
+2025-03-11 09:13:11,913 - INFO - Starting model preparation...
+2025-03-11 09:13:11,914 - INFO - Loaded processed data from dataset/processed_requirements.pkl
+2025-03-11 09:13:11,935 - ERROR - Model preparation failed: expected sequence of length 23 at dim 1 (got 16)
+2025-03-11 09:15:03,761 - INFO - Created/verified model directory: models/
+2025-03-11 09:15:03,761 - INFO - Starting model preparation...
+2025-03-11 09:15:03,761 - INFO - Loaded processed data from dataset/processed_requirements.pkl
+2025-03-11 09:15:27,689 - INFO - Transformer model initialized with RoBERTa and T5.
+2025-03-11 09:15:29,027 - ERROR - Forward pass failed: Expected key_padded_mask.shape[0] to be 26, but got 100
+2025-03-11 09:15:29,027 - ERROR - Model preparation failed: Expected key_padded_mask.shape[0] to be 26, but got 100
+2025-03-11 09:17:12,805 - INFO - Created/verified model directory: models/
+2025-03-11 09:17:12,805 - INFO - Starting model preparation...
+2025-03-11 09:17:12,807 - INFO - Loaded processed data from dataset/processed_requirements.pkl
+2025-03-11 09:17:14,595 - INFO - Transformer model initialized with RoBERTa and T5.
+2025-03-11 09:17:14,750 - ERROR - Forward pass failed: Expected key_padded_mask.shape[0] to be 26, but got 100
+2025-03-11 09:17:14,750 - ERROR - Model preparation failed: Expected key_padded_mask.shape[0] to be 26, but got 100
+2025-03-11 09:22:11,279 - INFO - Created/verified model directory: models/
+2025-03-11 09:22:11,279 - INFO - Starting model preparation...
+2025-03-11 09:22:11,280 - INFO - Loaded processed data from dataset/processed_requirements.pkl
+2025-03-11 09:22:11,280 - INFO - DataFrame shape: (100, 4)
+2025-03-11 09:22:11,280 - INFO - Number of requirements: 100
+2025-03-11 09:22:11,284 - INFO - Number of sequences to process: 100
+2025-03-11 09:22:11,284 - INFO - Using batch size for forward pass test: 16
+2025-03-11 09:22:12,765 - INFO - Transformer model initialized with RoBERTa and T5.
+2025-03-11 09:22:12,784 - ERROR - Forward pass failed: Expected key_padded_mask.shape[0] to be 26, but got 16
+2025-03-11 09:22:12,784 - ERROR - Model preparation failed: Expected key_padded_mask.shape[0] to be 26, but got 16

@@ -19,7 +19,7 @@ class DataIngestion:
         self.config = self._load_config(config_path)
         self.input_dir = self.config["paths"]["input_files"]
         self.dataset_dir = self.config["paths"]["dataset"]
-        self.tokenizer = AutoTokenizer.from_pretrained("roberta-base")  # Prepares text for RoBERTa
+        self.tokenizer = AutoTokenizer.from_pretrained("roberta-base")
         self._create_directories()
 
     def _load_config(self, config_path: str) -> Dict:
@@ -61,7 +61,7 @@ class DataIngestion:
                         logger.warning(f"File {file} missing required columns. Skipping.")
                         continue
                     dataframes.append(df)
-                    logger.info(f"Successfully read {file}")
+                    logger.info(f"Successfully read {file} with {len(df)} rows")
                 except Exception as e:
                     logger.error(f"Error reading {file}: {e}")
         return dataframes
@@ -88,7 +88,11 @@ class DataIngestion:
             raise ValueError("No valid input files to process.")
 
         # Combine all dataframes and remove duplicates
-        combined_df = pd.concat(dataframes, ignore_index=True).drop_duplicates(subset=["Requirement ID"])
+        combined_df = pd.concat(dataframes, ignore_index=True)
+        logger.info(f"Combined DataFrame before deduplication: {len(combined_df)} rows")
+        combined_df = combined_df.drop_duplicates(subset=["Requirement ID"])
+        logger.info(f"Combined DataFrame after deduplication: {len(combined_df)} rows")
+
         processed_df = self._preprocess_text(combined_df)
 
         # Save processed data
@@ -96,7 +100,7 @@ class DataIngestion:
         processed_df.to_csv(output_path, index=False)
         logger.info(f"Data saved to {output_path}")
 
-        # Optional: Save as pickle for faster loading later
+        # Save as pickle
         processed_df.to_pickle(os.path.join(self.dataset_dir, "processed_requirements.pkl"))
         logger.info(f"Data saved as pickle to {os.path.join(self.dataset_dir, 'processed_requirements.pkl')}")
 
