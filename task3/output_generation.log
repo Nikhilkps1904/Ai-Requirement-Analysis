@@ -1,0 +1,4 @@
+2025-03-11 10:32:55,044 - INFO - Created/verified output directory: output_files/
+2025-03-11 10:32:55,044 - INFO - Starting output generation process...
+2025-03-11 10:32:55,044 - ERROR - Results file analysis_results.pkl not found.
+2025-03-11 10:32:55,045 - ERROR - Output generation failed: [Errno 2] No such file or directory: 'analysis_results.pkl'

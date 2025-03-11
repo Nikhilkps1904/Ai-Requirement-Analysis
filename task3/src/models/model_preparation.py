@@ -10,6 +10,27 @@ from stable_baselines3 import PPO
 from stable_baselines3.common.policies import ActorCriticPolicy
 import pandas as pd
 
+import gym
+from stable_baselines3.common.envs import DummyVecEnv
+
+class SimpleEnv(gym.Env):
+    """A minimal custom Gym environment for PPO training."""
+    def __init__(self):
+        super(SimpleEnv, self).__init__()
+        self.observation_space = gym.spaces.Box(low=-1.0, high=1.0, shape=(768,), dtype=np.float32)  # Adjust as needed
+        self.action_space = gym.spaces.Discrete(2)  # Example: binary action space
+
+    def step(self, action):
+        """Execute one time step in the environment."""
+        return np.random.rand(768), 0.0, False, {}  # Random observation, dummy reward, done=False, empty info
+
+    def reset(self):
+        """Reset the environment to an initial state."""
+        return np.random.rand(768)  # Random initial observation
+
+# Wrap it in a vectorized environment
+env = DummyVecEnv([lambda: SimpleEnv()])
+
 # Set up logging
 logging.basicConfig(
     level=logging.INFO,
@@ -37,19 +58,27 @@ class PositionalEncoding(nn.Module):
 
 class TransformerModel(nn.Module):
     """Custom transformer model with encoder and decoder stacks."""
-    def __init__(self, config: Dict, d_model: int = 768, nhead: int = 12, num_layers: int = 6):
+    def __init__(self, config: Dict, d_model: int = 768, nhead: int = 8, num_layers: int = 6):
         super(TransformerModel, self).__init__()
         self.config = config
         self.d_model = d_model
         self.embedding = nn.Embedding(50265, d_model)  # RoBERTa vocab size
-        self.encoder = nn.TransformerEncoder(
-            nn.TransformerEncoderLayer(d_model=d_model, nhead=nhead),
-            num_layers=num_layers
+        
+        # Create transformer layers with batch_first=True to avoid dimension issues
+        encoder_layer = nn.TransformerEncoderLayer(
+            d_model=d_model,
+            nhead=nhead,
+            batch_first=True  # Important: set batch_first=True
         )
-        self.decoder = nn.TransformerDecoder(
-            nn.TransformerDecoderLayer(d_model=d_model, nhead=nhead),
-            num_layers=num_layers
+        decoder_layer = nn.TransformerDecoderLayer(
+            d_model=d_model,
+            nhead=nhead,
+            batch_first=True  # Important: set batch_first=True
         )
+        
+        self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+        self.decoder = nn.TransformerDecoder(decoder_layer, num_layers=num_layers)
+        
         self.positional_encoding = PositionalEncoding(d_model)
         self.roberta = AutoModel.from_pretrained(config["models"]["encoder"])
         self.t5 = T5Model.from_pretrained(config["models"]["decoder"])
@@ -77,18 +106,44 @@ class TransformerModel(nn.Module):
             raise ValueError(f"tgt_mask shape mismatch: expected ({batch_size}, {seq_len}), got {tgt_mask.shape}")
 
         # Embed source and target token IDs
-        src = self.embedding(src) * (self.d_model ** 0.5)
-        tgt = self.embedding(tgt) * (self.d_model ** 0.5)
+        src_emb = self.embedding(src) * (self.d_model ** 0.5)
+        tgt_emb = self.embedding(tgt) * (self.d_model ** 0.5)
 
         # Add positional encoding
-        src = self.positional_encoding(src)
-        tgt = self.positional_encoding(tgt)
+        src_emb = self.positional_encoding(src_emb)
+        tgt_emb = self.positional_encoding(tgt_emb)
+        
+        # Prepare masks for transformer layers
+        # With batch_first=True, key_padding_mask should be [batch_size, seq_len]
+        # True indicates positions that should be masked (padding tokens)
+        src_key_padding_mask = ~src_mask  # Invert: True means padding
+        tgt_key_padding_mask = ~tgt_mask  # Invert: True means padding
+        
+        # Create square attention mask for decoder to prevent attention to future tokens
+        tgt_len = tgt_emb.size(1)  # With batch_first=True, dimension 1 is seq_len
+        tgt_attn_mask = torch.triu(
+            torch.ones(tgt_len, tgt_len) * float('-inf'), 
+            diagonal=1
+        ).to(tgt_emb.device)
 
-        # Encoder and Decoder forward pass with masks
-        memory = self.encoder(src, src_key_padding_mask=~src_mask)  # Invert mask
-        output = self.decoder(tgt, memory, tgt_key_padding_mask=~tgt_mask)
+        # Encoder forward pass
+        memory = self.encoder(
+            src_emb,
+            src_key_padding_mask=src_key_padding_mask
+        )
+        
+        # Decoder forward pass
+        output = self.decoder(
+            tgt_emb,
+            memory,
+            tgt_mask=tgt_attn_mask,
+            tgt_key_padding_mask=tgt_key_padding_mask
+        )
+        
+        # Final linear layer and softmax
         output = self.linear(output)
         output = self.softmax(output)
+        
         return output
 
 class RLIntegration:
@@ -97,9 +152,11 @@ class RLIntegration:
         self.model = model
         self.config = config
         self.policy = ActorCriticPolicy
+        self.env = DummyVecEnv([lambda: SimpleEnv()])  # Provide a valid environment
+
         self.rl_model = PPO(
             policy=self.policy,
-            env=None,
+            env=self.env,  # Use the valid environment
             learning_rate=config["hyperparameters"]["learning_rate"],
             n_steps=2048,
             batch_size=config["hyperparameters"]["batch_size"],
@@ -107,7 +164,7 @@ class RLIntegration:
             gamma=0.99,
             verbose=1
         )
-        logger.info("RL actor-critic model (PPO) initialized.")
+        logger.info("RL actor-critic model (PPO) initialized with a valid environment.")
 
     def save_rl_model(self, path: str) -> None:
         """Save the RL model for later use."""
@@ -196,25 +253,23 @@ class ModelPreparation:
         # Load processed data
         df = self._load_processed_data()
 
-        # Verify DataFrame size
-        logger.info(f"Number of requirements: {len(df)}")
-
         # Convert data to tensor format with padding
         sequences = [row["Encoded_Requirement"] for _, row in df.iterrows()]
         logger.info(f"Number of sequences to process: {len(sequences)}")
 
-        # Use a smaller batch for the forward pass test
-        batch_size = min(self.config["hyperparameters"]["batch_size"], len(sequences))
-        logger.info(f"Using batch size for forward pass test: {batch_size}")
-        
-        # Take only the first batch_size sequences for the test
+        # Use a smaller batch for testing to avoid memory issues
+        batch_size = min(len(sequences), 16)  # Limit batch size
         test_sequences = sequences[:batch_size]
+        
+        # Prepare data for forward pass test
         src_data, src_mask = self._pad_sequences(test_sequences)
         tgt_data, tgt_mask = self._pad_sequences(test_sequences)  # Placeholder; same as src for now
 
         # Validate shapes
         if src_data.size(0) != src_mask.size(0) or tgt_data.size(0) != tgt_mask.size(0):
             raise ValueError(f"Batch size mismatch: src_data={src_data.size(0)}, src_mask={src_mask.size(0)}, tgt_data={tgt_data.size(0)}, tgt_mask={tgt_mask.size(0)}")
+        if src_data.size(1) != src_mask.size(1) or tgt_data.size(1) != tgt_mask.size(1):
+            raise ValueError(f"Sequence length mismatch: src_data={src_data.size(1)}, src_mask={src_mask.size(1)}, tgt_data={tgt_data.size(1)}, tgt_mask={tgt_mask.size(1)}")
 
         # Initialize transformer model
         model = TransformerModel(self.config)
@@ -224,7 +279,7 @@ class ModelPreparation:
         try:
             with torch.no_grad():
                 output = model(src_data, src_mask, tgt_data, tgt_mask)
-            logger.info("Forward pass successful. Model is compatible with input data.")
+            logger.info(f"Forward pass successful. Output shape: {output.shape}")
         except Exception as e:
             logger.error(f"Forward pass failed: {e}")
             raise
@@ -249,6 +304,7 @@ def main():
     try:
         preparer = ModelPreparation()
         model, rl_integration = preparer.prepare_model()
+        logger.info("Model preparation completed successfully.")
     except Exception as e:
         logger.error(f"Model preparation failed: {e}")
         raise

@@ -17,3 +17,27 @@
 2025-03-11 09:23:25,449 - INFO - Text preprocessing and tokenization completed.
 2025-03-11 09:23:25,452 - INFO - Data saved to dataset/processed_requirements.csv
 2025-03-11 09:23:25,453 - INFO - Data saved as pickle to dataset/processed_requirements.pkl
+2025-03-11 09:25:01,547 - INFO - Created/verified dataset directory: dataset/
+2025-03-11 09:25:01,547 - INFO - Starting data ingestion process...
+2025-03-11 09:25:01,622 - INFO - Successfully read software_requirements_extended.xlsx with 100 rows
+2025-03-11 09:25:01,622 - INFO - Combined DataFrame before deduplication: 100 rows
+2025-03-11 09:25:01,623 - INFO - Combined DataFrame after deduplication: 100 rows
+2025-03-11 09:25:01,639 - INFO - Text preprocessing and tokenization completed.
+2025-03-11 09:25:01,642 - INFO - Data saved to dataset/processed_requirements.csv
+2025-03-11 09:25:01,643 - INFO - Data saved as pickle to dataset/processed_requirements.pkl
+2025-03-11 09:33:30,236 - INFO - Created/verified dataset directory: dataset/
+2025-03-11 09:33:30,236 - INFO - Starting data ingestion process...
+2025-03-11 09:33:30,310 - INFO - Successfully read software_requirements_extended.xlsx with 100 rows
+2025-03-11 09:33:30,311 - INFO - Combined DataFrame before deduplication: 100 rows
+2025-03-11 09:33:30,311 - INFO - Combined DataFrame after deduplication: 100 rows
+2025-03-11 09:33:30,327 - INFO - Text preprocessing and tokenization completed.
+2025-03-11 09:33:30,330 - INFO - Data saved to dataset/processed_requirements.csv
+2025-03-11 09:33:30,331 - INFO - Data saved as pickle to dataset/processed_requirements.pkl
+2025-03-11 10:17:47,549 - INFO - Created/verified dataset directory: dataset/
+2025-03-11 10:17:47,549 - INFO - Starting data ingestion process...
+2025-03-11 10:17:47,631 - INFO - Successfully read software_requirements_extended.xlsx with 100 rows
+2025-03-11 10:17:47,631 - INFO - Combined DataFrame before deduplication: 100 rows
+2025-03-11 10:17:47,631 - INFO - Combined DataFrame after deduplication: 100 rows
+2025-03-11 10:17:47,650 - INFO - Text preprocessing and tokenization completed.
+2025-03-11 10:17:47,653 - INFO - Data saved to dataset/processed_requirements.csv
+2025-03-11 10:17:47,654 - INFO - Data saved as pickle to dataset/processed_requirements.pkl
