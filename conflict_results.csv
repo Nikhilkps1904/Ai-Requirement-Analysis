@@ -1,0 +1,901 @@
+Requirement_1,Requirement_2,Conflict_Result
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,Users should be able to turn off the headlight manually.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen.
+The bike must have a top speed of 120 km/h.,The vehicle should be cost-effective and use affordable materials.,Besoin: Die Bike muss mit einer Höchstgeschwindigkeit von 120 km/h. |
+The vehicle should include tubeless tires for durability and safety.,The two-wheeler should have a maximum curb weight of 120 kg.,| The two-wheeler should have a maximum curb weight of 120 kg. | The two
+Users should be able to turn off the headlight manually.,The frame should be made of lightweight aluminum for efficiency.,Exigenz: Benutzer sollten die Kopflights manuell ausschalten können. | Die Frame sollte
+"The vehicle should be affordable with a base price under $1,500.",The vehicle should be cost-effective and use affordable materials.,"Besoins: The vehicle should be affordable with a base price under $1,500"
+The engine should have a fuel injection system for optimized combustion.,The vehicle design should be compact and lightweight.,Besoin: Der Motor sollte über ein Fuel injection system für optimierte Verbrennung verfüge
+The bike should support over-the-air (OTA) software updates.,The engine must comply with strict noise restrictions.,Exigenz: Das Bike sollte die Software-Updates über die Maschine (OTA)
+The vehicle must meet Euro 6 emission standards.,The bike should support over-the-air (OTA) software updates.,- - - - - - - - - -
+The bike must have a top speed of 120 km/h.,The frame should be made of lightweight aluminum for efficiency.,Exigenz: Das Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Der
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The bike should include an always-on headlight for safety compliance.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen.
+The vehicle should include tubeless tires for durability and safety.,The vehicle should incorporate modular components for easy customization.,Bequirement: The vehicle should include tubeless tires for durability and safety. | The vehicle
+The vehicle should be cost-effective and use affordable materials.,The two-wheeler should have a maximum curb weight of 120 kg.,| The two-wheeler should have a maximum curb weight of 120 kg. | The two
+The vehicle design should be compact and lightweight.,The wheels should be spoked to maintain classic aesthetics.,The vehicle design should be compact and lightweight. | The wheels should be spoked to maintain classic
+The vehicle should include tubeless tires for durability and safety.,The bike should include an always-on headlight for safety compliance.,Exigenz: Das Fahrzeug sollte mit tubeless tires für durability und safety. | Das Fahrzeug sollte
+The engine must comply with strict noise restrictions.,The engine should have a minimum power output of 25 HP.,- Die Motor muss die strengen Noise-Restrictions erfüllen. | Die Motor sollte eine
+The two-wheeler should have a maximum curb weight of 120 kg.,The engine should have a fuel injection system for optimized combustion.,Besoin: Der zwei-wheeler sollte über ein maximales Fahrgewicht von 120
+The bike should have a storage compartment for a full-size helmet.,The vehicle should support fast charging to reach 80% in 30 minutes.,- - - - - - - - - -
+The instrument cluster should use analog dials to reduce complexity.,The wheels should be spoked to maintain classic aesthetics.,- Die rotoren sollten mit analog dials angewendet werden. | Die
+The two-wheeler should use biodegradable materials where possible.,The engine should have a minimum power output of 25 HP.,- Die zweirädrige Motor sollte möglichst biodegradable Materialien verwenden. |
+The seat should be made of premium leather for comfort.,The onboard computer should be minimal to reduce electronic dependencies.,- - - - - - - - - -
+The bike should support over-the-air (OTA) software updates.,The display panel must be fully digital with GPS navigation.,Exigenz: Das Fahrrad sollte die Software-Updates über die ganze Welt (OTA)
+The vehicle must include a high-capacity battery for extended electric range.,The bike should be resistant to extreme weather conditions.,- - - - - - - - - -
+The engine should have a fuel injection system for optimized combustion.,The bike should be resistant to extreme weather conditions.,"- Die Motoren müssen mit einem Spritzgusssystem ausgestattet sein, um die"
+The vehicle should have a minimalistic dashboard design.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- - - - - - - - - -
+The seat should be made of premium leather for comfort.,The instrument cluster should use analog dials to reduce complexity.,Die Sitzbestellung sollte aus hochwertigem Leder für den Komfort. | Die Instrument Cluster sollte mit analog
+The vehicle should be fully electric.,The bike must have a top speed of 120 km/h.,Exigenz: Der Fahrzeug muss vollständig electric sein | Der Motor muss mit einer Spitzengeschwindigkeit von
+The vehicle should include tubeless tires for durability and safety.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- - - - - - - - - -
+The bike should include an always-on headlight for safety compliance.,The instrument cluster should use analog dials to reduce complexity.,- - - - - - - - - -
+The vehicle should have a minimalistic dashboard design.,The frame should be made of lightweight aluminum for efficiency.,Besoins: Das Fahrzeug sollte mit minimalistischem Dashboard design versehen sein. | Der
+The engine must comply with strict noise restrictions.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,- - - - - - - - - -
+The vehicle should be fully electric.,The onboard computer should be minimal to reduce electronic dependencies.,Bequirement: The vehicle should be fully electric. | The onboard computer should be minimal
+The bike should be resistant to extreme weather conditions.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The vehicle should have a minimalistic dashboard design.,The wheels should be spoked to maintain classic aesthetics.,The vehicle should have a minimalistic dashboard design. | The wheels should be spoked to
+The bike should be resistant to extreme weather conditions.,The bike must have a top speed of 120 km/h.,- Die moto must be resistant to extreme weather conditions. | Die moto must have
+The engine must comply with strict noise restrictions.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- - - - - - - - - -
+The onboard computer should be minimal to reduce electronic dependencies.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet.
+The seat should be made of premium leather for comfort.,The vehicle should be cost-effective and use affordable materials.,Bequirement: Der seat should be made of premium leather for comfort. | The vehicle should
+The engine should have a minimum power output of 25 HP.,The engine should have a fuel injection system for optimized combustion.,Besoin: Der Motor sollte eine Mindestleistung von 25 HP haben. | Der Motor sollte
+The two-wheeler should use biodegradable materials where possible.,The engine should have a fuel injection system for optimized combustion.,"- Die zwei-Rodd-Fahrer sollten, wenn möglich, biodegrad"
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The bike should be resistant to extreme weather conditions.,- - - - - - - - - -
+The bike should support over-the-air (OTA) software updates.,The wheels should be spoked to maintain classic aesthetics.,The bike should support over-the-air (OTA) software updates. | The wheels should
+The display panel must be fully digital with GPS navigation.,The vehicle should have a minimalistic dashboard design.,Exigenz: Die Display Panel muss vollständig digital mit GPS Navigation sein. | Der Fahrzeug sollte mit
+The engine should have a fuel injection system for optimized combustion.,"The vehicle should be affordable with a base price under $1,500.","| The vehicle should be affordable with a base price under $1,500."
+The engine must comply with strict noise restrictions.,The two-wheeler must have a rearview camera for safety.,Exigenz: Der Motor muss strenge Noise Limits erfüllen. | Der Zweirader muss
+Users should be able to turn off the headlight manually.,Production costs should remain below market average for affordability.,"Besoins: Benutzer sollten die Möglichkeit haben, die Kopflights manuell zu de"
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The wheels should be spoked to maintain classic aesthetics.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi. | The wheels should be spoke
+The vehicle should be cost-effective and use affordable materials.,The display panel must be fully digital with GPS navigation.,- - - - - - - - - -
+Production costs should remain below market average for affordability.,The instrument cluster should use analog dials to reduce complexity.,: Production costs should remain below market average for affordability. | The instrument cluster should use analog dial
+The frame should be made of lightweight aluminum for efficiency.,The braking system should use ABS for enhanced safety.,- Die Frame sollte aus lightweight aluminum für Effizienz. | Die braking system
+The two-wheeler must have a rearview camera for safety.,Durability must be ensured for at least 10 years of use.,Besoins: Die zwei-wheeler muss über eine rearview camera verfügen.
+The wheels should be spoked to maintain classic aesthetics.,The frame should be made of lightweight aluminum for efficiency.,The wheels should be spoked to maintain classic aesthetics. | The frame should be made of
+The engine design should prioritize performance over emission constraints.,Users should be able to turn off the headlight manually.,"| Benutzer sollten es erlauben, die Kopflight manuell zu deaktivieren"
+The system should minimize power consumption for extended battery life.,The engine design should prioritize performance over emission constraints.,"Bequirement: Das System sollte die Energieverbrauch minimieren, um die Energieverbrauch zu reduzieren"
+The vehicle should incorporate modular components for easy customization.,The two-wheeler must have a rearview camera for safety.,- - - - - - - - - -
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The bike should support over-the-air (OTA) software updates.,Exigenz: Das Fahrzeug sollte intelligente Verbindung via Bluetooth und Wi-Fi unterstützen | Das Fahrrad
+The braking system should use ABS for enhanced safety.,The vehicle should incorporate modular components for easy customization.,Bequirement: The brake system should use ABS for enhanced safety. | The vehicle should incorporate
+Users should be able to turn off the headlight manually.,The vehicle should incorporate modular components for easy customization.,- Besoins: Benutzer sollten die Kopflights manuell ausschalten können.
+The two-wheeler should have a maximum curb weight of 120 kg.,The frame should be made of lightweight aluminum for efficiency.,Besoins: Der zwei-wheeler sollte mit einem maximalen Fahrgewicht von 120
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The vehicle should be fully electric.,- - - - - - - - - -
+The instrument cluster should use analog dials to reduce complexity.,The battery should use standard charging methods to maintain longevity.,: The instrument cluster should use analog dials to reduce complexity. | The battery should use standard
+The engine design should prioritize performance over emission constraints.,The frame should be made of lightweight aluminum for efficiency.,Bequirement: Die Motor design sollte die Priorität bei der Engine-Leistung und bei der
+The vehicle should incorporate modular components for easy customization.,The two-wheeler should use biodegradable materials where possible.,Bequirement: The vehicle should incorporate modular components for easy customization. | The two-wheel
+Production costs should remain below market average for affordability.,The braking system should use ABS for enhanced safety.,Bequirement: Production costs should remain below market average for affordability. | The brake system should
+Users should be able to turn off the headlight manually.,The engine design should prioritize performance over emission constraints.,User should be able to turn off the headlight manually. | The engine design should prioritize
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The engine should have a minimum power output of 25 HP.,- - - - - - - - - -
+The vehicle should be fully electric.,The vehicle should be cost-effective and use affordable materials.,- - - - - - - - - -
+The vehicle should have a minimalistic dashboard design.,Durability must be ensured for at least 10 years of use.,- - - - - - - - - -
+The seat should be made of premium leather for comfort.,The engine design should prioritize performance over emission constraints.,Bequirement: Der Sitz sollte aus hochwertige leather for comfort. | Der Sitz sollte a
+Production costs should remain below market average for affordability.,The vehicle should include tubeless tires for durability and safety.,Bequirement: Production costs should remain below market average for affordability. | The vehicle should include
+The instrument cluster should use analog dials to reduce complexity.,The onboard computer should be minimal to reduce electronic dependencies.,: The instrument cluster should use analog dials to reduce complexity. | The onboard computer should
+The vehicle design should be compact and lightweight.,The instrument cluster should use analog dials to reduce complexity.,- - - - - - - - - -
+The onboard computer should be minimal to reduce electronic dependencies.,The vehicle should support fast charging to reach 80% in 30 minutes.,- - - - - - - - - -
+The vehicle must meet Euro 6 emission standards.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,- - - - - - - - - -
+The two-wheeler must have a rearview camera for safety.,The vehicle design should be compact and lightweight.,Besoin: Die zweirädrige Fahrzeug muss mit einer rearview camera versehen sein
+The vehicle should incorporate modular components for easy customization.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet. | The bike
+The two-wheeler should have a maximum curb weight of 120 kg.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Besoin: Der zwei-wheeler sollte über ein maximales Fahrgewicht von 120
+The engine design should prioritize performance over emission constraints.,The bike should include an always-on headlight for safety compliance.,- - - - - - - - - -
+The vehicle should be fully electric.,The battery should use standard charging methods to maintain longevity.,Bequirement: The vehicle should be fully electric. | The battery should use standard charging methods
+The instrument cluster should use analog dials to reduce complexity.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,: The instrument cluster should use analog dials to reduce complexity. | The vehicle must achieve
+The seat should be made of premium leather for comfort.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The bike should include an always-on headlight for safety compliance.,The vehicle should incorporate modular components for easy customization.,Bequirement: The bike should include an always-on headlight for safety compliance. |
+The vehicle design should be compact and lightweight.,The engine design should prioritize performance over emission constraints.,Bequirement: Die Fahrzeug design sollte compact und lightweight sein sein. | Die Fahrzeug design sollte
+The frame should be made of lightweight aluminum for efficiency.,The battery should use standard charging methods to maintain longevity.,Bequirement: The frame should be made of lightweight aluminum for efficiency. | The battery should
+The bike should support over-the-air (OTA) software updates.,The wheels should be spoked to maintain classic aesthetics.,The bike should support over-the-air (OTA) software updates. | The wheels should
+The vehicle design should be compact and lightweight.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+The display panel must be fully digital with GPS navigation.,The bike should have a storage compartment for a full-size helmet.,| The display panel must be fully digital with GPS navigation. | The bike should have a storage
+The braking system should use ABS for enhanced safety.,The engine should have a fuel injection system for optimized combustion.,- Die braking system should use ABS for enhanced safety. | The engine should have a
+The vehicle must include a high-capacity battery for extended electric range.,The vehicle should support fast charging to reach 80% in 30 minutes.,- The vehicle must include a high-capacity battery for extended electric range. |
+The engine should have a fuel injection system for optimized combustion.,The seat should be made of premium leather for comfort.,Besoin: Der Motor sollte über ein Fuel injection system für optimierte Verbrennung verfüge
+The onboard computer should be minimal to reduce electronic dependencies.,The bike should support over-the-air (OTA) software updates.,The onboard computer should be minimal to reduce electronic dependencies. | The bike should support over
+The instrument cluster should use analog dials to reduce complexity.,The battery should use standard charging methods to maintain longevity.,: The instrument cluster should use analog dials to reduce complexity. | The battery should use standard
+The onboard computer should be minimal to reduce electronic dependencies.,The bike should be resistant to extreme weather conditions.,"Die Maschine ist flexibel, flexibel, flexibel, flexibel, flexibel,"
+The bike should have a storage compartment for a full-size helmet.,The bike should include an always-on headlight for safety compliance.,Exigences: The bike should have a storage compartment for a full-size helmet.
+The bike must have a top speed of 120 km/h.,The vehicle design should be compact and lightweight.,Exigenz: Das Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Die
+The vehicle must meet Euro 6 emission standards.,Users should be able to turn off the headlight manually.,"| Benutzer sollten in der Lage sein, die Scheibe manuell zu schalten."
+The bike should have a storage compartment for a full-size helmet.,The system should minimize power consumption for extended battery life.,"- Die Anlage sollte die Energieverbrauch senken, um die Batterien zu ver"
+The vehicle must include a high-capacity battery for extended electric range.,The two-wheeler should have a maximum curb weight of 120 kg.,- - - - - - - - - -
+The bike should include an always-on headlight for safety compliance.,The vehicle should incorporate modular components for easy customization.,Bequirement: The bike should include an always-on headlight for safety compliance. |
+The vehicle should be cost-effective and use affordable materials.,Production costs should remain below market average for affordability.,- - - - - - - - - -
+The two-wheeler should use biodegradable materials where possible.,The vehicle should incorporate modular components for easy customization.,Bequirement: The two-wheeler should use biodegradable materials where possible.
+The braking system should use ABS for enhanced safety.,The engine should have a fuel injection system for optimized combustion.,- Die braking system should use ABS for enhanced safety. | The engine should have a
+The two-wheeler must have a rearview camera for safety.,The bike should include an always-on headlight for safety compliance.,Exigenz: Der zwei-wheeler muss über eine rearview camera für Sicherheit verfügen.
+The bike should include an always-on headlight for safety compliance.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+The seat should be made of premium leather for comfort.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- Die Sitz sollte aus hochwertige leather for comfort. | Das Fahrzeug sollte die intelligente Bluetooth-
+The seat should be made of premium leather for comfort.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- Die Sitz sollte aus hochwertige leather for comfort. | Das Fahrzeug sollte die intelligente Bluetooth-
+The bike should support over-the-air (OTA) software updates.,The vehicle should be cost-effective and use affordable materials.,Besoin: The bike should support over-the-air (OTA) software updates.
+The display panel must be fully digital with GPS navigation.,The vehicle should support fast charging to reach 80% in 30 minutes.,Bequirement: The display panel must be fully digital with GPS navigation. | The vehicle should
+The braking system should use ABS for enhanced safety.,The seat should be made of premium leather for comfort.,Bequirement: The brake system should use ABS for enhanced safety. | The seat should be
+The vehicle should incorporate modular components for easy customization.,The vehicle should support fast charging to reach 80% in 30 minutes.,Bequirement: The vehicle should incorporate modular components for easy customization. | The vehicle should support
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Production costs should remain below market average for affordability.,Bequirement: Das Fahrzeug sollte intelligent connectivity via Bluetooth und Wi-Fi. | Production
+The engine design should prioritize performance over emission constraints.,The vehicle should incorporate modular components for easy customization.,Bequirement: Die Motor design sollte die Priorität der Performance und der emission constraints setzen
+The vehicle must meet Euro 6 emission standards.,The bike should support over-the-air (OTA) software updates.,- - - - - - - - - -
+The bike should include an always-on headlight for safety compliance.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+The display panel must be fully digital with GPS navigation.,The bike must have a top speed of 120 km/h.,Die Anzeige muss vollständig digital mit GPS Navigation sein | Die Bike muss eine Höchstgeschwindigkeit von 120
+The onboard computer should be minimal to reduce electronic dependencies.,Production costs should remain below market average for affordability.,- - - - - - - - - -
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The vehicle must meet Euro 6 emission standards.,Bequirement: Der Fahrzeug muss die BenzBenzBenzBenzBenzBenzBenzBenzBenzBenz
+The vehicle must meet Euro 6 emission standards.,The display panel must be fully digital with GPS navigation.,Exquirement: The vehicle must meet Euro 6 emission standards. | The display panel must be
+The bike must have a top speed of 120 km/h.,Production costs should remain below market average for affordability.,Besoin: Die Bike muss mit einer Höchstgeschwindigkeit von 120 km/h. |
+The two-wheeler must have a rearview camera for safety.,The instrument cluster should use analog dials to reduce complexity.,: The two-wheeler must have a rearview camera for safety. | The instrument
+The battery should use standard charging methods to maintain longevity.,The vehicle should be cost-effective and use affordable materials.,- Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie
+The vehicle must include a high-capacity battery for extended electric range.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The vehicle should have a minimalistic dashboard design.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+The wheels should be spoked to maintain classic aesthetics.,The braking system should use ABS for enhanced safety.,The wheels should be spoked to maintain classic aesthetics. | The braking system should use
+The bike must have a top speed of 120 km/h.,The seat should be made of premium leather for comfort.,Exigenz: Die Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Der
+The braking system should use ABS for enhanced safety.,The instrument cluster should use analog dials to reduce complexity.,- - - - - - - - - -
+The vehicle should be fully electric.,Production costs should remain below market average for affordability.,- - - - - - - - - -
+The bike should support over-the-air (OTA) software updates.,The wheels should be spoked to maintain classic aesthetics.,The bike should support over-the-air (OTA) software updates. | The wheels should
+The wheels should be spoked to maintain classic aesthetics.,The onboard computer should be minimal to reduce electronic dependencies.,The wheels should be spoked to maintain classic aesthetics. | The onboard computer should be
+The bike should be resistant to extreme weather conditions.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+The vehicle should have a minimalistic dashboard design.,The engine should have a minimum power output of 25 HP.,Exigenz: Das Fahrzeug sollte mit minimalistischem Dashboard design versehen sein | Der Motor sollte mit
+The two-wheeler must have a rearview camera for safety.,The vehicle should include tubeless tires for durability and safety.,Exigenz: Der zweirader muss über eine rearview camera für Sicherheit verfügen. |
+Users should be able to turn off the headlight manually.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet. | The bike
+The bike should have a storage compartment for a full-size helmet.,The instrument cluster should use analog dials to reduce complexity.,The bike should have a storage compartment for a full-size helmet. | The instrument
+The system should minimize power consumption for extended battery life.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- - - - - - - - - -
+The instrument cluster should use analog dials to reduce complexity.,The frame should be made of lightweight aluminum for efficiency.,Die Anlage sollte mit analog dials komplex erfassen. | Die Rahmen sollte aus
+The vehicle should support fast charging to reach 80% in 30 minutes.,The bike should support over-the-air (OTA) software updates.,The vehicle should support fast charging to reach 80 % in 30 minutes. | The bike should
+The onboard computer should be minimal to reduce electronic dependencies.,The braking system should use ABS for enhanced safety.,"- Die technischen Voraussetzungen: Der Computer aufboard sollte minimal sein, um die elektronische Ab"
+Production costs should remain below market average for affordability.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet.
+The vehicle should have a minimalistic dashboard design.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The engine design should prioritize performance over emission constraints.,Bequirement: Das Fahrzeug sollte intelligent connectivity via Bluetooth und Wi-Fi. | Die Engine
+The wheels should be spoked to maintain classic aesthetics.,The vehicle should include tubeless tires for durability and safety.,: The wheels should be spoked to maintain classic aesthetics. | The vehicle should include tube
+The vehicle should include tubeless tires for durability and safety.,The onboard computer should be minimal to reduce electronic dependencies.,- - - - - - - - - -
+The vehicle should be fully electric.,"The vehicle should be affordable with a base price under $1,500.",Besoin: The vehicle should be fully electric. | The vehicle should be affordable with
+The bike should support over-the-air (OTA) software updates.,The bike should include an always-on headlight for safety compliance.,Exigences: The bike should support over-the-air (OTA) software updates. |
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The bike should be resistant to extreme weather conditions.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen.
+The vehicle should be fully electric.,"The vehicle should be affordable with a base price under $1,500.",Besoin: The vehicle should be fully electric. | The vehicle should be affordable with
+The wheels should be spoked to maintain classic aesthetics.,The vehicle should incorporate modular components for easy customization.,The wheels should be spoked to maintain classic aesthetic. | The vehicle should incorporate modular components for
+The wheels should be spoked to maintain classic aesthetics.,Durability must be ensured for at least 10 years of use.,The wheels should be spoked to maintain classic aesthetics. | Durability must be ensured
+The bike should support over-the-air (OTA) software updates.,The vehicle must meet Euro 6 emission standards.,Exigenz: Das Fahrrad sollte die Software-Updates über die Maschine (OTA) unterstützen
+"The vehicle should be affordable with a base price under $1,500.",The two-wheeler must have a rearview camera for safety.,"Besoins: Das Fahrzeug sollte preisgünstig sein, es sollte unter $1"
+Production costs should remain below market average for affordability.,The two-wheeler must have a rearview camera for safety.,| The two-wheeler must have a rearview camera for safety. | The two-
+The battery should use standard charging methods to maintain longevity.,The two-wheeler must have a rearview camera for safety.,| The battery must use standard charging methods to maintain longevity. | The two-wheeler must have
+The vehicle must include a high-capacity battery for extended electric range.,The two-wheeler should have a maximum curb weight of 120 kg.,- - - - - - - - - -
+The vehicle should incorporate modular components for easy customization.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+The display panel must be fully digital with GPS navigation.,The seat should be made of premium leather for comfort.,Bequirement: The display panel must be fully digital with GPS navigation. | The seat should
+Durability must be ensured for at least 10 years of use.,The battery should use standard charging methods to maintain longevity.,"- Die Batterie muss mit standard charging methods angewendet werden, um die Lebensdauer zu"
+The vehicle should be cost-effective and use affordable materials.,Durability must be ensured for at least 10 years of use.,- - - - - - - - - -
+The vehicle should have a minimalistic dashboard design.,The seat should be made of premium leather for comfort.,Exigenz: Das Fahrzeug sollte mit minimalistischem Dashboard design versehen sein. | Der Sitz sollte
+The engine should have a minimum power output of 25 HP.,The vehicle must meet Euro 6 emission standards.,Exigenz: Der Motor muss eine Mindestleistung von 25 HP haben. | Der Fahrzeug muss die
+The system should minimize power consumption for extended battery life.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet.
+The vehicle should include tubeless tires for durability and safety.,The vehicle must include a high-capacity battery for extended electric range.,| The vehicle must include a high-capacity battery for extended electric range. | The
+The vehicle must include a high-capacity battery for extended electric range.,The instrument cluster should use analog dials to reduce complexity.,The vehicle must include a high-capacity battery for extended electric range. | The
+The vehicle should be fully electric.,The onboard computer should be minimal to reduce electronic dependencies.,Bequirement: The vehicle should be fully electric. | The onboard computer should be minimal
+The two-wheeler should have a maximum curb weight of 120 kg.,The engine design should prioritize performance over emission constraints.,Besoins: Der zweirader sollte über ein maximales Fahrgewicht von 120
+The vehicle should be cost-effective and use affordable materials.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Production costs should remain below market average for affordability.,Bequirement: Das Fahrzeug sollte intelligent connectivity via Bluetooth und Wi-Fi. | Production
+The frame should be made of lightweight aluminum for efficiency.,The vehicle should have a minimalistic dashboard design.,Exigenz: Der Rahmen sollte aus leichtem Aluminium für die Effizienz hergestellt
+The vehicle should include tubeless tires for durability and safety.,The vehicle should have a minimalistic dashboard design.,| The vehicle should have a minimalistic dashboard design. | The vehicle should have a minimalist
+The engine should have a fuel injection system for optimized combustion.,The vehicle design should be compact and lightweight.,Besoin: Der Motor sollte über ein Fuel injection system für optimierte Verbrennung verfüge
+The bike must have a top speed of 120 km/h.,The frame should be made of lightweight aluminum for efficiency.,Exigenz: Das Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Der
+The two-wheeler should use biodegradable materials where possible.,The vehicle must meet Euro 6 emission standards.,Bequirement: The two-wheeler should use biodegradable materials where possible.
+The seat should be made of premium leather for comfort.,Users should be able to turn off the headlight manually.,- Die Sitze sollten aus hochwertigem Leder für den Komfort gehalten werden. | Benutzer sollten
+The seat should be made of premium leather for comfort.,The vehicle should be fully electric.,- - - - - - - - - -
+The wheels should be spoked to maintain classic aesthetics.,The two-wheeler should have a maximum curb weight of 120 kg.,: The wheels should be spoked to maintain classic aesthetics. | The two-wheeler
+The instrument cluster should use analog dials to reduce complexity.,The two-wheeler must have a rearview camera for safety.,: The instrument cluster should use analog dials to reduce complexity. | The two-wheeler
+The bike must have a top speed of 120 km/h.,The two-wheeler should have a maximum curb weight of 120 kg.,Exigenz: Die Bike muss mit einer Höchstgeschwindigkeit von 120 km/h. | Die
+Users should be able to turn off the headlight manually.,The bike must have a top speed of 120 km/h.,| Die Bike muss eine Höchstgeschwindigkeit von 120 km/h haben.
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The engine design should prioritize performance over emission constraints.,Bequirement: Das Fahrzeug sollte intelligent connectivity via Bluetooth und Wi-Fi. | Die Engine
+The engine should have a minimum power output of 25 HP.,The vehicle should include tubeless tires for durability and safety.,Besoins: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein.
+The bike must have a top speed of 120 km/h.,The vehicle should incorporate modular components for easy customization.,Besoin: Das Bike muss mit einer Höchstgeschwindigkeit von 120 km/h. |
+The vehicle should include tubeless tires for durability and safety.,The engine should have a fuel injection system for optimized combustion.,| The engine should have a fuel injection system for optimized combustion. | The vehicle should include tube
+The vehicle should be fully electric.,Durability must be ensured for at least 10 years of use.,- - - - - - - - - -
+The frame should be made of lightweight aluminum for efficiency.,"The vehicle should be affordable with a base price under $1,500.","| The vehicle should be affordable with a base price under $1,500."
+The vehicle should incorporate modular components for easy customization.,The vehicle should be cost-effective and use affordable materials.,- - - - - - - - - -
+The bike should support over-the-air (OTA) software updates.,The seat should be made of premium leather for comfort.,Exigenz: Das Fahrrad sollte die Software-Updates über die Maschine unterstützen. | Der
+Durability must be ensured for at least 10 years of use.,Users should be able to turn off the headlight manually.,| Benutzer sollten die Kopflampe manuell ausschalten können. | Benutzer sollten die Lampe aus
+The instrument cluster should use analog dials to reduce complexity.,The two-wheeler should have a maximum curb weight of 120 kg.,: The instrument cluster should use analog dials to reduce complexity. | The two-wheeler
+The instrument cluster should use analog dials to reduce complexity.,The frame should be made of lightweight aluminum for efficiency.,Die Anlage sollte mit analog dials komplex erfassen. | Die Rahmen sollte aus
+The two-wheeler should have a maximum curb weight of 120 kg.,The bike should include an always-on headlight for safety compliance.,Exigenz: Der zwei-wheeler sollte mit einem maximalen Fahrgewicht von 120 kg
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The two-wheeler should have a maximum curb weight of 120 kg.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen.
+The system should minimize power consumption for extended battery life.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+"The vehicle should be affordable with a base price under $1,500.",The two-wheeler should have a maximum curb weight of 120 kg.,"Besoins: Das Fahrzeug sollte preisgünstig sein und unter $1,500 a"
+Users should be able to turn off the headlight manually.,The vehicle should have a minimalistic dashboard design.,"| Benutzer sollten die Möglichkeit haben, die Kopflampe manuell zu deaktivieren. | Das"
+The vehicle should support fast charging to reach 80% in 30 minutes.,The vehicle should be fully electric.,"Exigenz: Der Fahrzeug sollte mit schnellem Aufladen fahren, um 80% in"
+The wheels should be spoked to maintain classic aesthetics.,The seat should be made of premium leather for comfort.,The wheels should be spoked to maintain classic aesthetics. | The seat should be made of
+The bike should have a storage compartment for a full-size helmet.,Durability must be ensured for at least 10 years of use.,- - - - - - - - - -
+The vehicle must meet Euro 6 emission standards.,The bike must have a top speed of 120 km/h.,Exigenz: Der Fahrzeug muss die Euro 6 emission standards erfüllen. | Der Motor muss mit einer
+The engine should have a minimum power output of 25 HP.,The vehicle design should be compact and lightweight.,Besoin: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein. |
+The braking system should use ABS for enhanced safety.,The wheels should be spoked to maintain classic aesthetics.,The brake system should use ABS for enhanced safety. | The wheels should be spoked to maintain
+The vehicle should be fully electric.,The seat should be made of premium leather for comfort.,Bequirement: The vehicle should be fully electric. | The seat should be made of premium
+The two-wheeler should use biodegradable materials where possible.,The vehicle should be cost-effective and use affordable materials.,Bequirement: The two-wheeler should use biodegradable materials where possible.
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The system should minimize power consumption for extended battery life.,Bequirement: Das Fahrzeug sollte die intelligente Connect via Bluetooth und Wi-Fi. |
+The seat should be made of premium leather for comfort.,The vehicle should have a minimalistic dashboard design.,- Die Sitze sollten aus Premium-Loadstoff für den Komfort sein | Die
+The engine should have a fuel injection system for optimized combustion.,The vehicle should include tubeless tires for durability and safety.,- Die Maschine sollte mit einem Spritzgusssystem für optimierte Verbren
+The engine should have a minimum power output of 25 HP.,The vehicle should have a minimalistic dashboard design.,Besoin: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein | Der
+The engine should have a minimum power output of 25 HP.,The onboard computer should be minimal to reduce electronic dependencies.,Besoins: Der Motor sollte mit einem Minimum Power output of 25 HP. | Der
+The engine design should prioritize performance over emission constraints.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The vehicle must meet Euro 6 emission standards.,The engine should have a minimum power output of 25 HP.,Exigenz: Das Fahrzeug muss die Euro 6 emission standards erfüllen. | Der Motor muss eine Mindest
+The system should minimize power consumption for extended battery life.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The display panel must be fully digital with GPS navigation.,The braking system should use ABS for enhanced safety.,Bequirement: The display panel must be fully digital with GPS navigation. | The brake system
+The bike must have a top speed of 120 km/h.,The vehicle should be fully electric.,Exigenz: Die Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Die
+The vehicle should support fast charging to reach 80% in 30 minutes.,The vehicle should incorporate modular components for easy customization.,Besoins: The vehicle should support fast charging to reach 80% in 30 minutes.
+The battery should use standard charging methods to maintain longevity.,The engine design should prioritize performance over emission constraints.,"Bequirement: Die Batterie sollte standard charging methods verwenden, um die Batterie weiterhin langle"
+The vehicle should have a minimalistic dashboard design.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The engine should have a minimum power output of 25 HP.,The bike should have a storage compartment for a full-size helmet.,Exigenz: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein | Der Motor
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The onboard computer should be minimal to reduce electronic dependencies.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen.
+Users should be able to turn off the headlight manually.,The battery should use standard charging methods to maintain longevity.,"Besoins: Benutzer sollten die Möglichkeit haben, das Headlight manuell zu deaktiv"
+Durability must be ensured for at least 10 years of use.,The two-wheeler must have a rearview camera for safety.,| The two-wheeler must have a rearview camera for safety. | The two-
+The two-wheeler should have a maximum curb weight of 120 kg.,The vehicle should include tubeless tires for durability and safety.,Besoins: Der zweirader sollte über ein maximales Fahrgewicht von 120
+The vehicle must include a high-capacity battery for extended electric range.,The vehicle should incorporate modular components for easy customization.,- - - - - - - - - -
+The vehicle should be cost-effective and use affordable materials.,The frame should be made of lightweight aluminum for efficiency.,Bequirement: The vehicle should be cost-effective and use affordable materials. | The frame
+The seat should be made of premium leather for comfort.,The vehicle should be cost-effective and use affordable materials.,Bequirement: Der seat should be made of premium leather for comfort. | The vehicle should
+The instrument cluster should use analog dials to reduce complexity.,The bike should have a storage compartment for a full-size helmet.,: The instrument cluster should use analog dials to reduce complexity. | The bike should have
+The bike must have a top speed of 120 km/h.,The vehicle should have a minimalistic dashboard design.,Exigenz: Der Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Der
+Production costs should remain below market average for affordability.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+The frame should be made of lightweight aluminum for efficiency.,Production costs should remain below market average for affordability.,Bequirement: The frame should be made of lightweight aluminum for efficiency. | Production costs should
+The onboard computer should be minimal to reduce electronic dependencies.,The two-wheeler should use biodegradable materials where possible.,Bequirement: The onboard computer should be minimal to reduce electronic dependencies. | The
+The vehicle must include a high-capacity battery for extended electric range.,Durability must be ensured for at least 10 years of use.,- - - - - - - - - -
+The frame should be made of lightweight aluminum for efficiency.,The seat should be made of premium leather for comfort.,Bequirement: The frame should be made of lightweight aluminum for efficiency. | The seat should
+The engine design should prioritize performance over emission constraints.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h.
+The vehicle should have a minimalistic dashboard design.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- - - - - - - - - -
+The bike must have a top speed of 120 km/h.,Durability must be ensured for at least 10 years of use.,Exigenz: Die Bike muss mit einer Höchstgeschwindigkeit von 120 km/h. | Dur
+Production costs should remain below market average for affordability.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h.
+The two-wheeler should use biodegradable materials where possible.,The bike should have a storage compartment for a full-size helmet.,- - - - - - - - - -
+The vehicle should include tubeless tires for durability and safety.,The bike should support over-the-air (OTA) software updates.,The vehicle should include tubeless tires for durability and safety. | The bike should support over-
+The onboard computer should be minimal to reduce electronic dependencies.,The braking system should use ABS for enhanced safety.,"- Die technischen Voraussetzungen: Der Computer aufboard sollte minimal sein, um die elektronische Ab"
+The vehicle must meet Euro 6 emission standards.,The engine design should prioritize performance over emission constraints.,- - - - - - - - - -
+The wheels should be spoked to maintain classic aesthetics.,The frame should be made of lightweight aluminum for efficiency.,The wheels should be spoked to maintain classic aesthetics. | The frame should be made of
+Users should be able to turn off the headlight manually.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The vehicle should incorporate modular components for easy customization.,Users should be able to turn off the headlight manually.,| Benutzer sollten die Kopflampe manuell ausschalten können.
+The seat should be made of premium leather for comfort.,The engine should have a minimum power output of 25 HP.,- Die Sitze sollten aus Premium-Limoyale für den Komfort. |
+The two-wheeler should have a maximum curb weight of 120 kg.,The system should minimize power consumption for extended battery life.,Besoins: Der zwei-wheeler sollte mit einem maximalen Innenraumgewicht
+The engine design should prioritize performance over emission constraints.,The display panel must be fully digital with GPS navigation.,- - - - - - - - - -
+The vehicle should have a minimalistic dashboard design.,The system should minimize power consumption for extended battery life.,- - - - - - - - - -
+The two-wheeler must have a rearview camera for safety.,The two-wheeler should have a maximum curb weight of 120 kg.,"Exigenz: Der zwei-wheeler muss über eine rearview camera fahren, um die"
+The two-wheeler should have a maximum curb weight of 120 kg.,The onboard computer should be minimal to reduce electronic dependencies.,Besoins: Der zwei-wheeler sollte mit einem maximalen Fahrgewicht von 120
+The seat should be made of premium leather for comfort.,The two-wheeler must have a rearview camera for safety.,- Die Sitzbestimmungen sollten aus hochwertigem Leder für den Komfort sein | Die Zwei-
+The vehicle should be cost-effective and use affordable materials.,The system should minimize power consumption for extended battery life.,- - - - - - - - - -
+The vehicle should be cost-effective and use affordable materials.,The vehicle should support fast charging to reach 80% in 30 minutes.,The vehicle should be cost-effective and use affordable materials. | The vehicle should support fast charging
+The vehicle should have a minimalistic dashboard design.,The engine design should prioritize performance over emission constraints.,Exigences: Das Fahrzeug sollte mit minimalistischem Dashboard design ausgestattet sein. | Das Motordesign
+The onboard computer should be minimal to reduce electronic dependencies.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The bike should be resistant to extreme weather conditions.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The vehicle should support fast charging to reach 80% in 30 minutes.,The vehicle must include a high-capacity battery for extended electric range.,- The vehicle must support fast charging to reach 80% in 30 minutes. | The vehicle must
+The bike should be resistant to extreme weather conditions.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet.
+The two-wheeler should have a maximum curb weight of 120 kg.,The vehicle should be cost-effective and use affordable materials.,Besoins: Der zweirader sollte mit einem maximalen Fahrgewicht von 120 kg
+The vehicle should include tubeless tires for durability and safety.,The battery should use standard charging methods to maintain longevity.,Bequirement: The vehicle should include tubeless tires for durability and safety. | The battery
+The seat should be made of premium leather for comfort.,The two-wheeler should have a maximum curb weight of 120 kg.,Exigenz: Der Sitz sollte aus hochwertigem Leder für den Komfort sein. | Der zwei-
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The two-wheeler should have a maximum curb weight of 120 kg.,- - - - - - - - - -
+The display panel must be fully digital with GPS navigation.,The bike should be resistant to extreme weather conditions.,Die Anzeige hat muss digital mit GPS navigation. | Die bike muss resistent zu extreme weather
+The bike should support over-the-air (OTA) software updates.,The braking system should use ABS for enhanced safety.,Exigenz: Das Bike sollte die Software-Updates über die Maschine (OTA)
+"The vehicle should be affordable with a base price under $1,500.",The seat should be made of premium leather for comfort.,Besoins: Das Fahrzeug sollte preisgünstig sein und hat einen Basispreis unter
+The wheels should be spoked to maintain classic aesthetics.,The engine should have a minimum power output of 25 HP.,The wheels should be spoked to maintain classic aesthetics. | The engine should have a
+The vehicle should be fully electric.,The two-wheeler must have a rearview camera for safety.,Exigenz: Das Fahrzeug sollte vollständig electric sein | Der zwei-wheeler muss mit einer rear
+The engine should have a fuel injection system for optimized combustion.,The vehicle should be cost-effective and use affordable materials.,Besoins: Der Motor sollte über ein Fuel injection system für optimierte Verbrennung
+The bike should include an always-on headlight for safety compliance.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The bike should have a storage compartment for a full-size helmet.,The vehicle should be cost-effective and use affordable materials.,Besoins: The bike should have a storage compartment for a full-size
+The vehicle should incorporate modular components for easy customization.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,| The vehicle must achieve a fuel efficiency of at least 50 km/l.
+The bike should support over-the-air (OTA) software updates.,The bike should include an always-on headlight for safety compliance.,Exigences: The bike should support over-the-air (OTA) software updates. |
+The vehicle should support fast charging to reach 80% in 30 minutes.,The vehicle must include a high-capacity battery for extended electric range.,- The vehicle must support fast charging to reach 80% in 30 minutes. | The vehicle must
+The vehicle should have a minimalistic dashboard design.,The vehicle should be cost-effective and use affordable materials.,- - - - - - - - - -
+The vehicle should incorporate modular components for easy customization.,The bike should include an always-on headlight for safety compliance.,Bequirement: The vehicle should incorporate modular components for easy customization. | The bike should include
+The bike should have a storage compartment for a full-size helmet.,The vehicle should incorporate modular components for easy customization.,Besoin: The bike should have a storage compartment for a full-size helmet
+The engine should have a fuel injection system for optimized combustion.,The engine design should prioritize performance over emission constraints.,- - - - - - - - - -
+The engine should have a minimum power output of 25 HP.,The vehicle should incorporate modular components for easy customization.,Besoin: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein. |
+The two-wheeler must have a rearview camera for safety.,The vehicle design should be compact and lightweight.,Besoin: Die zweirädrige Fahrzeug muss mit einer rearview camera versehen sein
+The vehicle should be cost-effective and use affordable materials.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet. | The bike
+The bike should support over-the-air (OTA) software updates.,The vehicle should incorporate modular components for easy customization.,Besoin: The bike should support over-the-air (OTA) software updates.
+The engine should have a minimum power output of 25 HP.,The vehicle design should be compact and lightweight.,Besoin: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein. |
+Production costs should remain below market average for affordability.,The two-wheeler should use biodegradable materials where possible.,Bequirement: Production costs should remain below market average for affordability. | The two-wheel
+The engine should have a fuel injection system for optimized combustion.,The bike should support over-the-air (OTA) software updates.,- - - - - - - - - -
+The two-wheeler must have a rearview camera for safety.,The bike must have a top speed of 120 km/h.,Exigenz: Der zweirader muss über eine rearview camera fahren. | Der B
+The instrument cluster should use analog dials to reduce complexity.,The vehicle should have a minimalistic dashboard design.,The instrument cluster should use analog dials to reduce complexity. | The vehicle should have a
+The engine design should prioritize performance over emission constraints.,The vehicle should incorporate modular components for easy customization.,Bequirement: Die Motor design sollte die Priorität der Performance und der emission constraints setzen
+The two-wheeler must have a rearview camera for safety.,The two-wheeler should use biodegradable materials where possible.,Exigenz: Der zwei-wheeler muss über eine rearview camera für Sicherheit verfügen.
+Users should be able to turn off the headlight manually.,The bike should include an always-on headlight for safety compliance.,- Benutzer sollten die Headlights manuell ausschalten können. | Der Bike sollte einen
+The display panel must be fully digital with GPS navigation.,The vehicle should be fully electric.,Exigenz: Die Display Panel muss vollständig digital mit GPS navigation. | Die Fahrzeug muss vollständig electric
+Durability must be ensured for at least 10 years of use.,The bike should include an always-on headlight for safety compliance.,| The bike should include an always-on headlight for safety compliance.
+The display panel must be fully digital with GPS navigation.,The bike must have a top speed of 120 km/h.,Die Anzeige muss vollständig digital mit GPS Navigation sein | Die Bike muss eine Höchstgeschwindigkeit von 120
+The engine should have a fuel injection system for optimized combustion.,The bike should include an always-on headlight for safety compliance.,Exigenz: Der Motor sollte über ein Fuel injection system für optimierte Verbrennung verfügen
+The bike must have a top speed of 120 km/h.,The vehicle design should be compact and lightweight.,Exigenz: Das Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Die
+The bike should include an always-on headlight for safety compliance.,The vehicle should have a minimalistic dashboard design.,- The bike should include an always-on headlight for safety compliance. | The vehicle should
+The system should minimize power consumption for extended battery life.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h.
+The onboard computer should be minimal to reduce electronic dependencies.,The vehicle should be fully electric.,- - - - - - - - - -
+The two-wheeler should have a maximum curb weight of 120 kg.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Besoin: Der zwei-wheeler sollte über ein maximales Fahrgewicht von 120
+The engine must comply with strict noise restrictions.,Users should be able to turn off the headlight manually.,| Benutzer sollten die Kopflights manuell ausschalten können.
+The display panel must be fully digital with GPS navigation.,The vehicle should be fully electric.,Exigenz: Die Display Panel muss vollständig digital mit GPS navigation. | Die Fahrzeug muss vollständig electric
+The engine should have a minimum power output of 25 HP.,The seat should be made of premium leather for comfort.,Besoin: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein. |
+"The vehicle should be affordable with a base price under $1,500.",The bike should be resistant to extreme weather conditions.,"Besoins: Das Fahrzeug sollte preisgünstig sein und unter $1,500 fahren"
+The vehicle should support fast charging to reach 80% in 30 minutes.,The frame should be made of lightweight aluminum for efficiency.,"Besoin: Das Fahrzeug sollte mit schnellem Aufladen fahren, um 80%"
+Production costs should remain below market average for affordability.,The two-wheeler should have a maximum curb weight of 120 kg.,- Die zwei-wheeler-Fahrer-Fahrer-Fahrer-Fahrer-
+The battery should use standard charging methods to maintain longevity.,The onboard computer should be minimal to reduce electronic dependencies.,- - - - - - - - - -
+Durability must be ensured for at least 10 years of use.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The vehicle design should be compact and lightweight.,The seat should be made of premium leather for comfort.,Bequirement: Die Fahrzeug design sollte compact und lightweight. | Der Sitz sollte aus hochwertige leather
+The bike should have a storage compartment for a full-size helmet.,The vehicle should include tubeless tires for durability and safety.,Exigences: The bike should have a storage compartment for a full-size helmet.
+The system should minimize power consumption for extended battery life.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h.
+The engine should have a minimum power output of 25 HP.,The two-wheeler must have a rearview camera for safety.,Exigenz: Der Motor muss mit einem Minimum Power output of 25 HP ausgestattet sein. | Der
+Durability must be ensured for at least 10 years of use.,The vehicle should support fast charging to reach 80% in 30 minutes.,- - - - - - - - - -
+The two-wheeler should have a maximum curb weight of 120 kg.,The bike should include an always-on headlight for safety compliance.,Exigenz: Der zwei-wheeler sollte mit einem maximalen Fahrgewicht von 120 kg
+The two-wheeler should use biodegradable materials where possible.,The engine must comply with strict noise restrictions.,Bequirement: The two-wheeler should use biodegradable materials where possible.
+The frame should be made of lightweight aluminum for efficiency.,The engine design should prioritize performance over emission constraints.,Bequirement: The frame should be made of lightweight aluminum for efficiency. | The engine design
+The vehicle should be fully electric.,Production costs should remain below market average for affordability.,- - - - - - - - - -
+The engine should have a minimum power output of 25 HP.,The vehicle should support fast charging to reach 80% in 30 minutes.,Besoin: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein | Der
+The bike must have a top speed of 120 km/h.,The battery should use standard charging methods to maintain longevity.,Besoin: Die Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. |
+The system should minimize power consumption for extended battery life.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,| The vehicle must achieve a fuel efficiency of at least 50 km/l.
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The two-wheeler must have a rearview camera for safety.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen.
+The vehicle should be fully electric.,The display panel must be fully digital with GPS navigation.,Bequirement: The vehicle should be fully electric. | The display panel must be fully digital
+The engine should have a minimum power output of 25 HP.,The braking system should use ABS for enhanced safety.,- Die Motoren müssen mit einem Minimum Power output of 25 HP ausgestattet sein. | Der Bre
+The display panel must be fully digital with GPS navigation.,Users should be able to turn off the headlight manually.,- Die Display Panels müssen vollständig digital mit GPS Navigation sein. | Benutzer sollten die Möglichkeit haben
+The vehicle should be fully electric.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The wheels should be spoked to maintain classic aesthetics.,Users should be able to turn off the headlight manually.,The wheels should be spoked to maintain classic aesthetics. | Users should be able to
+The vehicle should be cost-effective and use affordable materials.,The braking system should use ABS for enhanced safety.,- - - - - - - - - -
+The vehicle must include a high-capacity battery for extended electric range.,The vehicle should have a minimalistic dashboard design.,| The vehicle should have a minimalistic dashboard design.
+The engine design should prioritize performance over emission constraints.,The seat should be made of premium leather for comfort.,Bequirement: Die Motor design sollte die Priorität der Performance setzen auf Performance versus
+The system should minimize power consumption for extended battery life.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,| The vehicle must achieve a fuel efficiency of at least 50 km/l.
+The braking system should use ABS for enhanced safety.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- - - - - - - - - -
+The display panel must be fully digital with GPS navigation.,"The vehicle should be affordable with a base price under $1,500.",- Die Display Panels müssen vollständig digital mit GPS Navigation sein | Der Fahrzeug sollte preisgünstig
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,Production costs should remain below market average for affordability.,Besoins: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen
+The wheels should be spoked to maintain classic aesthetics.,The engine should have a fuel injection system for optimized combustion.,The wheels should be spoked to maintain classic aesthetics. | The engine should have a
+The engine should have a fuel injection system for optimized combustion.,The frame should be made of lightweight aluminum for efficiency.,Besoin: Der Motor sollte über ein Fuel injection system für optimierte Verbrennung verfüge
+"The vehicle should be affordable with a base price under $1,500.",The vehicle design should be compact and lightweight.,"Besoins: Das Fahrzeug sollte preisgünstig sein und unter $1,500 f"
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The seat should be made of premium leather for comfort.,Bequirement: Das Fahrzeug sollte die intelligent connectivity via Bluetooth und Wi-Fi. | Der
+The bike should be resistant to extreme weather conditions.,The two-wheeler must have a rearview camera for safety.,- - - - - - - - - -
+"The vehicle should be affordable with a base price under $1,500.",The frame should be made of lightweight aluminum for efficiency.,Besoins: Das Fahrzeug sollte preisgünstig sein und hat einen Basispreis unter
+The bike must have a top speed of 120 km/h.,The engine should have a fuel injection system for optimized combustion.,Exigenz: Die Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Die
+The engine design should prioritize performance over emission constraints.,The system should minimize power consumption for extended battery life.,Bequirement: Motor design should prioritize performance over emission constraints. | The system should minimize power
+Production costs should remain below market average for affordability.,The vehicle should incorporate modular components for easy customization.,Bequirement: Production costs should remain below market average for affordability. | The vehicle should incorporate
+The braking system should use ABS for enhanced safety.,The vehicle should have a minimalistic dashboard design.,| The vehicle should have a minimalistic dashboard design.
+The vehicle must include a high-capacity battery for extended electric range.,The vehicle should include tubeless tires for durability and safety.,- The vehicle must include a high-capacity battery for extended electric range. |
+The bike should be resistant to extreme weather conditions.,The vehicle should incorporate modular components for easy customization.,Bequirement: The bike should be resistant to extreme weather conditions. | The vehicle should incorporate
+The vehicle should include tubeless tires for durability and safety.,The vehicle should support fast charging to reach 80% in 30 minutes.,- - - - - - - - - -
+The engine should have a minimum power output of 25 HP.,The vehicle should be fully electric.,Exigenz: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein | Der Fahrzeug
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,Durability must be ensured for at least 10 years of use.,- - - - - - - - - -
+"The vehicle should be affordable with a base price under $1,500.",The vehicle should support fast charging to reach 80% in 30 minutes.,"Besoins: The vehicle should be affordable with a base price under $1,500"
+The battery should use standard charging methods to maintain longevity.,The frame should be made of lightweight aluminum for efficiency.,Bequirement: Batterie should use standard charging methods to maintain longevity. | The frame should be
+"The vehicle should be affordable with a base price under $1,500.",Durability must be ensured for at least 10 years of use.,Besoins: Das Fahrzeug sollte preisgünstig sein und hat einen Basispreis unter
+Users should be able to turn off the headlight manually.,The engine design should prioritize performance over emission constraints.,User should be able to turn off the headlight manually. | The engine design should prioritize
+The engine design should prioritize performance over emission constraints.,The display panel must be fully digital with GPS navigation.,- - - - - - - - - -
+The vehicle must include a high-capacity battery for extended electric range.,The system should minimize power consumption for extended battery life.,Exigences: The vehicle must include a high-capacity battery for extended electric range
+The vehicle must meet Euro 6 emission standards.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+The wheels should be spoked to maintain classic aesthetics.,Production costs should remain below market average for affordability.,The wheels should be spoked to maintain classic aesthetics. | Production costs should remain below market
+The two-wheeler should have a maximum curb weight of 120 kg.,The vehicle must include a high-capacity battery for extended electric range.,Besoin: The two-wheeler should have a maximum curb weight of 120 kg
+The vehicle should have a minimalistic dashboard design.,The two-wheeler should use biodegradable materials where possible.,Besoins: Das Fahrzeug sollte mit minimalistischem Dashboard design ausgestattet sein. | Das
+The bike should include an always-on headlight for safety compliance.,The braking system should use ABS for enhanced safety.,- - - - - - - - - -
+The bike should support over-the-air (OTA) software updates.,The vehicle should incorporate modular components for easy customization.,Besoin: The bike should support over-the-air (OTA) software updates.
+Users should be able to turn off the headlight manually.,The engine should have a fuel injection system for optimized combustion.,"| Benutzer sollten die Möglichkeit haben, die Kopflights manuell zu deaktivieren. | Der"
+The vehicle should incorporate modular components for easy customization.,The bike should include an always-on headlight for safety compliance.,Bequirement: The vehicle should incorporate modular components for easy customization. | The bike should include
+The engine should have a minimum power output of 25 HP.,The vehicle should have a minimalistic dashboard design.,Besoin: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein | Der
+Users should be able to turn off the headlight manually.,The vehicle should be cost-effective and use affordable materials.,- - - - - - - - - -
+The bike should support over-the-air (OTA) software updates.,The braking system should use ABS for enhanced safety.,Exigenz: Das Bike sollte die Software-Updates über die Maschine (OTA)
+The braking system should use ABS for enhanced safety.,The seat should be made of premium leather for comfort.,Bequirement: The brake system should use ABS for enhanced safety. | The seat should be
+The onboard computer should be minimal to reduce electronic dependencies.,Production costs should remain below market average for affordability.,- - - - - - - - - -
+The bike should be resistant to extreme weather conditions.,The engine should have a fuel injection system for optimized combustion.,- Die Maschine sollte empfindlich zu extremen Wetterbedingungen sein | Die Motor sollte mit einem
+The engine should have a fuel injection system for optimized combustion.,The battery should use standard charging methods to maintain longevity.,Besoin: Der Motor sollte über ein Fuel injection system für optimierte Verbrennung verfüge
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The engine must comply with strict noise restrictions.,Bequirement: Der Fahrzeug muss mindestens 50 km/l BenzBenz BenzBenz
+The system should minimize power consumption for extended battery life.,The frame should be made of lightweight aluminum for efficiency.,- Die System - - - - - - - -
+The frame should be made of lightweight aluminum for efficiency.,The instrument cluster should use analog dials to reduce complexity.,Die Anlage sollte aus dünne Aluminium für Effizienz gebaut werden |
+Durability must be ensured for at least 10 years of use.,The display panel must be fully digital with GPS navigation.,| Display panel must be fully digital with GPS navigation. | Display panel must be fully digital with GPS
+The bike must have a top speed of 120 km/h.,The vehicle should include tubeless tires for durability and safety.,Exigenz: Die Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Die
+The two-wheeler must have a rearview camera for safety.,The bike should have a storage compartment for a full-size helmet.,Besoin: The two-wheeler must have a rearview camera for safety.
+The engine should have a minimum power output of 25 HP.,The vehicle should incorporate modular components for easy customization.,Besoin: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein. |
+The two-wheeler should use biodegradable materials where possible.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h.
+The two-wheeler should have a maximum curb weight of 120 kg.,The engine must comply with strict noise restrictions.,Exigenz: Der zweirader muss über ein maximales Fahrgewicht von 120 kg
+The onboard computer should be minimal to reduce electronic dependencies.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+"The vehicle should be affordable with a base price under $1,500.",Production costs should remain below market average for affordability.,"Besoins: Das Fahrzeug sollte preisgünstig sein, es sollte unter $1"
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The instrument cluster should use analog dials to reduce complexity.,- - - - - - - - - -
+The frame should be made of lightweight aluminum for efficiency.,The vehicle should support fast charging to reach 80% in 30 minutes.,Bequirement: The frame should be made of lightweight aluminum for efficiency. | The vehicle should
+The vehicle should be fully electric.,Users should be able to turn off the headlight manually.,"- Die Fahrzeuge sollten vollständig elektrisch sein. | Benutzer sollten die Möglichkeit haben, die Kopflamp"
+The onboard computer should be minimal to reduce electronic dependencies.,The two-wheeler must have a rearview camera for safety.,| The two-wheeler must have a rearview camera for safety.
+The engine design should prioritize performance over emission constraints.,The instrument cluster should use analog dials to reduce complexity.,Besoin: Die Motordesign sollte die Performance Priorität auf emission constraints setzen. |
+The vehicle should be cost-effective and use affordable materials.,The two-wheeler must have a rearview camera for safety.,| The two-wheeler must have a rearview camera for safety. | The two-
+The vehicle design should be compact and lightweight.,The frame should be made of lightweight aluminum for efficiency.,Bequirement: Die Fahrzeug design should be compact and lightweight. | The frame should be made
+The engine must comply with strict noise restrictions.,The vehicle must meet Euro 6 emission standards.,Exigenz: Der Motor muss die streng noise restrictions rigrigrigrigrigrigrigrig
+The vehicle must meet Euro 6 emission standards.,Durability must be ensured for at least 10 years of use.,- - - - - - - - - -
+The vehicle should support fast charging to reach 80% in 30 minutes.,The bike should include an always-on headlight for safety compliance.,"Exigenz: Das Fahrzeug sollte fast charging erlauben, um 80% in 30 minutes"
+The vehicle must include a high-capacity battery for extended electric range.,The two-wheeler should use biodegradable materials where possible.,The vehicle must include a high-capacity battery for extended electric range. | The
+"The vehicle should be affordable with a base price under $1,500.",The vehicle should have a minimalistic dashboard design.,"Besoins: The vehicle should be affordable with a base price under $1,500"
+The vehicle should support fast charging to reach 80% in 30 minutes.,The wheels should be spoked to maintain classic aesthetics.,The vehicle should support fast charging to reach 80 % in 30 minutes. | The wheels should
+The vehicle should support fast charging to reach 80% in 30 minutes.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h. | The bike must have
+The bike should support over-the-air (OTA) software updates.,The seat should be made of premium leather for comfort.,Exigenz: Das Fahrrad sollte die Software-Updates über die Maschine unterstützen. | Der
+"The vehicle should be affordable with a base price under $1,500.",The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,"Besoins: The vehicle should be affordable with a base price under $1,500"
+The engine must comply with strict noise restrictions.,The bike should be resistant to extreme weather conditions.,- - - - - - - - - -
+The bike should be resistant to extreme weather conditions.,The two-wheeler must have a rearview camera for safety.,- - - - - - - - - -
+The bike should include an always-on headlight for safety compliance.,The two-wheeler should use biodegradable materials where possible.,Bequirement: The bike should include an always-on headlight for safety compliance. |
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,Users should be able to turn off the headlight manually.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen.
+The bike must have a top speed of 120 km/h.,The engine must comply with strict noise restrictions.,Exigenz: Die Bike muss mit einer Höchstgeschwindigkeit von 120 km/h. | Die
+The braking system should use ABS for enhanced safety.,The engine should have a fuel injection system for optimized combustion.,- Die braking system should use ABS for enhanced safety. | The engine should have a
+The bike should have a storage compartment for a full-size helmet.,The frame should be made of lightweight aluminum for efficiency.,Besoins: The bike should have a storage compartment for a full-size
+Durability must be ensured for at least 10 years of use.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,| The vehicle should support smart connectivity via Bluetooth and Wi-Fi.
+The display panel must be fully digital with GPS navigation.,The system should minimize power consumption for extended battery life.,Bequirement: The display panel must be fully digital with GPS navigation. | The system should
+The system should minimize power consumption for extended battery life.,The engine should have a minimum power output of 25 HP.,- Die Leistung des Motors sollte mindestens 25 HP betragen. | Der Motor sollte
+The bike should have a storage compartment for a full-size helmet.,The system should minimize power consumption for extended battery life.,"- Die Anlage sollte die Energieverbrauch senken, um die Batterien zu ver"
+The vehicle should incorporate modular components for easy customization.,The two-wheeler should have a maximum curb weight of 120 kg.,Besoins: Das Fahrzeug sollte modulare Bauteile für einfaches Customisieren enthalten
+The display panel must be fully digital with GPS navigation.,The vehicle should have a minimalistic dashboard design.,Exigenz: Die Display Panel muss vollständig digital mit GPS Navigation sein. | Der Fahrzeug sollte mit
+The vehicle must meet Euro 6 emission standards.,The braking system should use ABS for enhanced safety.,- - - - - - - - - -
+The vehicle must meet Euro 6 emission standards.,The two-wheeler must have a rearview camera for safety.,Exigenz: Der Fahrzeug muss die Euro 6 emission standards erfüllen. | Der Zweirader muss
+The onboard computer should be minimal to reduce electronic dependencies.,The bike should include an always-on headlight for safety compliance.,| The bike should include an always-on headlight for safety compliance.
+The vehicle should have a minimalistic dashboard design.,The two-wheeler must have a rearview camera for safety.,Exigences: The vehicle should have a minimalistic dashboard design. | The two-wheel
+The two-wheeler must have a rearview camera for safety.,The battery should use standard charging methods to maintain longevity.,Besoin: Die zwei-wheeler muss über eine rearview camera verfügen. |
+The battery should use standard charging methods to maintain longevity.,The vehicle should be fully electric.,- Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie
+The engine must comply with strict noise restrictions.,The vehicle should have a minimalistic dashboard design.,Exigenz: Der Motor muss strenge Noise Limits erfüllen. | Der Fahrzeug sollte mit minimalist
+The vehicle design should be compact and lightweight.,The vehicle should incorporate modular components for easy customization.,- - - - - - - - - -
+The frame should be made of lightweight aluminum for efficiency.,The two-wheeler must have a rearview camera for safety.,Exigenz: Die Frame sollte aus leichtem Aluminium für die Effizienz hergestellt
+The braking system should use ABS for enhanced safety.,The seat should be made of premium leather for comfort.,Bequirement: The brake system should use ABS for enhanced safety. | The seat should be
+The engine should have a minimum power output of 25 HP.,The vehicle should support fast charging to reach 80% in 30 minutes.,Besoin: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein | Der
+The bike must have a top speed of 120 km/h.,The engine should have a minimum power output of 25 HP.,Exigenz: Das Bike muss eine Höchstgeschwindigkeit von 120 km/h haben | Der Motor
+Production costs should remain below market average for affordability.,The bike should support over-the-air (OTA) software updates.,| The bike should support over-the-air (OTA) software updates.
+The engine must comply with strict noise restrictions.,The display panel must be fully digital with GPS navigation.,Exigenz: Der Motor muss die streng noise restrictions. | Der Display Panel muss vollständig digital mit
+The vehicle should be cost-effective and use affordable materials.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The two-wheeler must have a rearview camera for safety.,The two-wheeler should use biodegradable materials where possible.,Exigenz: Der zwei-wheeler muss über eine rearview camera für Sicherheit verfügen.
+The engine should have a fuel injection system for optimized combustion.,The frame should be made of lightweight aluminum for efficiency.,Besoin: Der Motor sollte über ein Fuel injection system für optimierte Verbrennung verfüge
+The onboard computer should be minimal to reduce electronic dependencies.,The battery should use standard charging methods to maintain longevity.,Bequirement: The onboard computer should be minimal to reduce electronic dependencies. | The
+The seat should be made of premium leather for comfort.,Durability must be ensured for at least 10 years of use.,- Si Si Si Si Si Si Si Si Si Si Si Si Si Si Si Si Si Si
+The instrument cluster should use analog dials to reduce complexity.,The bike must have a top speed of 120 km/h.,: The instrument cluster should use analog dials to reduce complexity. | The bike must have
+Users should be able to turn off the headlight manually.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet. | The bike
+The vehicle should support fast charging to reach 80% in 30 minutes.,The two-wheeler should use biodegradable materials where possible.,"Besoin: Das Fahrzeug sollte schnell laden, um 80% in 30 Minuten zu erreichen"
+The battery should use standard charging methods to maintain longevity.,The bike should support over-the-air (OTA) software updates.,| The bike should support over-the-air (OTA) software updates.
+The display panel must be fully digital with GPS navigation.,The vehicle should be fully electric.,Exigenz: Die Display Panel muss vollständig digital mit GPS navigation. | Die Fahrzeug muss vollständig electric
+The braking system should use ABS for enhanced safety.,The vehicle should be fully electric.,- - - - - - - - - -
+Users should be able to turn off the headlight manually.,The engine design should prioritize performance over emission constraints.,User should be able to turn off the headlight manually. | The engine design should prioritize
+The bike must have a top speed of 120 km/h.,"The vehicle should be affordable with a base price under $1,500.",Besoin: The bike must have a top speed of 120 km/h. |
+The wheels should be spoked to maintain classic aesthetics.,The seat should be made of premium leather for comfort.,The wheels should be spoked to maintain classic aesthetics. | The seat should be made of
+The bike should include an always-on headlight for safety compliance.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+Durability must be ensured for at least 10 years of use.,The frame should be made of lightweight aluminum for efficiency.,Besoins: Durability must be ensured for at least 10 years of use.
+The battery should use standard charging methods to maintain longevity.,The frame should be made of lightweight aluminum for efficiency.,Bequirement: Batterie should use standard charging methods to maintain longevity. | The frame should be
+The system should minimize power consumption for extended battery life.,The wheels should be spoked to maintain classic aesthetics.,The system should minimize power consumption for extended battery life. | The wheels should be spoked to
+The two-wheeler should have a maximum curb weight of 120 kg.,The vehicle should be fully electric.,Besoin: Der zwei-wheeler sollte mit einem maximalen Fahrgewicht von 120 kg
+The display panel must be fully digital with GPS navigation.,The frame should be made of lightweight aluminum for efficiency.,Bequirement: The display panel must be fully digital with GPS navigation. | The frame should
+Durability must be ensured for at least 10 years of use.,The two-wheeler should use biodegradable materials where possible.,The two-wheeler should use biodegradable materials where possible. | The two-
+The two-wheeler must have a rearview camera for safety.,The braking system should use ABS for enhanced safety.,- - - - - - - - - -
+The engine should have a minimum power output of 25 HP.,The bike should support over-the-air (OTA) software updates.,Voraussetzung: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein. | Der Bike
+The system should minimize power consumption for extended battery life.,Durability must be ensured for at least 10 years of use.,"Exigences: Das System sollte die Energieverbrauchs senken, um die Lebensdauer"
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,Users should be able to turn off the headlight manually.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen.
+The battery should use standard charging methods to maintain longevity.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The two-wheeler should use biodegradable materials where possible.,Production costs should remain below market average for affordability.,Bequirement: The two-wheeler should use biodegradable materials where possible.
+"The vehicle should be affordable with a base price under $1,500.",The battery should use standard charging methods to maintain longevity.,Besoins: Das Fahrzeug sollte preisgünstig sein und hat einen Basispreis unter
+The vehicle should support fast charging to reach 80% in 30 minutes.,The seat should be made of premium leather for comfort.,"Besoin: Das Fahrzeug sollte mit einer schnellen Gebühr fahren, um 80%"
+The engine should have a minimum power output of 25 HP.,The system should minimize power consumption for extended battery life.,Besoin: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein. |
+The instrument cluster should use analog dials to reduce complexity.,The vehicle should have a minimalistic dashboard design.,The instrument cluster should use analog dials to reduce complexity. | The vehicle should have a
+The vehicle should include tubeless tires for durability and safety.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h. | The bike must have
+The seat should be made of premium leather for comfort.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,- - - - - - - - - -
+The engine design should prioritize performance over emission constraints.,The display panel must be fully digital with GPS navigation.,- - - - - - - - - -
+The vehicle must meet Euro 6 emission standards.,The engine must comply with strict noise restrictions.,"Exquirement: Das Fahrzeug muss die Euro 6 emission standards erfüllen, gemäß Euro 6 emission"
+The two-wheeler should have a maximum curb weight of 120 kg.,The vehicle should have a minimalistic dashboard design.,Besoin: Der zwei-wheeler sollte mit maximal 120 kg Innenraumgewicht haben
+The engine must comply with strict noise restrictions.,Production costs should remain below market average for affordability.,- - - - - - - - - -
+The engine must comply with strict noise restrictions.,The engine design should prioritize performance over emission constraints.,- - - - - - - - - -
+The vehicle should be fully electric.,The instrument cluster should use analog dials to reduce complexity.,- - - - - - - - - -
+The vehicle should incorporate modular components for easy customization.,The bike should include an always-on headlight for safety compliance.,Bequirement: The vehicle should incorporate modular components for easy customization. | The bike should include
+The braking system should use ABS for enhanced safety.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h.
+The bike should include an always-on headlight for safety compliance.,Production costs should remain below market average for affordability.,- - - - - - - - - -
+The vehicle should support fast charging to reach 80% in 30 minutes.,The system should minimize power consumption for extended battery life.,"Besoin: Das Fahrzeug sollte fast charging erlauben, um 80% in 30"
+"The vehicle should be affordable with a base price under $1,500.",The vehicle should incorporate modular components for easy customization.,"Besoins: The vehicle should be affordable with a base price under $1,500"
+The bike should have a storage compartment for a full-size helmet.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+"The vehicle should be affordable with a base price under $1,500.",The braking system should use ABS for enhanced safety.,"Besoins: Das Fahrzeug sollte preisgünstig sein und unter $1,500 fahren"
+The engine must comply with strict noise restrictions.,The display panel must be fully digital with GPS navigation.,Exigenz: Der Motor muss die streng noise restrictions. | Der Display Panel muss vollständig digital mit
+The wheels should be spoked to maintain classic aesthetics.,The vehicle design should be compact and lightweight.,The wheels should be spoked to maintain classic aesthetics. | The vehicle design should be compact
+The bike should include an always-on headlight for safety compliance.,Production costs should remain below market average for affordability.,- - - - - - - - - -
+The system should minimize power consumption for extended battery life.,The engine must comply with strict noise restrictions.,- - - - - - - - - -
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The bike should support over-the-air (OTA) software updates.,Exigenz: Das Fahrzeug sollte intelligente Verbindung via Bluetooth und Wi-Fi unterstützen | Das Fahrrad
+Durability must be ensured for at least 10 years of use.,The display panel must be fully digital with GPS navigation.,| Display panel must be fully digital with GPS navigation. | Display panel must be fully digital with GPS
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The two-wheeler must have a rearview camera for safety.,| The two-wheeler must have a rearview camera for safety.
+The engine should have a fuel injection system for optimized combustion.,Production costs should remain below market average for affordability.,- Die Maschine sollte mit einem Spritzgusssystem für optimiertes Brenn
+The engine must comply with strict noise restrictions.,The instrument cluster should use analog dials to reduce complexity.,- - - - - - - - - -
+The vehicle should include tubeless tires for durability and safety.,The engine should have a minimum power output of 25 HP.,| The engine should have a minimum power output of 25 HP.
+"The vehicle should be affordable with a base price under $1,500.",The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,"Besoins: The vehicle should be affordable with a base price under $1,500"
+The vehicle must include a high-capacity battery for extended electric range.,Users should be able to turn off the headlight manually.,The vehicle must include a high-capacity battery for extended electric range. | Users
+The display panel must be fully digital with GPS navigation.,The vehicle should support fast charging to reach 80% in 30 minutes.,Bequirement: The display panel must be fully digital with GPS navigation. | The vehicle should
+The two-wheeler should use biodegradable materials where possible.,The engine design should prioritize performance over emission constraints.,Bequirement: The two-wheeler should use biodegradable materials where possible.
+The display panel must be fully digital with GPS navigation.,The vehicle must meet Euro 6 emission standards.,Exigenz: Die Display Panel muss vollständig digital mit GPS navigation. | Der Fahrzeug muss die Euro
+The seat should be made of premium leather for comfort.,The engine must comply with strict noise restrictions.,- - - - - - - - - -
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The bike should include an always-on headlight for safety compliance.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen.
+The engine must comply with strict noise restrictions.,The vehicle should include tubeless tires for durability and safety.,Exigenz: Der Motor muss die streng noise restrictions. | Der Motor muss die rigrig
+Durability must be ensured for at least 10 years of use.,The vehicle must include a high-capacity battery for extended electric range.,| The vehicle must include a high-capacity battery for extended electric range. | The
+The engine should have a fuel injection system for optimized combustion.,The frame should be made of lightweight aluminum for efficiency.,Besoin: Der Motor sollte über ein Fuel injection system für optimierte Verbrennung verfüge
+The two-wheeler should have a maximum curb weight of 120 kg.,"The vehicle should be affordable with a base price under $1,500.",Besoin: The two-wheeler should have a maximum curb weight of 120 kg
+The engine design should prioritize performance over emission constraints.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The display panel must be fully digital with GPS navigation.,The seat should be made of premium leather for comfort.,Bequirement: The display panel must be fully digital with GPS navigation. | The seat should
+The bike should be resistant to extreme weather conditions.,The vehicle should be cost-effective and use affordable materials.,- Die bike hat hat a a a a a a
+Durability must be ensured for at least 10 years of use.,The engine must comply with strict noise restrictions.,Exigences: Durability must be ensured for at least 10 years of use. | The
+The engine design should prioritize performance over emission constraints.,The engine should have a fuel injection system for optimized combustion.,- Die Engine sollte die Performance auf emission constraints setzen. | Die Engine sollte über ein Fuel
+The system should minimize power consumption for extended battery life.,The bike should be resistant to extreme weather conditions.,Die Anlage sollte die Energieverbrauch möglichst minimal für länger battery life. | Die bike sollte resist
+The onboard computer should be minimal to reduce electronic dependencies.,The system should minimize power consumption for extended battery life.,- - - - - - - - - -
+The vehicle should incorporate modular components for easy customization.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,| The vehicle must achieve a fuel efficiency of at least 50 km/l.
+The braking system should use ABS for enhanced safety.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+The onboard computer should be minimal to reduce electronic dependencies.,The bike should support over-the-air (OTA) software updates.,The onboard computer should be minimal to reduce electronic dependencies. | The bike should support over
+The vehicle should include tubeless tires for durability and safety.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- - - - - - - - - -
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet.
+The vehicle design should be compact and lightweight.,The braking system should use ABS for enhanced safety.,- Die Fahrzeug design sollte compact und lightweight. | Die Fahrzeug design sollte mit ABS ausgestattet sein.
+Users should be able to turn off the headlight manually.,The engine must comply with strict noise restrictions.,"Exigenz: Benutzer sollten die Möglichkeit haben, die Kopflight manuell zu deaktivieren."
+The vehicle should be cost-effective and use affordable materials.,The bike should support over-the-air (OTA) software updates.,The vehicle should be cost-effective and use affordable materials. | The bike should support over-
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The vehicle should be cost-effective and use affordable materials.,Besoins: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen
+The engine should have a minimum power output of 25 HP.,The bike must have a top speed of 120 km/h.,Exigenz: Der Motor muss mit einem Minimum Power output of 25 HP. | Der Motor muss
+"The vehicle should be affordable with a base price under $1,500.",The bike should be resistant to extreme weather conditions.,"Besoins: Das Fahrzeug sollte preisgünstig sein und unter $1,500 fahren"
+The two-wheeler should use biodegradable materials where possible.,The engine should have a minimum power output of 25 HP.,- Die zweirädrige Motor sollte möglichst biodegradable Materialien verwenden. |
+The vehicle should support fast charging to reach 80% in 30 minutes.,The engine should have a minimum power output of 25 HP.,- - - - - - - - - -
+Production costs should remain below market average for affordability.,The vehicle should incorporate modular components for easy customization.,Bequirement: Production costs should remain below market average for affordability. | The vehicle should incorporate
+The vehicle must meet Euro 6 emission standards.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+The system should minimize power consumption for extended battery life.,The seat should be made of premium leather for comfort.,- Die Anlage sollte die Energieverbrauch möglichst minimal für länger battery life. | Der Sitz
+The engine should have a fuel injection system for optimized combustion.,The vehicle should have a minimalistic dashboard design.,Besoin: Der Motor sollte über ein Fuel injection system für optimierte Verbrennung verfüge
+The vehicle should incorporate modular components for easy customization.,"The vehicle should be affordable with a base price under $1,500.","| The vehicle should be affordable with a base price under $1,500. | The vehicle should"
+The bike should support over-the-air (OTA) software updates.,The bike should be resistant to extreme weather conditions.,Exigenz: The bike should support over-the-air (OTA) software updates. |
+The two-wheeler should have a maximum curb weight of 120 kg.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Besoin: Der zwei-wheeler sollte über ein maximales Fahrgewicht von 120
+The vehicle should be cost-effective and use affordable materials.,The vehicle must include a high-capacity battery for extended electric range.,| The vehicle must include a high-capacity battery for extended electric range. | The
+The vehicle design should be compact and lightweight.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The engine must comply with strict noise restrictions.,The vehicle should be fully electric.,Exigenz: Der Motor muss die rigrigrigrigrigrigrigrigrigrigrig
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The bike should support over-the-air (OTA) software updates.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen.
+The engine should have a fuel injection system for optimized combustion.,The two-wheeler must have a rearview camera for safety.,The engine should have a fuel injection system for optimized combustion. | The two-wheeler
+The two-wheeler must have a rearview camera for safety.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The bike should support over-the-air (OTA) software updates.,Exigenz: Das Fahrzeug sollte intelligente Verbindung via Bluetooth und Wi-Fi unterstützen | Das Fahrrad
+The system should minimize power consumption for extended battery life.,The vehicle should be fully electric.,- - - - - - - - - -
+"The vehicle should be affordable with a base price under $1,500.",Users should be able to turn off the headlight manually.,"Besoins: Das Fahrzeug sollte preisgünstig sein und unter $1,500 fahren"
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The vehicle must meet Euro 6 emission standards.,Bequirement: Der Fahrzeug muss die BenzBenzBenzBenzBenzBenzBenzBenzBenzBenz
+The vehicle should be cost-effective and use affordable materials.,The vehicle should be fully electric.,- - - - - - - - - -
+The battery should use standard charging methods to maintain longevity.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h. | The battery should use
+The bike should have a storage compartment for a full-size helmet.,The vehicle design should be compact and lightweight.,Besoin: The bike should have a storage compartment for a full-size helmet
+The instrument cluster should use analog dials to reduce complexity.,The two-wheeler should use biodegradable materials where possible.,: The instrument cluster should use analog dials to reduce complexity. | The two-wheeler
+The vehicle should support fast charging to reach 80% in 30 minutes.,The engine design should prioritize performance over emission constraints.,"Besoins: Das Fahrzeug sollte fast charging erlauben, um 80% in"
+The vehicle should be cost-effective and use affordable materials.,The two-wheeler should use biodegradable materials where possible.,Bequirement: The vehicle should be cost-effective and use affordable materials. | The two
+The onboard computer should be minimal to reduce electronic dependencies.,The vehicle should be fully electric.,- - - - - - - - - -
+The bike must have a top speed of 120 km/h.,The vehicle should include tubeless tires for durability and safety.,Exigenz: Die Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Die
+The braking system should use ABS for enhanced safety.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The two-wheeler should have a maximum curb weight of 120 kg.,The vehicle should be fully electric.,Besoin: Der zwei-wheeler sollte mit einem maximalen Fahrgewicht von 120 kg
+The bike must have a top speed of 120 km/h.,The two-wheeler should have a maximum curb weight of 120 kg.,Exigenz: Die Bike muss mit einer Höchstgeschwindigkeit von 120 km/h. | Die
+The two-wheeler must have a rearview camera for safety.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,- - - - - - - - - -
+The vehicle should have a minimalistic dashboard design.,Durability must be ensured for at least 10 years of use.,- - - - - - - - - -
+The instrument cluster should use analog dials to reduce complexity.,The vehicle should have a minimalistic dashboard design.,The instrument cluster should use analog dials to reduce complexity. | The vehicle should have a
+The vehicle design should be compact and lightweight.,The engine design should prioritize performance over emission constraints.,Bequirement: Die Fahrzeug design sollte compact und lightweight sein sein. | Die Fahrzeug design sollte
+The bike should include an always-on headlight for safety compliance.,The vehicle should be cost-effective and use affordable materials.,- - - - - - - - - -
+The vehicle should have a minimalistic dashboard design.,The engine should have a fuel injection system for optimized combustion.,Besoins: Das Fahrzeug sollte mit minimalistischem Dashboard design ausgestattet sein. | Das
+"The vehicle should be affordable with a base price under $1,500.",The vehicle should incorporate modular components for easy customization.,"Besoins: The vehicle should be affordable with a base price under $1,500"
+The vehicle should be cost-effective and use affordable materials.,The vehicle should be fully electric.,- - - - - - - - - -
+The vehicle should be cost-effective and use affordable materials.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+The braking system should use ABS for enhanced safety.,The frame should be made of lightweight aluminum for efficiency.,Bequirement: The brake system should use ABS for enhanced safety. | The frame should be
+The onboard computer should be minimal to reduce electronic dependencies.,The two-wheeler must have a rearview camera for safety.,| The two-wheeler must have a rearview camera for safety.
+The vehicle design should be compact and lightweight.,The braking system should use ABS for enhanced safety.,- Die Fahrzeug design sollte compact und lightweight. | Die Fahrzeug design sollte mit ABS ausgestattet sein.
+The engine should have a fuel injection system for optimized combustion.,The engine design should prioritize performance over emission constraints.,- - - - - - - - - -
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The vehicle should support fast charging to reach 80% in 30 minutes.,- - - - - - - - - -
+The engine should have a minimum power output of 25 HP.,The instrument cluster should use analog dials to reduce complexity.,The engine should have minimum power output of 25 HP. | The instrument cluster should use analog dial
+The vehicle should be fully electric.,The bike should be resistant to extreme weather conditions.,Bequirement: The vehicle should be fully electric. | The bike should be resistant to extreme
+The bike should support over-the-air (OTA) software updates.,The display panel must be fully digital with GPS navigation.,Exigenz: Das Fahrrad sollte die Software-Updates über die ganze Welt (OTA)
+Users should be able to turn off the headlight manually.,The battery should use standard charging methods to maintain longevity.,"Besoins: Benutzer sollten die Möglichkeit haben, das Headlight manuell zu deaktiv"
+The seat should be made of premium leather for comfort.,The bike should have a storage compartment for a full-size helmet.,| The seat should be made of premium leather for comfort. | The bike should have a storage
+The vehicle must include a high-capacity battery for extended electric range.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+The bike must have a top speed of 120 km/h.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Exigenz: Die Bike muss mit einer Höchstgeschwindigkeit von 120 km/h. | Die
+Durability must be ensured for at least 10 years of use.,The bike should support over-the-air (OTA) software updates.,| The bike should support over-the-air (OTA) software updates.
+The bike must have a top speed of 120 km/h.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,Exigenz: Die Bike muss eine Höchstgeschwindigkeit von 120 km/h. | Die Fahrzeug
+The vehicle should have a minimalistic dashboard design.,The system should minimize power consumption for extended battery life.,- - - - - - - - - -
+The bike should have a storage compartment for a full-size helmet.,The two-wheeler should use biodegradable materials where possible.,Besoin: The bike should have a storage compartment for a full-size helmet
+The engine must comply with strict noise restrictions.,The frame should be made of lightweight aluminum for efficiency.,- - - - - - - - - -
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The system should minimize power consumption for extended battery life.,Bequirement: Das Fahrzeug sollte die intelligente Connect via Bluetooth und Wi-Fi. |
+The engine must comply with strict noise restrictions.,The vehicle should have a minimalistic dashboard design.,Exigenz: Der Motor muss strenge Noise Limits erfüllen. | Der Fahrzeug sollte mit minimalist
+The vehicle should have a minimalistic dashboard design.,The two-wheeler must have a rearview camera for safety.,Exigences: The vehicle should have a minimalistic dashboard design. | The two-wheel
+"The vehicle should be affordable with a base price under $1,500.",The bike should have a storage compartment for a full-size helmet.,"Besoins: The vehicle should be affordable with a base price under $1,500"
+The engine should have a minimum power output of 25 HP.,The vehicle should have a minimalistic dashboard design.,Besoin: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein | Der
+The two-wheeler should use biodegradable materials where possible.,The bike should have a storage compartment for a full-size helmet.,- - - - - - - - - -
+"The vehicle should be affordable with a base price under $1,500.",The battery should use standard charging methods to maintain longevity.,Besoins: Das Fahrzeug sollte preisgünstig sein und hat einen Basispreis unter
+The bike should support over-the-air (OTA) software updates.,The engine must comply with strict noise restrictions.,Exigenz: Das Bike sollte die Software-Updates über die Maschine (OTA)
+The vehicle should be fully electric.,The bike should be resistant to extreme weather conditions.,Bequirement: The vehicle should be fully electric. | The bike should be resistant to extreme
+The bike should support over-the-air (OTA) software updates.,The seat should be made of premium leather for comfort.,Exigenz: Das Fahrrad sollte die Software-Updates über die Maschine unterstützen. | Der
+The vehicle design should be compact and lightweight.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The engine design should prioritize performance over emission constraints.,The two-wheeler should use biodegradable materials where possible.,Bequirement: Die Motor design sollte die Performance prioritisieren und die emissions constraints. |
+The two-wheeler should use biodegradable materials where possible.,The vehicle should incorporate modular components for easy customization.,Bequirement: The two-wheeler should use biodegradable materials where possible.
+The vehicle should be cost-effective and use affordable materials.,The two-wheeler should use biodegradable materials where possible.,Bequirement: The vehicle should be cost-effective and use affordable materials. | The two
+The engine must comply with strict noise restrictions.,The onboard computer should be minimal to reduce electronic dependencies.,- - - - - - - - - -
+The bike must have a top speed of 120 km/h.,The vehicle design should be compact and lightweight.,Exigenz: Das Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Die
+Durability must be ensured for at least 10 years of use.,The system should minimize power consumption for extended battery life.,- - - - - - - - - -
+"The vehicle should be affordable with a base price under $1,500.",The vehicle must include a high-capacity battery for extended electric range.,"Besoins: The vehicle should be affordable with a base price under $1,500"
+The braking system should use ABS for enhanced safety.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+"The vehicle should be affordable with a base price under $1,500.",The two-wheeler should use biodegradable materials where possible.,"Besoins: Das Fahrzeug sollte preisgünstig sein und unter $1,500 fahren"
+The vehicle should support fast charging to reach 80% in 30 minutes.,Durability must be ensured for at least 10 years of use.,The vehicle should support fast charging to reach 80 % in 30 minutes. | Durability must
+Durability must be ensured for at least 10 years of use.,The braking system should use ABS for enhanced safety.,- Die Dauer muss für mindestens 10 Jahre während bestehende Nutzung gewährleistet sein | Der Bre
+The vehicle design should be compact and lightweight.,The display panel must be fully digital with GPS navigation.,- - - - - - - - - -
+The vehicle should be fully electric.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,- - - - - - - - - -
+The engine should have a minimum power output of 25 HP.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+Durability must be ensured for at least 10 years of use.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet. | The bike
+The engine design should prioritize performance over emission constraints.,The bike should support over-the-air (OTA) software updates.,Exigenz: Die Motordesign sollte die Performance auf emission constraints setzen. | Der Bike
+The seat should be made of premium leather for comfort.,The two-wheeler should use biodegradable materials where possible.,Bequirement: The seat should be made of premium leather for comfort. | The seat should
+The two-wheeler must have a rearview camera for safety.,The bike should include an always-on headlight for safety compliance.,Exigenz: Der zwei-wheeler muss über eine rearview camera für Sicherheit verfügen.
+The vehicle should be fully electric.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+"The vehicle should be affordable with a base price under $1,500.",The vehicle should include tubeless tires for durability and safety.,"Besoins: Das Fahrzeug sollte preisgünstig sein und unter $1,500 f"
+The display panel must be fully digital with GPS navigation.,The braking system should use ABS for enhanced safety.,Bequirement: The display panel must be fully digital with GPS navigation. | The brake system
+The bike should be resistant to extreme weather conditions.,The engine should have a fuel injection system for optimized combustion.,- Die Maschine sollte empfindlich zu extremen Wetterbedingungen sein | Die Motor sollte mit einem
+Production costs should remain below market average for affordability.,The vehicle should have a minimalistic dashboard design.,- - - - - - - - - -
+"The vehicle should be affordable with a base price under $1,500.",The engine design should prioritize performance over emission constraints.,"Besoins: Das Fahrzeug sollte preisgünstig sein, mit einem Basispreis unter $1"
+The battery should use standard charging methods to maintain longevity.,The instrument cluster should use analog dials to reduce complexity.,: The battery should use standard charging methods to maintain longevity. | The instrument cluster should use analog
+The vehicle should be cost-effective and use affordable materials.,The two-wheeler should use biodegradable materials where possible.,Bequirement: The vehicle should be cost-effective and use affordable materials. | The two
+Production costs should remain below market average for affordability.,The battery should use standard charging methods to maintain longevity.,Bequirement: Production costs should remain below market average for affordability. | The battery should use
+The braking system should use ABS for enhanced safety.,Production costs should remain below market average for affordability.,Bequirement: Die Bremmsystem sollte mit ABS für verbessert Sicherheit setzen. |
+The bike should support over-the-air (OTA) software updates.,The engine design should prioritize performance over emission constraints.,Besoin: Das Fahrrad sollte die Software-Updates über die ffentlichkeit (OTA
+The engine should have a fuel injection system for optimized combustion.,The engine should have a minimum power output of 25 HP.,- Die Motoren sollten mit einem Spritzgusssystem für optimierte Verbren
+The two-wheeler should use biodegradable materials where possible.,Durability must be ensured for at least 10 years of use.,"Besoins: Die Zweiräder sollten, wenn möglich, biodegradable Materialien verwenden"
+The wheels should be spoked to maintain classic aesthetics.,The vehicle design should be compact and lightweight.,The wheels should be spoked to maintain classic aesthetics. | The vehicle design should be compact
+The seat should be made of premium leather for comfort.,The vehicle must include a high-capacity battery for extended electric range.,- Die Sitze sollten aus Premium-Limota für den Komfort. | Die
+The vehicle should incorporate modular components for easy customization.,The vehicle should support fast charging to reach 80% in 30 minutes.,Bequirement: The vehicle should incorporate modular components for easy customization. | The vehicle should support
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The instrument cluster should use analog dials to reduce complexity.,The vehicle must achieve a fuel efficiency of at least 50 km/l. | The instrument
+The two-wheeler should have a maximum curb weight of 120 kg.,The bike should be resistant to extreme weather conditions.,Besoin: Der zwei-wheeler sollte mit einem maximalen Fahrgewicht von 120 kg
+The bike should include an always-on headlight for safety compliance.,The bike should support over-the-air (OTA) software updates.,Exigences: The bike should include an always-on headlight for safety compliance. | The
+The bike should support over-the-air (OTA) software updates.,The bike should include an always-on headlight for safety compliance.,Exigences: The bike should support over-the-air (OTA) software updates. |
+Durability must be ensured for at least 10 years of use.,The onboard computer should be minimal to reduce electronic dependencies.,| The onboard computer should be minimal to reduce electronic dependencies.
+Production costs should remain below market average for affordability.,The engine must comply with strict noise restrictions.,- - - - - - - - - -
+The wheels should be spoked to maintain classic aesthetics.,The display panel must be fully digital with GPS navigation.,The wheels should be spoked to maintain classic aesthetics. | The display panel must be fully
+The two-wheeler must have a rearview camera for safety.,The wheels should be spoked to maintain classic aesthetics.,The two-wheeler must have a rearview camera for safety. | The wheels should
+The wheels should be spoked to maintain classic aesthetics.,The engine design should prioritize performance over emission constraints.,The wheels should be spoked to maintain classic aesthetics. | The engine design should prioritize performance
+The instrument cluster should use analog dials to reduce complexity.,Users should be able to turn off the headlight manually.,: The instrument cluster should use analog dials to reduce complexity. | Users should be able
+The engine must comply with strict noise restrictions.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- - - - - - - - - -
+The vehicle should include tubeless tires for durability and safety.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+The vehicle should incorporate modular components for easy customization.,The bike should be resistant to extreme weather conditions.,Bequirement: Das Fahrzeug sollte modular components für easy customization. | Das bike sollte resistent
+The vehicle must include a high-capacity battery for extended electric range.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h.
+The two-wheeler should use biodegradable materials where possible.,The bike should have a storage compartment for a full-size helmet.,- - - - - - - - - -
+The bike must have a top speed of 120 km/h.,The vehicle should include tubeless tires for durability and safety.,Exigenz: Die Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Die
+The two-wheeler should have a maximum curb weight of 120 kg.,The vehicle should be cost-effective and use affordable materials.,Besoins: Der zweirader sollte mit einem maximalen Fahrgewicht von 120 kg
+The vehicle must meet Euro 6 emission standards.,The battery should use standard charging methods to maintain longevity.,Bequirement: The vehicle must meet Euro 6 emission standards. | The battery should use standard
+The two-wheeler must have a rearview camera for safety.,The wheels should be spoked to maintain classic aesthetics.,The two-wheeler must have a rearview camera for safety. | The wheels should
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The bike should include an always-on headlight for safety compliance.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen.
+The braking system should use ABS for enhanced safety.,The vehicle should support fast charging to reach 80% in 30 minutes.,Bequirement: The brake system should use ABS for enhanced safety. | The vehicle should support
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The onboard computer should be minimal to reduce electronic dependencies.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen.
+The wheels should be spoked to maintain classic aesthetics.,The bike should support over-the-air (OTA) software updates.,The wheels should be spoked to maintain classic aesthetic. | The bike should support over-the
+The battery should use standard charging methods to maintain longevity.,The bike should support over-the-air (OTA) software updates.,| The bike should support over-the-air (OTA) software updates.
+The vehicle design should be compact and lightweight.,The instrument cluster should use analog dials to reduce complexity.,- - - - - - - - - -
+The bike should be resistant to extreme weather conditions.,The engine design should prioritize performance over emission constraints.,Bequirement: The bike should be resistant to extreme weather conditions. | The engine design should
+The instrument cluster should use analog dials to reduce complexity.,Users should be able to turn off the headlight manually.,: The instrument cluster should use analog dials to reduce complexity. | Users should be able
+The system should minimize power consumption for extended battery life.,The wheels should be spoked to maintain classic aesthetics.,The system should minimize power consumption for extended battery life. | The wheels should be spoked to
+The vehicle should include tubeless tires for durability and safety.,The engine should have a minimum power output of 25 HP.,| The engine should have a minimum power output of 25 HP.
+The display panel must be fully digital with GPS navigation.,The vehicle should support fast charging to reach 80% in 30 minutes.,Bequirement: The display panel must be fully digital with GPS navigation. | The vehicle should
+The vehicle must meet Euro 6 emission standards.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+The seat should be made of premium leather for comfort.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- Die Sitz sollte aus hochwertige leather for comfort. | Das Fahrzeug sollte die intelligente Bluetooth-
+The onboard computer should be minimal to reduce electronic dependencies.,The braking system should use ABS for enhanced safety.,"- Die technischen Voraussetzungen: Der Computer aufboard sollte minimal sein, um die elektronische Ab"
+The system should minimize power consumption for extended battery life.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet.
+The frame should be made of lightweight aluminum for efficiency.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h.
+The vehicle should be fully electric.,The two-wheeler should use biodegradable materials where possible.,Bequirement: The vehicle should be fully electric. | The two-wheeler should use
+The two-wheeler should have a maximum curb weight of 120 kg.,The bike should be resistant to extreme weather conditions.,Besoin: Der zwei-wheeler sollte mit einem maximalen Fahrgewicht von 120 kg
+The vehicle must include a high-capacity battery for extended electric range.,The instrument cluster should use analog dials to reduce complexity.,The vehicle must include a high-capacity battery for extended electric range. | The
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The instrument cluster should use analog dials to reduce complexity.,The vehicle must achieve a fuel efficiency of at least 50 km/l. | The instrument
+The bike should have a storage compartment for a full-size helmet.,The braking system should use ABS for enhanced safety.,- Die Maschine sollte mit einem Speicherraum für ein vollwertiges Helm
+The battery should use standard charging methods to maintain longevity.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,| The vehicle should support smart connectivity via Bluetooth and Wi-Fi.
+The battery should use standard charging methods to maintain longevity.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h. | The battery should use
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,Durability must be ensured for at least 10 years of use.,- - - - - - - - - -
+The bike should support over-the-air (OTA) software updates.,The two-wheeler should have a maximum curb weight of 120 kg.,Die Bike sollte die Software-Updates über die ffentlichkeit (OTA) unterstützen. |
+The engine must comply with strict noise restrictions.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h.
+The engine design should prioritize performance over emission constraints.,The vehicle should support fast charging to reach 80% in 30 minutes.,Bequirement: Die Motor design sollte die Performance Prior Priorität setzen auf Performance und
+The battery should use standard charging methods to maintain longevity.,Durability must be ensured for at least 10 years of use.,"- Die Batterie sollte mit standard charging methods angewendet werden, um die Lebensdauer zu"
+The bike should have a storage compartment for a full-size helmet.,The vehicle should incorporate modular components for easy customization.,Besoin: The bike should have a storage compartment for a full-size helmet
+The vehicle must include a high-capacity battery for extended electric range.,"The vehicle should be affordable with a base price under $1,500.","| The vehicle should be affordable with a base price under $1,500."
+Production costs should remain below market average for affordability.,The vehicle must meet Euro 6 emission standards.,Bequirement: Production costs should remain below market average for affordability. | The vehicle must meet
+The system should minimize power consumption for extended battery life.,The onboard computer should be minimal to reduce electronic dependencies.,- - - - - - - - - -
+The vehicle should include tubeless tires for durability and safety.,The vehicle should be cost-effective and use affordable materials.,| The vehicle should include tubeless tires for durability and safety. | The vehicle should be cost-
+The braking system should use ABS for enhanced safety.,The two-wheeler must have a rearview camera for safety.,| Die zwei-wheeler müssen mit einer rearview camera für Sicherheit ausgestattet sein. | Die
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Users should be able to turn off the headlight manually.,- Anforderung: Das Fahrzeug sollte intelligente Verbindungen via Bluetooth und Wi-Fi er
+The two-wheeler should have a maximum curb weight of 120 kg.,The engine should have a minimum power output of 25 HP.,- - - - - - - - - -
+The engine design should prioritize performance over emission constraints.,The vehicle should be fully electric.,Bequirement: Die Motor design sollte die Priorität der Performance und der emission constraints setzen
+The bike should support over-the-air (OTA) software updates.,The vehicle should support fast charging to reach 80% in 30 minutes.,Exigenz: Das Fahrrad sollte die Software-Updates über die Maschine (OTA) unterstützen
+The frame should be made of lightweight aluminum for efficiency.,The bike should support over-the-air (OTA) software updates.,Exigenz: Die Frame sollte aus leichtem Aluminium für die Effizienz hergestellt
+The vehicle should have a minimalistic dashboard design.,The two-wheeler must have a rearview camera for safety.,Exigences: The vehicle should have a minimalistic dashboard design. | The two-wheel
+The frame should be made of lightweight aluminum for efficiency.,The bike should have a storage compartment for a full-size helmet.,- Die Innenseite sollte aus lichtdurchlässigem Aluminium für die Effizi
+The bike should be resistant to extreme weather conditions.,Durability must be ensured for at least 10 years of use.,Exigences: The bike should be resistant to extreme weather conditions. | Durability must be ensure
+The engine design should prioritize performance over emission constraints.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet.
+The engine must comply with strict noise restrictions.,"The vehicle should be affordable with a base price under $1,500.","| The vehicle should be affordable with a base price under $1,500. | The vehicle should"
+The vehicle must include a high-capacity battery for extended electric range.,The battery should use standard charging methods to maintain longevity.,Besoin: The vehicle must include a high-capacity battery for extended electric
+The engine design should prioritize performance over emission constraints.,Durability must be ensured for at least 10 years of use.,Besoins: Die Motordesign sollte die Performance auf emission constraints setzen. | Dur
+The wheels should be spoked to maintain classic aesthetics.,The vehicle should incorporate modular components for easy customization.,The wheels should be spoked to maintain classic aesthetic. | The vehicle should incorporate modular components for
+The bike should support over-the-air (OTA) software updates.,The vehicle should incorporate modular components for easy customization.,Besoin: The bike should support over-the-air (OTA) software updates.
+The vehicle must meet Euro 6 emission standards.,The bike must have a top speed of 120 km/h.,Exigenz: Der Fahrzeug muss die Euro 6 emission standards erfüllen. | Der Motor muss mit einer
+The instrument cluster should use analog dials to reduce complexity.,The engine should have a minimum power output of 25 HP.,: The instrument cluster should use analog dials to reduce complexity. | The engine should have
+The vehicle should have a minimalistic dashboard design.,The onboard computer should be minimal to reduce electronic dependencies.,- Die Fahrzeuge sollten mit minimalistischem Dashboard design versehen sein. | Der Onboard-
+The onboard computer should be minimal to reduce electronic dependencies.,The two-wheeler should have a maximum curb weight of 120 kg.,"- Die Maschine sollte minimal sein, um die elektronischen Abhängigkeiten zu reduzieren"
+The two-wheeler must have a rearview camera for safety.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- - - - - - - - - -
+Users should be able to turn off the headlight manually.,The two-wheeler should use biodegradable materials where possible.,Besoins: Benutzer sollten die Kopflights manuell ausschalten können. | Der
+The bike should have a storage compartment for a full-size helmet.,The bike should support over-the-air (OTA) software updates.,The bike should have a storage compartment for a full-size helmet. | The bike
+The system should minimize power consumption for extended battery life.,The two-wheeler should have a maximum curb weight of 120 kg.,"Exigenz: Das System sollte die Energieverbrauch möglichst gering halten, um die Batterie"
+The instrument cluster should use analog dials to reduce complexity.,The bike should have a storage compartment for a full-size helmet.,: The instrument cluster should use analog dials to reduce complexity. | The bike should have
+The frame should be made of lightweight aluminum for efficiency.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,- - - - - - - - - -
+The vehicle design should be compact and lightweight.,The engine must comply with strict noise restrictions.,- - - - - - - - - -
+Production costs should remain below market average for affordability.,The display panel must be fully digital with GPS navigation.,| Die Display Panel muss digital mit GPS navigation.
+The vehicle should support fast charging to reach 80% in 30 minutes.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,- - - - - - - - - -
+The vehicle must include a high-capacity battery for extended electric range.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The two-wheeler should have a maximum curb weight of 120 kg.,The vehicle should be fully electric.,Besoin: Der zwei-wheeler sollte mit einem maximalen Fahrgewicht von 120 kg
+The two-wheeler must have a rearview camera for safety.,The bike should be resistant to extreme weather conditions.,Besoin: Der zwei-wheeler muss über eine rearview camera fahren. |
+The bike should include an always-on headlight for safety compliance.,The battery should use standard charging methods to maintain longevity.,Bequirement: The bike should include an always-on headlight for safety compliance. |
+The system should minimize power consumption for extended battery life.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+The two-wheeler should use biodegradable materials where possible.,The vehicle should support fast charging to reach 80% in 30 minutes.,Besoin: Die zweirädrige Fahrzeug sollte biodegradable materials where possible
+The bike should include an always-on headlight for safety compliance.,The two-wheeler should have a maximum curb weight of 120 kg.,Exigenz: The bike should include an always-on headlight for safety compliance. | The
+The bike should have a storage compartment for a full-size helmet.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,- Die Maschine muss mit einem Speicherraum für einen vollwertigen Helm ausgestattet sein
+The engine design should prioritize performance over emission constraints.,The engine should have a fuel injection system for optimized combustion.,- Die Engine sollte die Performance auf emission constraints setzen. | Die Engine sollte über ein Fuel
+The wheels should be spoked to maintain classic aesthetics.,Durability must be ensured for at least 10 years of use.,The wheels should be spoked to maintain classic aesthetics. | Durability must be ensured
+The vehicle should incorporate modular components for easy customization.,The onboard computer should be minimal to reduce electronic dependencies.,Bequirement: The vehicle should incorporate modular components for easy customization. | The onboard computer
+The braking system should use ABS for enhanced safety.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,| The vehicle must achieve a fuel efficiency of at least 50 km/l.
+Durability must be ensured for at least 10 years of use.,The seat should be made of premium leather for comfort.,- Besoins: Durability must be ensured for at least 10 years of
+Durability must be ensured for at least 10 years of use.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h. | The bike must have
+The engine should have a minimum power output of 25 HP.,The bike should have a storage compartment for a full-size helmet.,Exigenz: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein | Der Motor
+The system should minimize power consumption for extended battery life.,The two-wheeler should have a maximum curb weight of 120 kg.,"Exigenz: Das System sollte die Energieverbrauch möglichst gering halten, um die Batterie"
+The engine should have a minimum power output of 25 HP.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+"The vehicle should be affordable with a base price under $1,500.",The vehicle should support fast charging to reach 80% in 30 minutes.,"Besoins: The vehicle should be affordable with a base price under $1,500"
+The wheels should be spoked to maintain classic aesthetics.,The two-wheeler must have a rearview camera for safety.,The wheels should be spoked to maintain classic aesthetics. | The two-wheeler must
+The vehicle should be fully electric.,The vehicle should support fast charging to reach 80% in 30 minutes.,Bequirement: The vehicle should be fully electric. | The vehicle should support fast charging to
+Durability must be ensured for at least 10 years of use.,The engine should have a minimum power output of 25 HP.,| The engine should have a minimum power output of 25 HP. | The engine should have
+Users should be able to turn off the headlight manually.,The battery should use standard charging methods to maintain longevity.,"Besoins: Benutzer sollten die Möglichkeit haben, das Headlight manuell zu deaktiv"
+The vehicle should have a minimalistic dashboard design.,The vehicle should support fast charging to reach 80% in 30 minutes.,- The vehicle should have a minimalistic dashboard design. | The vehicle should support fast charging
+The bike should support over-the-air (OTA) software updates.,The two-wheeler should use biodegradable materials where possible.,Besoin: The bike should support over-the-air (OTA) software updates.
+Users should be able to turn off the headlight manually.,The vehicle must include a high-capacity battery for extended electric range.,| User should be able to turn off the headlight manually. | The vehicle must include
+The display panel must be fully digital with GPS navigation.,The bike should be resistant to extreme weather conditions.,Die Anzeige hat muss digital mit GPS navigation. | Die bike muss resistent zu extreme weather
+The vehicle must include a high-capacity battery for extended electric range.,The display panel must be fully digital with GPS navigation.,- - - - - - - - - -
+The vehicle should be fully electric.,The onboard computer should be minimal to reduce electronic dependencies.,Bequirement: The vehicle should be fully electric. | The onboard computer should be minimal
+The two-wheeler should have a maximum curb weight of 120 kg.,The bike should support over-the-air (OTA) software updates.,Besoin: Der zwei-wheeler sollte mit einem maximalen Fahrgewicht von 120 kg
+The battery should use standard charging methods to maintain longevity.,The vehicle should be cost-effective and use affordable materials.,- Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie Batterie
+Users should be able to turn off the headlight manually.,The vehicle should incorporate modular components for easy customization.,- Besoins: Benutzer sollten die Kopflights manuell ausschalten können.
+The engine should have a fuel injection system for optimized combustion.,The display panel must be fully digital with GPS navigation.,- Die Anzeige muss vollständig digital mit GPS Navigation sein.
+The vehicle must meet Euro 6 emission standards.,The vehicle should have a minimalistic dashboard design.,- - - - - - - - - -
+The engine should have a minimum power output of 25 HP.,The engine should have a fuel injection system for optimized combustion.,Besoin: Der Motor sollte eine Mindestleistung von 25 HP haben. | Der Motor sollte
+The vehicle design should be compact and lightweight.,The two-wheeler should have a maximum curb weight of 120 kg.,Exigenz: Die Fahrzeuge sollten kompakt und leicht sein | Die Zweirader
+The battery should use standard charging methods to maintain longevity.,Durability must be ensured for at least 10 years of use.,"- Die Batterie sollte mit standard charging methods angewendet werden, um die Lebensdauer zu"
+The engine should have a minimum power output of 25 HP.,The bike should have a storage compartment for a full-size helmet.,Exigenz: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein | Der Motor
+The vehicle should be fully electric.,The two-wheeler should have a maximum curb weight of 120 kg.,Exigenz: Das Fahrzeug sollte vollständig electric sein | Das Zweirader sollte mit einem maximalen
+The engine must comply with strict noise restrictions.,The vehicle should be fully electric.,Exigenz: Der Motor muss die rigrigrigrigrigrigrigrigrigrigrig
+The vehicle design should be compact and lightweight.,The two-wheeler should use biodegradable materials where possible.,Bequirement: Die Fahrzeug design sollte compact und lightweight sein. | Die Zwei-wheeler
+The battery should use standard charging methods to maintain longevity.,The two-wheeler should have a maximum curb weight of 120 kg.,| The two-wheeler should have a maximum curb weight of 120 kg.
+Durability must be ensured for at least 10 years of use.,The wheels should be spoked to maintain classic aesthetics.,The wheels should be spoked to maintain classic aesthetics. | The wheels should be spoked
+The wheels should be spoked to maintain classic aesthetics.,The engine must comply with strict noise restrictions.,The wheels should be spoked to maintain classic aesthetics. | The engine must comply with strict
+The vehicle should have a minimalistic dashboard design.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,- - - - - - - - - -
+The vehicle should have a minimalistic dashboard design.,The vehicle should incorporate modular components for easy customization.,Besoins: The vehicle should have a minimalistic dashboard design. | The vehicle
+The two-wheeler must have a rearview camera for safety.,The instrument cluster should use analog dials to reduce complexity.,: The two-wheeler must have a rearview camera for safety. | The instrument
+The system should minimize power consumption for extended battery life.,The onboard computer should be minimal to reduce electronic dependencies.,- - - - - - - - - -
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The engine should have a fuel injection system for optimized combustion.,Besoin: Der Fahrzeug muss eine Leistung von mindestens 50 km/l erreichen |
+The engine should have a minimum power output of 25 HP.,The engine should have a fuel injection system for optimized combustion.,Besoin: Der Motor sollte eine Mindestleistung von 25 HP haben. | Der Motor sollte
+The frame should be made of lightweight aluminum for efficiency.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Die Bequirement: Die frame should be made aus lightweight aluminum for efficiency. | The vehicle
+The engine should have a minimum power output of 25 HP.,The instrument cluster should use analog dials to reduce complexity.,The engine should have minimum power output of 25 HP. | The instrument cluster should use analog dial
+The braking system should use ABS for enhanced safety.,The engine must comply with strict noise restrictions.,- - - - - - - - - -
+Users should be able to turn off the headlight manually.,The bike should be resistant to extreme weather conditions.,- Die Maschine sollte empfindlich zu extremen Wetterbedingungen sein. | Die Maschine sollte
+The two-wheeler should use biodegradable materials where possible.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,| The vehicle must achieve a fuel efficiency of at least 50 km/l.
+Durability must be ensured for at least 10 years of use.,The system should minimize power consumption for extended battery life.,- - - - - - - - - -
+The engine must comply with strict noise restrictions.,Durability must be ensured for at least 10 years of use.,- - - - - - - - - -
+The bike should have a storage compartment for a full-size helmet.,The seat should be made of premium leather for comfort.,Besoins: The bike should have a storage compartment for a full-size
+The battery should use standard charging methods to maintain longevity.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,| The vehicle should support smart connectivity via Bluetooth and Wi-Fi.
+The bike should have a storage compartment for a full-size helmet.,"The vehicle should be affordable with a base price under $1,500.",- The bike should have a storage compartment for a full-size helmet. | The
+The vehicle must include a high-capacity battery for extended electric range.,The engine must comply with strict noise restrictions.,Exigences: Das Fahrzeug muss eine hohe Kapazitätsbatterie für eine erweiterte elektrische
+The engine design should prioritize performance over emission constraints.,The seat should be made of premium leather for comfort.,Bequirement: Die Motor design sollte die Priorität der Performance setzen auf Performance versus
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The engine design should prioritize performance over emission constraints.,Bequirement: Das Fahrzeug sollte intelligent connectivity via Bluetooth und Wi-Fi. | Die Engine
+The vehicle should be fully electric.,The system should minimize power consumption for extended battery life.,- - - - - - - - - -
+The vehicle should be fully electric.,The vehicle should incorporate modular components for easy customization.,Bequirement: The vehicle should be fully electric. | The vehicle should incorporate modular components for
+The braking system should use ABS for enhanced safety.,The vehicle should be fully electric.,- - - - - - - - - -
+The battery should use standard charging methods to maintain longevity.,The engine should have a minimum power output of 25 HP.,| The engine should have a minimum power output of 25 HP.
+The vehicle must include a high-capacity battery for extended electric range.,The wheels should be spoked to maintain classic aesthetics.,The vehicle must include a battery for extended electric range. | The wheels should be spoked
+The vehicle should include tubeless tires for durability and safety.,The engine should have a minimum power output of 25 HP.,| The engine should have a minimum power output of 25 HP.
+The seat should be made of premium leather for comfort.,The onboard computer should be minimal to reduce electronic dependencies.,- - - - - - - - - -
+The vehicle should include tubeless tires for durability and safety.,The engine should have a fuel injection system for optimized combustion.,| The engine should have a fuel injection system for optimized combustion. | The vehicle should include tube
+The vehicle should be fully electric.,Durability must be ensured for at least 10 years of use.,- - - - - - - - - -
+The engine should have a minimum power output of 25 HP.,The onboard computer should be minimal to reduce electronic dependencies.,Besoins: Der Motor sollte mit einem Minimum Power output of 25 HP. | Der
+The braking system should use ABS for enhanced safety.,Durability must be ensured for at least 10 years of use.,- - - - - - - - - -
+The vehicle should support fast charging to reach 80% in 30 minutes.,Users should be able to turn off the headlight manually.,The vehicle should support fast charging to reach 80 % in 30 minutes. | Users should be
+Users should be able to turn off the headlight manually.,The engine should have a minimum power output of 25 HP.,| Die Motoren müssen mit einem Minimum Power output of 25 HP ausgestattet sein. | Die Motoren
+The battery should use standard charging methods to maintain longevity.,The instrument cluster should use analog dials to reduce complexity.,: The battery should use standard charging methods to maintain longevity. | The instrument cluster should use analog
+The bike should support over-the-air (OTA) software updates.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Exigenz: Das Fahrrad sollte die Software-Updates über die Maschine (OTA) unterstützen
+The bike should include an always-on headlight for safety compliance.,The vehicle should be cost-effective and use affordable materials.,- - - - - - - - - -
+The frame should be made of lightweight aluminum for efficiency.,The engine design should prioritize performance over emission constraints.,Bequirement: The frame should be made of lightweight aluminum for efficiency. | The engine design
+The vehicle should have a minimalistic dashboard design.,The two-wheeler must have a rearview camera for safety.,Exigences: The vehicle should have a minimalistic dashboard design. | The two-wheel
+The engine should have a minimum power output of 25 HP.,The bike must have a top speed of 120 km/h.,Exigenz: Der Motor muss mit einem Minimum Power output of 25 HP. | Der Motor muss
+The bike must have a top speed of 120 km/h.,Durability must be ensured for at least 10 years of use.,Exigenz: Die Bike muss mit einer Höchstgeschwindigkeit von 120 km/h. | Dur
+The frame should be made of lightweight aluminum for efficiency.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Die Bequirement: Die frame should be made aus lightweight aluminum for efficiency. | The vehicle
+The bike should have a storage compartment for a full-size helmet.,The engine must comply with strict noise restrictions.,Exigences: The bike should have a storage compartment for a full-size helmet.
+The bike should be resistant to extreme weather conditions.,The engine should have a minimum power output of 25 HP.,- Die Maschine sollte empfindlich zu extremen Wetterbedingungen sein | Die Motoren sollten mit
+The engine design should prioritize performance over emission constraints.,The two-wheeler should have a maximum curb weight of 120 kg.,Exigences: Die Motordesign sollte die Performance auf emission constraints setzen. | Der Zweirad
+"The vehicle should be affordable with a base price under $1,500.",The bike must have a top speed of 120 km/h.,"Besoin: Das Fahrzeug sollte preisgünstig sein und unter $1,500 fahren."
+The bike must have a top speed of 120 km/h.,The onboard computer should be minimal to reduce electronic dependencies.,Exigenz: Die Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Der
+Durability must be ensured for at least 10 years of use.,The vehicle should be cost-effective and use affordable materials.,- - - - - - - - - -
+The vehicle should be fully electric.,The instrument cluster should use analog dials to reduce complexity.,- - - - - - - - - -
+The bike should include an always-on headlight for safety compliance.,The two-wheeler should have a maximum curb weight of 120 kg.,Exigenz: The bike should include an always-on headlight for safety compliance. | The
+The seat should be made of premium leather for comfort.,The engine must comply with strict noise restrictions.,- - - - - - - - - -
+The braking system should use ABS for enhanced safety.,The engine should have a minimum power output of 25 HP.,"- Die Maschine sollte mit ABS ausgestattet sein, um die Sicherheit zu verbessern. | Die Motor"
+The wheels should be spoked to maintain classic aesthetics.,The vehicle should include tubeless tires for durability and safety.,: The wheels should be spoked to maintain classic aesthetics. | The vehicle should include tube
+The bike must have a top speed of 120 km/h.,The wheels should be spoked to maintain classic aesthetics.,Exigences: The bike must have a top speed of 120 km/h. | The
+The engine should have a minimum power output of 25 HP.,Durability must be ensured for at least 10 years of use.,Besoins: Der Motor sollte eine Mindestleistung von 25 HP haben. | Durability
+The vehicle should have a minimalistic dashboard design.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- - - - - - - - - -
+The two-wheeler must have a rearview camera for safety.,Users should be able to turn off the headlight manually.,- - - - - - - - - -
+The engine design should prioritize performance over emission constraints.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+The frame should be made of lightweight aluminum for efficiency.,The instrument cluster should use analog dials to reduce complexity.,Die Anlage sollte aus dünne Aluminium für Effizienz gebaut werden |
+The instrument cluster should use analog dials to reduce complexity.,The vehicle must include a high-capacity battery for extended electric range.,: The instrument cluster should use analog dials to reduce complexity. | The vehicle must include
+The vehicle should include tubeless tires for durability and safety.,The vehicle should be fully electric.,- - - - - - - - - -
+The vehicle design should be compact and lightweight.,The display panel must be fully digital with GPS navigation.,- - - - - - - - - -
+The seat should be made of premium leather for comfort.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,- Die Sitz sollte aus hochwertige leather for comfort. | Das Fahrzeug sollte die intelligente Bluetooth-
+The bike should support over-the-air (OTA) software updates.,The two-wheeler should have a maximum curb weight of 120 kg.,Die Bike sollte die Software-Updates über die ffentlichkeit (OTA) unterstützen. |
+The bike should support over-the-air (OTA) software updates.,The braking system should use ABS for enhanced safety.,Exigenz: Das Bike sollte die Software-Updates über die Maschine (OTA)
+The seat should be made of premium leather for comfort.,The bike should have a storage compartment for a full-size helmet.,| The seat should be made of premium leather for comfort. | The bike should have a storage
+The vehicle design should be compact and lightweight.,The vehicle must meet Euro 6 emission standards.,- - - - - - - - - -
+The frame should be made of lightweight aluminum for efficiency.,The vehicle should support fast charging to reach 80% in 30 minutes.,Bequirement: The frame should be made of lightweight aluminum for efficiency. | The vehicle should
+The engine should have a minimum power output of 25 HP.,The system should minimize power consumption for extended battery life.,Besoin: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein. |
+The bike should be resistant to extreme weather conditions.,The bike should support over-the-air (OTA) software updates.,- Die Maschine sollte flexibel auf extreme Wetterbedingungen sein. | Die Maschine sollte die
+The two-wheeler must have a rearview camera for safety.,The vehicle must meet Euro 6 emission standards.,Exigenz: Der zweirader muss über eine rearview camera für Sicherheit verfügen. |
+The vehicle design should be compact and lightweight.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The display panel must be fully digital with GPS navigation.,The vehicle should be fully electric.,Exigenz: Die Display Panel muss vollständig digital mit GPS navigation. | Die Fahrzeug muss vollständig electric
+The engine design should prioritize performance over emission constraints.,The vehicle should have a minimalistic dashboard design.,Exigences: Die Motorengestaltung sollte die Performance auf emission constraints setzen. | Die Fahrzeug
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The two-wheeler should have a maximum curb weight of 120 kg.,- - - - - - - - - -
+The frame should be made of lightweight aluminum for efficiency.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Die Bequirement: Die frame should be made aus lightweight aluminum for efficiency. | The vehicle
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Durability must be ensured for at least 10 years of use.,Exigenz: Das Fahrzeug sollte intelligente Verbindungen via Bluetooth und Wi-Fi unterstützen. |
+The display panel must be fully digital with GPS navigation.,The braking system should use ABS for enhanced safety.,Bequirement: The display panel must be fully digital with GPS navigation. | The brake system
+The bike should support over-the-air (OTA) software updates.,The vehicle should have a minimalistic dashboard design.,- - - - - - - - - -
+The bike should support over-the-air (OTA) software updates.,The two-wheeler should have a maximum curb weight of 120 kg.,Die Bike sollte die Software-Updates über die ffentlichkeit (OTA) unterstützen. |
+The onboard computer should be minimal to reduce electronic dependencies.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+The two-wheeler must have a rearview camera for safety.,Durability must be ensured for at least 10 years of use.,Besoins: Die zwei-wheeler muss über eine rearview camera verfügen.
+The frame should be made of lightweight aluminum for efficiency.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,- - - - - - - - - -
+The seat should be made of premium leather for comfort.,The frame should be made of lightweight aluminum for efficiency.,Bequirement: Der seat should be made of premium leather for comfort. | The frame should
+The engine design should prioritize performance over emission constraints.,The seat should be made of premium leather for comfort.,Bequirement: Die Motor design sollte die Priorität der Performance setzen auf Performance versus
+The vehicle must meet Euro 6 emission standards.,The bike should include an always-on headlight for safety compliance.,- - - - - - - - - -
+The display panel must be fully digital with GPS navigation.,The engine should have a minimum power output of 25 HP.,Exigenz: Die Display Panel muss vollständig digital mit GPS navigation. | Der Motor muss mit einem
+The engine should have a minimum power output of 25 HP.,The bike should support over-the-air (OTA) software updates.,Voraussetzung: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein. | Der Bike
+The vehicle should support fast charging to reach 80% in 30 minutes.,The vehicle should have a minimalistic dashboard design.,- The vehicle should support fast charging to reach 80% in 30 minutes. | The vehicle should
+The onboard computer should be minimal to reduce electronic dependencies.,The braking system should use ABS for enhanced safety.,"- Die technischen Voraussetzungen: Der Computer aufboard sollte minimal sein, um die elektronische Ab"
+The seat should be made of premium leather for comfort.,The onboard computer should be minimal to reduce electronic dependencies.,- - - - - - - - - -
+The engine must comply with strict noise restrictions.,The display panel must be fully digital with GPS navigation.,Exigenz: Der Motor muss die streng noise restrictions. | Der Display Panel muss vollständig digital mit
+The vehicle must meet Euro 6 emission standards.,The bike should have a storage compartment for a full-size helmet.,| The bike should have a storage compartment for a full-size helmet. | The bike
+The bike must have a top speed of 120 km/h.,Durability must be ensured for at least 10 years of use.,Exigenz: Die Bike muss mit einer Höchstgeschwindigkeit von 120 km/h. | Dur
+The onboard computer should be minimal to reduce electronic dependencies.,The display panel must be fully digital with GPS navigation.,- - - - - - - - - -
+The vehicle should incorporate modular components for easy customization.,The vehicle should include tubeless tires for durability and safety.,Bequirement: The vehicle should incorporate modular components for easy customization. | The vehicle should include
+The seat should be made of premium leather for comfort.,The onboard computer should be minimal to reduce electronic dependencies.,- - - - - - - - - -
+The vehicle should incorporate modular components for easy customization.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,| The vehicle must achieve a fuel efficiency of at least 50 km/l.
+The two-wheeler should use biodegradable materials where possible.,Durability must be ensured for at least 10 years of use.,"Besoins: Die Zweiräder sollten, wenn möglich, biodegradable Materialien verwenden"
+Users should be able to turn off the headlight manually.,"The vehicle should be affordable with a base price under $1,500.","| The vehicle should be affordable with a base price under $1,500. | The vehicle should"
+The bike should have a storage compartment for a full-size helmet.,"The vehicle should be affordable with a base price under $1,500.",- The bike should have a storage compartment for a full-size helmet. | The
+The two-wheeler should have a maximum curb weight of 120 kg.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,Besoin: Der zwei-wheeler sollte über ein maximales Fahrgewicht von 120
+The bike should support over-the-air (OTA) software updates.,The two-wheeler must have a rearview camera for safety.,The bike should support over-the-air (OTA) software updates. | The two-
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The wheels should be spoked to maintain classic aesthetics.,The vehicle should support smart connectivity via Bluetooth and Wi-Fi. | The wheels should be spoke
+The bike must have a top speed of 120 km/h.,The frame should be made of lightweight aluminum for efficiency.,Exigenz: Das Bike muss eine Höchstgeschwindigkeit von 120 km/h haben. | Der
+The vehicle should be cost-effective and use affordable materials.,Production costs should remain below market average for affordability.,- - - - - - - - - -
+The vehicle design should be compact and lightweight.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The bike must have a top speed of 120 km/h.,The bike should support over-the-air (OTA) software updates.,Exigences: The bike must have top speed of 120 km/h. | The bike should
+The bike should support over-the-air (OTA) software updates.,The engine design should prioritize performance over emission constraints.,Besoin: Das Fahrrad sollte die Software-Updates über die ffentlichkeit (OTA
+The vehicle should incorporate modular components for easy customization.,The instrument cluster should use analog dials to reduce complexity.,Besoin: Der Fahrzeug sollte modulare Bauteile für einfaches Customisieren integr
+The bike must have a top speed of 120 km/h.,The vehicle should support fast charging to reach 80% in 30 minutes.,Exigenz: Das Rad muss mit einer Höchstgeschwindigkeit von 120 km/h. | Das Fahrzeug
+The bike should support over-the-air (OTA) software updates.,The engine should have a fuel injection system for optimized combustion.,- - - - - - - - - -
+The vehicle design should be compact and lightweight.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h.
+The two-wheeler should use biodegradable materials where possible.,The bike should be resistant to extreme weather conditions.,Bequirement: The two-wheeler should use biodegradable materials where possible.
+The vehicle should include tubeless tires for durability and safety.,Durability must be ensured for at least 10 years of use.,Exigences: Fahrzeug should include tubeless tires for durability and safety. | Durability must be
+The frame should be made of lightweight aluminum for efficiency.,The vehicle should have a minimalistic dashboard design.,Exigenz: Der Rahmen sollte aus leichtem Aluminium für die Effizienz hergestellt
+The vehicle must include a high-capacity battery for extended electric range.,The vehicle should include tubeless tires for durability and safety.,- The vehicle must include a high-capacity battery for extended electric range. |
+The wheels should be spoked to maintain classic aesthetics.,The seat should be made of premium leather for comfort.,The wheels should be spoked to maintain classic aesthetics. | The seat should be made of
+The bike should include an always-on headlight for safety compliance.,The two-wheeler should use biodegradable materials where possible.,Bequirement: The bike should include an always-on headlight for safety compliance. |
+The vehicle must meet Euro 6 emission standards.,The vehicle should incorporate modular components for easy customization.,- - - - - - - - - -
+The battery should use standard charging methods to maintain longevity.,The two-wheeler must have a rearview camera for safety.,| The battery must use standard charging methods to maintain longevity. | The two-wheeler must have
+The vehicle must meet Euro 6 emission standards.,The bike must have a top speed of 120 km/h.,Exigenz: Der Fahrzeug muss die Euro 6 emission standards erfüllen. | Der Motor muss mit einer
+The engine should have a minimum power output of 25 HP.,The vehicle should include tubeless tires for durability and safety.,Besoins: Der Motor sollte mit einem Minimum Power output of 25 HP ausgestattet sein.
+The bike must have a top speed of 120 km/h.,Production costs should remain below market average for affordability.,Besoin: Die Bike muss mit einer Höchstgeschwindigkeit von 120 km/h. |
+The two-wheeler should use biodegradable materials where possible.,The instrument cluster should use analog dials to reduce complexity.,: The two-wheeler should use biodegradable materials where possible. | The instrument
+The vehicle should be fully electric.,The vehicle should include tubeless tires for durability and safety.,- - - - - - - - - -
+The engine design should prioritize performance over emission constraints.,The vehicle should support fast charging to reach 80% in 30 minutes.,Bequirement: Die Motor design sollte die Performance Prior Priorität setzen auf Performance und
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The onboard computer should be minimal to reduce electronic dependencies.,Bequirement: The vehicle should support smart connectivity via Bluetooth and Wi-Fi. | The
+The battery should use standard charging methods to maintain longevity.,The two-wheeler should use biodegradable materials where possible.,"Bequirement: Die Batterie sollte standard charging methods verwenden, um die Batterie zu batterie zu"
+The vehicle should have a minimalistic dashboard design.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,- - - - - - - - - -
+The vehicle should have a minimalistic dashboard design.,The system should minimize power consumption for extended battery life.,- - - - - - - - - -
+The frame should be made of lightweight aluminum for efficiency.,The two-wheeler should use biodegradable materials where possible.,Bequirement: The frame should be made of lightweight aluminum for efficiency. | The two-
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The vehicle should be fully electric.,Bequirement: Der Fahrzeug muss mindestens 50 km/l BenzBenzBenzBenzBenz
+The engine should have a fuel injection system for optimized combustion.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+The vehicle design should be compact and lightweight.,The bike should be resistant to extreme weather conditions.,"Die moto bike ist flexibel, flexibel, flexibel, flexibel, flexibel,"
+Users should be able to turn off the headlight manually.,The system should minimize power consumption for extended battery life.,Users should be able to turn off the headlight manually. | The system should minimize power
+The vehicle design should be compact and lightweight.,The vehicle should be fully electric.,- - - - - - - - - -
+The vehicle should have a minimalistic dashboard design.,The bike must have a top speed of 120 km/h.,- Die Maschine muss mit einem minimalistischen Dashboard design versehen sein | Die Maschine muss mit
+The display panel must be fully digital with GPS navigation.,The vehicle must achieve a fuel efficiency of at least 50 km/l.,Exigenz: Die Display Panel muss vollständig digital mit GPS Navigation sein. | Der Fahrzeug muss eine
+The onboard computer should be minimal to reduce electronic dependencies.,The battery should use standard charging methods to maintain longevity.,Bequirement: The onboard computer should be minimal to reduce electronic dependencies. | The
+The system should minimize power consumption for extended battery life.,The bike should be resistant to extreme weather conditions.,Die Anlage sollte die Energieverbrauch möglichst minimal für länger battery life. | Die bike sollte resist
+The battery should use standard charging methods to maintain longevity.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+The vehicle must achieve a fuel efficiency of at least 50 km/l.,The instrument cluster should use analog dials to reduce complexity.,The vehicle must achieve a fuel efficiency of at least 50 km/l. | The instrument
+The engine must comply with strict noise restrictions.,The two-wheeler must have a rearview camera for safety.,Exigenz: Der Motor muss strenge Noise Limits erfüllen. | Der Zweirader muss
+The instrument cluster should use analog dials to reduce complexity.,The vehicle should be cost-effective and use affordable materials.,- - - - - - - - - -
+The vehicle should be cost-effective and use affordable materials.,The engine design should prioritize performance over emission constraints.,Bequirement: Das Fahrzeug sollte cost-effective und kostengünstig sein sein und verbrauch
+The instrument cluster should use analog dials to reduce complexity.,The battery should use standard charging methods to maintain longevity.,: The instrument cluster should use analog dials to reduce complexity. | The battery should use standard
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The frame should be made of lightweight aluminum for efficiency.,Bequirement: Das Fahrzeug sollte die intelligent connectivity via Bluetooth und Wi-Fi. | Die
+The bike should have a storage compartment for a full-size helmet.,The two-wheeler should use biodegradable materials where possible.,Besoin: The bike should have a storage compartment for a full-size helmet
+The engine design should prioritize performance over emission constraints.,Production costs should remain below market average for affordability.,Bequirement: Motor design should prioritize performance over emission constraints. | Production costs should remain below
+The braking system should use ABS for enhanced safety.,The engine design should prioritize performance over emission constraints.,Bequirement: The brake system should use ABS for enhanced safety. | The engine design should
+The display panel must be fully digital with GPS navigation.,The vehicle should be cost-effective and use affordable materials.,- - - - - - - - - -
+The vehicle should support smart connectivity via Bluetooth and Wi-Fi.,The bike must have a top speed of 120 km/h.,| The bike must have a top speed of 120 km/h.
+The wheels should be spoked to maintain classic aesthetics.,The vehicle should be fully electric.,The wheels should be spoked to maintain classic aesthetics. | The vehicle should be fully electric
+The bike should support over-the-air (OTA) software updates.,The two-wheeler should use biodegradable materials where possible.,Besoin: The bike should support over-the-air (OTA) software updates.
+The onboard computer should be minimal to reduce electronic dependencies.,The wheels should be spoked to maintain classic aesthetics.,The onboard computer should be minimal to reduce electronic dependencies. | The wheels should be spoke
+The vehicle should be fully electric.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+The onboard computer should be minimal to reduce electronic dependencies.,The battery should use standard charging methods to maintain longevity.,Bequirement: The onboard computer should be minimal to reduce electronic dependencies. | The
+The engine should have a minimum power output of 25 HP.,The braking system should use ABS for enhanced safety.,- Die Motoren müssen mit einem Minimum Power output of 25 HP ausgestattet sein. | Der Bre
+The instrument cluster should use analog dials to reduce complexity.,The system should minimize power consumption for extended battery life.,: The instrument cluster should use analog dials to reduce complexity. | The system should minimize power
+The vehicle design should be compact and lightweight.,Durability must be ensured for at least 10 years of use.,Exigences: Die Fahrzeugausstattung sollte kompakt und leicht sein. | Dur
+The vehicle design should be compact and lightweight.,The two-wheeler should have a maximum curb weight of 120 kg.,Exigenz: Die Fahrzeuge sollten kompakt und leicht sein | Die Zweirader
+The braking system should use ABS for enhanced safety.,The vehicle design should be compact and lightweight.,- - - - - - - - - -
+The wheels should be spoked to maintain classic aesthetics.,The engine should have a fuel injection system for optimized combustion.,The wheels should be spoked to maintain classic aesthetics. | The engine should have a
+The bike should support over-the-air (OTA) software updates.,The two-wheeler must have a rearview camera for safety.,The bike should support over-the-air (OTA) software updates. | The two-
+The two-wheeler should use biodegradable materials where possible.,The vehicle design should be compact and lightweight.,Bequirement: The two-wheeler should use biodegradable materials where possible.
+The vehicle should be fully electric.,The engine design should prioritize performance over emission constraints.,Bequirement: The vehicle should be fully electric. | The engine design should prioritize performance performance
+"The vehicle should be affordable with a base price under $1,500.",The braking system should use ABS for enhanced safety.,"Besoins: Das Fahrzeug sollte preisgünstig sein und unter $1,500 fahren"
+The engine must comply with strict noise restrictions.,The engine should have a fuel injection system for optimized combustion.,- Die Motor muss strenge Noise restrictions erfüllen. | Die Motor sollte mit einem Fuel injection system
+The two-wheeler should have a maximum curb weight of 120 kg.,The seat should be made of premium leather for comfort.,Besoins: Die zweirädrige Fahrräder sollten mit einem maximalen Fahr
+The vehicle must meet Euro 6 emission standards.,The battery should use standard charging methods to maintain longevity.,Bequirement: The vehicle must meet Euro 6 emission standards. | The battery should use standard
+The bike should have a storage compartment for a full-size helmet.,The wheels should be spoked to maintain classic aesthetics.,The bike should have a storage compartment for a full-size helmet. | The wheels
+The vehicle should incorporate modular components for easy customization.,The vehicle must include a high-capacity battery for extended electric range.,- - - - - - - - - -
+The vehicle should be fully electric.,The wheels should be spoked to maintain classic aesthetics.,The vehicle should be fully electric. | The wheels should be spoked to maintain classic aesthetics
+The vehicle should be fully electric.,The bike should support over-the-air (OTA) software updates.,Exigenz: Das Fahrzeug sollte vollständig electric sein | Das Fahrrad sollte die Software-Updates über
