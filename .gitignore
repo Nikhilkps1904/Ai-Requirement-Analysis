@@ -1,4 +1,6 @@
 venv/
 trained_model/
 .env
-conflict_detection.log
+**/*.log
+__pycache__/
+*.log
