@@ -148,7 +148,7 @@ def train_model(args):
     train_df, val_df = train_test_split(df_train, test_size=args.validation_split, random_state=42)
     logger.info(f"Training on {len(train_df)} examples, validating on {len(val_df)} examples")
     
-    tokenizer = T5Tokenizer.from_pretrained(args.model_name)
+    tokenizer = T5Tokenizer.from_pretrained(args.model_name,legacy=False)
     model = T5ForConditionalGeneration.from_pretrained(args.model_name).to(device)
     
     train_dataset = RequirementConflictDataset(train_df, tokenizer)
@@ -233,7 +233,7 @@ def predict_conflicts(args, model=None, tokenizer=None):
         try:
             logger.info(f"Loading model from {args.output_dir}")
             model = T5ForConditionalGeneration.from_pretrained(args.output_dir).to(device)
-            tokenizer = T5Tokenizer.from_pretrained(args.output_dir)
+            tokenizer = T5Tokenizer.from_pretrained(args.output_dir,legacy=False)
         except Exception as e:
             logger.error(f"Error loading model: {e}")
             return
@@ -313,13 +313,13 @@ def predict_conflicts(args, model=None, tokenizer=None):
 def main():
     parser = argparse.ArgumentParser(description="Requirements Conflict Detection with Google Search")
     
-    parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="both")
+    parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="train")
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument("--input_file", type=str, default="training_data.csv")
     parser.add_argument("--output_dir", type=str, default="./trained_model")
     parser.add_argument("--model_name", type=str, default="t5-base")
-    parser.add_argument("--epochs", type=int, default=50)
-    parser.add_argument("--batch_size", type=int, default=16)
+    parser.add_argument("--epochs", type=int, default=10)
+    parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--learning_rate", type=float, default=3e-5)
     parser.add_argument("--weight_decay", type=float, default=0.01)
     parser.add_argument("--max_grad_norm", type=float, default=1.0)

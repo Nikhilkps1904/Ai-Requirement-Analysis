@@ -1,0 +1,1 @@
+python cust.py --mode train --input_file TwoWheeler_Requirement_Conflicts.csv --output_dir ./trained_model  "for training the models"
