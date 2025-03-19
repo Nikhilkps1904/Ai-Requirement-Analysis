@@ -13,7 +13,11 @@ from sklearn.model_selection import train_test_split
 import logging
 from tqdm import tqdm
 import json
-from googleapiclient.discovery import build  # For Google Custom Search
+import requests
+import warnings
+
+# Suppress deprecation warnings from transformers
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # Configure logging
 logging.basicConfig(
@@ -26,25 +30,26 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Google Custom Search API setup
-GOOGLE_API_KEY = "YOUR_GOOGLE_API_KEY"  # Replace with your API key
-GOOGLE_CSE_ID = "YOUR_CSE_ID"  # Replace with your Custom Search Engine ID
+# Hugging Face Inference API setup
+HF_API_TOKEN = os.getenv("HF_API_TOKEN", "YOUR_HF_API_TOKEN")  # Replace with your token
+HF_API_URL = "https://api-inference.huggingface.co/models/t5-base"
 
-def google_search(query, api_key=GOOGLE_API_KEY, cse_id=GOOGLE_CSE_ID, num_results=3):
-    """Fetch results from Google Custom Search API"""
+def huggingface_inference(prompt, api_token=HF_API_TOKEN, api_url=HF_API_URL):
+    """Call Hugging Face Inference API for free LLM inference"""
+    headers = {"Authorization": f"Bearer {api_token}"}
+    payload = {"inputs": prompt, "parameters": {"max_length": 256, "num_beams": 5}}
     try:
-        service = build("customsearch", "v1", developerKey=api_key)
-        res = service.cse().list(q=query, cx=cse_id, num=num_results).execute()
-        snippets = [item["snippet"] for item in res.get("items", [])]
-        return " ".join(snippets) if snippets else "No relevant engineering context found."
+        response = requests.post(api_url, headers=headers, json=payload)
+        response.raise_for_status()
+        result = response.json()
+        return result[0]["generated_text"] if isinstance(result, list) else "Inference failed"
     except Exception as e:
-        logger.error(f"Google Search API error: {e}")
-        return "Search failed due to API error."
+        logger.error(f"Hugging Face API error: {e}")
+        return "Inference failed due to API error."
 
 # Dataset Class
 class RequirementConflictDataset(Dataset):
     """Dataset for requirement conflict detection"""
-    
     def __init__(self, dataframe, tokenizer, max_input_length=128, max_target_length=64):
         self.dataframe = dataframe
         self.tokenizer = tokenizer
@@ -75,14 +80,10 @@ class RequirementConflictDataset(Dataset):
             return_tensors="pt"
         )
         
-        input_ids = inputs.input_ids.squeeze()
-        attention_mask = inputs.attention_mask.squeeze()
-        target_ids = targets.input_ids.squeeze()
-        
         return {
-            "input_ids": input_ids,
-            "attention_mask": attention_mask,
-            "labels": target_ids
+            "input_ids": inputs.input_ids.squeeze(),
+            "attention_mask": inputs.attention_mask.squeeze(),
+            "labels": targets.input_ids.squeeze()
         }
 
 # Load Sample Data
@@ -148,7 +149,7 @@ def train_model(args):
     train_df, val_df = train_test_split(df_train, test_size=args.validation_split, random_state=42)
     logger.info(f"Training on {len(train_df)} examples, validating on {len(val_df)} examples")
     
-    tokenizer = T5Tokenizer.from_pretrained(args.model_name,legacy=False)
+    tokenizer = T5Tokenizer.from_pretrained(args.model_name)
     model = T5ForConditionalGeneration.from_pretrained(args.model_name).to(device)
     
     train_dataset = RequirementConflictDataset(train_df, tokenizer)
@@ -170,21 +171,25 @@ def train_model(args):
         train_loss = 0
         progress_bar = tqdm(train_loader, desc=f"Epoch {epoch+1}/{args.epochs} [Train]")
         for batch in progress_bar:
-            input_ids = batch["input_ids"].to(device)
-            attention_mask = batch["attention_mask"].to(device)
-            labels = batch["labels"].to(device)
-            
-            outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
-            loss = outputs.loss
-            
-            optimizer.zero_grad()
-            loss.backward()
-            torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
-            optimizer.step()
-            scheduler.step()
-            
-            train_loss += loss.item()
-            progress_bar.set_postfix({"loss": loss.item()})
+            try:
+                input_ids = batch["input_ids"].to(device)
+                attention_mask = batch["attention_mask"].to(device)
+                labels = batch["labels"].to(device)
+                
+                outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
+                loss = outputs.loss
+                
+                optimizer.zero_grad()
+                loss.backward()
+                torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
+                optimizer.step()
+                scheduler.step()
+                
+                train_loss += loss.item()
+                progress_bar.set_postfix({"loss": loss.item()})
+            except Exception as e:
+                logger.error(f"Error in training loop: {e}")
+                raise
         
         avg_train_loss = train_loss / len(train_loader)
         training_history["train_loss"].append(avg_train_loss)
@@ -194,12 +199,16 @@ def train_model(args):
         progress_bar = tqdm(val_loader, desc=f"Epoch {epoch+1}/{args.epochs} [Val]")
         with torch.no_grad():
             for batch in progress_bar:
-                input_ids = batch["input_ids"].to(device)
-                attention_mask = batch["attention_mask"].to(device)
-                labels = batch["labels"].to(device)
-                outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
-                val_loss += outputs.loss.item()
-                progress_bar.set_postfix({"loss": outputs.loss.item()})
+                try:
+                    input_ids = batch["input_ids"].to(device)
+                    attention_mask = batch["attention_mask"].to(device)
+                    labels = batch["labels"].to(device)
+                    outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
+                    val_loss += outputs.loss.item()
+                    progress_bar.set_postfix({"loss": outputs.loss.item()})
+                except Exception as e:
+                    logger.error(f"Error in validation loop: {e}")
+                    raise
         
         avg_val_loss = val_loss / len(val_loader)
         training_history["val_loss"].append(avg_val_loss)
@@ -224,16 +233,17 @@ def train_model(args):
     logger.info(f"Training completed. Best validation loss: {best_val_loss:.4f}")
     return model, tokenizer
 
-# Prediction Function with Google Search Integration
+# Prediction Function
 def predict_conflicts(args, model=None, tokenizer=None):
-    """Predict conflicts with structured output and Google Search context"""
+    """Predict conflicts with structured output, using local model or Hugging Face API"""
     device = torch.device(args.device)
+    use_hf_api = args.use_hf_api
     
-    if model is None or tokenizer is None:
+    if not use_hf_api and (model is None or tokenizer is None):
         try:
-            logger.info(f"Loading model from {args.output_dir}")
+            logger.info(f"Loading local model from {args.output_dir}")
             model = T5ForConditionalGeneration.from_pretrained(args.output_dir).to(device)
-            tokenizer = T5Tokenizer.from_pretrained(args.output_dir,legacy=False)
+            tokenizer = T5Tokenizer.from_pretrained(args.output_dir)
         except Exception as e:
             logger.error(f"Error loading model: {e}")
             return
@@ -242,7 +252,7 @@ def predict_conflicts(args, model=None, tokenizer=None):
         df_input = pd.read_csv(args.test_file, encoding='utf-8')
         logger.info(f"Loaded {len(df_input)} requirement pairs")
     except Exception as e:
-        logger.error(f"Error reading input file: {e}")
+        logger.error(f"Error reading test file: {e}")
         return
 
     PREDEFINED_CONFLICTS = {
@@ -258,37 +268,33 @@ def predict_conflicts(args, model=None, tokenizer=None):
         req1 = row["Requirement_1"]
         req2 = row["Requirement_2"]
         
-        # Generate a search query for engineering context
-        query = f"engineering conflict between '{req1}' and '{req2}' site:*.edu | site:*.org | site:*.gov -inurl:(signup | login)"
-        search_context = google_search(query)
-        
-        # Enhanced prompt with search context
         input_text = (
             f"Analyze requirements conflict: {req1} AND {req2} "
-            f"Engineering context from web: {search_context[:200]} "  # Truncate for brevity
             "Generate output format: Conflict_Type||Conflict_Reason||Resolution_Suggestion:"
         )
         
-        inputs = tokenizer(
-            input_text,
-            return_tensors="pt",
-            max_length=256,
-            padding="max_length",
-            truncation=True
-        ).to(device)
-        
-        with torch.no_grad():
-            outputs = model.generate(
-                input_ids=inputs.input_ids,
-                attention_mask=inputs.attention_mask,
+        if use_hf_api:
+            full_output = huggingface_inference(input_text)
+        else:
+            inputs = tokenizer(
+                input_text,
+                return_tensors="pt",
                 max_length=256,
-                num_beams=5,
-                early_stopping=True
-            )
+                padding="max_length",
+                truncation=True
+            ).to(device)
+            
+            with torch.no_grad():
+                outputs = model.generate(
+                    input_ids=inputs.input_ids,
+                    attention_mask=inputs.attention_mask,
+                    max_length=256,
+                    num_beams=5,
+                    early_stopping=True
+                )
+            full_output = tokenizer.decode(outputs[0], skip_special_tokens=True)
         
-        full_output = tokenizer.decode(outputs[0], skip_special_tokens=True)
         parts = full_output.split("||")
-        
         conflict_type = parts[0].strip() if len(parts) > 0 else "Other"
         if conflict_type not in PREDEFINED_CONFLICTS:
             conflict_type = "Other"
@@ -300,8 +306,7 @@ def predict_conflicts(args, model=None, tokenizer=None):
             "Requirement_2": req2,
             "Conflict_Type": conflict_type,
             "Conflict_Reason": conflict_reason,
-            "Resolution_Suggestion": resolution,
-            "Search_Context": search_context[:200]  # Include truncated context in output
+            "Resolution_Suggestion": resolution
         })
     
     output_df = pd.DataFrame(results)
@@ -311,11 +316,11 @@ def predict_conflicts(args, model=None, tokenizer=None):
 
 # Main Function
 def main():
-    parser = argparse.ArgumentParser(description="Requirements Conflict Detection with Google Search")
+    parser = argparse.ArgumentParser(description="Requirements Conflict Detection with Hugging Face API")
     
     parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="train")
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu")
-    parser.add_argument("--input_file", type=str, default="training_data.csv")
+    parser.add_argument("--input_file", type=str, default="TwoWheeler_Requirement_Conflicts.csv")
     parser.add_argument("--output_dir", type=str, default="./trained_model")
     parser.add_argument("--model_name", type=str, default="t5-base")
     parser.add_argument("--epochs", type=int, default=10)
@@ -327,8 +332,9 @@ def main():
     parser.add_argument("--patience", type=int, default=3)
     parser.add_argument("--augment", action="store_true")
     parser.add_argument("--augment_multiplier", type=int, default=2)
-    parser.add_argument("--test_file", type=str, default="./TwoWheeler_Requirement_Conflicts.csv")
+    parser.add_argument("--test_file", type=str, default="./test_data.csv")
     parser.add_argument("--output_file", type=str, default="conflict_results.csv")
+    parser.add_argument("--use_hf_api", action="store_true", help="Use Hugging Face Inference API for predictions")
     
     args = parser.parse_args()
     
