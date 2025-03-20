@@ -323,7 +323,7 @@ def main():
     parser.add_argument("--input_file", type=str, default="TwoWheeler_Requirement_Conflicts.csv")
     parser.add_argument("--output_dir", type=str, default="./trained_model")
     parser.add_argument("--model_name", type=str, default="t5-base")
-    parser.add_argument("--epochs", type=int, default=10)
+    parser.add_argument("--epochs", type=int, default=14)
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--learning_rate", type=float, default=3e-5)
     parser.add_argument("--weight_decay", type=float, default=0.01)
