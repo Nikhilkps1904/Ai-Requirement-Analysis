@@ -1740,3 +1740,1223 @@
 2025-03-20 04:57:29,859 - INFO - Validation loss decreased from 0.5551 to 0.0760. Saving model...
 2025-03-20 05:08:26,044 - INFO - Epoch 3/14, Train Loss: 0.0656, Val Loss: 0.0479
 2025-03-20 05:08:26,045 - INFO - Validation loss decreased from 0.0760 to 0.0479. Saving model...
+2025-03-20 05:14:57,505 - INFO - Using device: cpu
+2025-03-20 05:14:57,509 - INFO - Training on 720 examples, validating on 180 examples
+2025-03-20 05:18:03,124 - INFO - Epoch 1/10, Train Loss: 9.6157, Val Loss: 0.5684
+2025-03-20 05:18:03,124 - INFO - Validation loss decreased from inf to 0.5684. Saving model...
+2025-03-20 05:21:07,897 - INFO - Epoch 2/10, Train Loss: 0.7447, Val Loss: 0.1477
+2025-03-20 05:21:07,897 - INFO - Validation loss decreased from 0.5684 to 0.1477. Saving model...
+2025-03-20 05:24:12,405 - INFO - Epoch 3/10, Train Loss: 0.1554, Val Loss: 0.0860
+2025-03-20 05:24:12,405 - INFO - Validation loss decreased from 0.1477 to 0.0860. Saving model...
+2025-03-20 05:27:15,762 - INFO - Epoch 4/10, Train Loss: 0.0976, Val Loss: 0.0692
+2025-03-20 05:27:15,762 - INFO - Validation loss decreased from 0.0860 to 0.0692. Saving model...
+2025-03-20 05:30:19,359 - INFO - Epoch 5/10, Train Loss: 0.0798, Val Loss: 0.0587
+2025-03-20 05:30:19,359 - INFO - Validation loss decreased from 0.0692 to 0.0587. Saving model...
+2025-03-20 05:33:22,155 - INFO - Epoch 6/10, Train Loss: 0.0695, Val Loss: 0.0524
+2025-03-20 05:33:22,156 - INFO - Validation loss decreased from 0.0587 to 0.0524. Saving model...
+2025-03-20 05:36:26,351 - INFO - Epoch 7/10, Train Loss: 0.0635, Val Loss: 0.0489
+2025-03-20 05:36:26,351 - INFO - Validation loss decreased from 0.0524 to 0.0489. Saving model...
+2025-03-20 05:39:29,546 - INFO - Epoch 8/10, Train Loss: 0.0606, Val Loss: 0.0470
+2025-03-20 05:39:29,546 - INFO - Validation loss decreased from 0.0489 to 0.0470. Saving model...
+2025-03-20 05:42:33,602 - INFO - Epoch 9/10, Train Loss: 0.0591, Val Loss: 0.0462
+2025-03-20 05:42:33,602 - INFO - Validation loss decreased from 0.0470 to 0.0462. Saving model...
+2025-03-20 05:45:37,399 - INFO - Epoch 10/10, Train Loss: 0.0588, Val Loss: 0.0460
+2025-03-20 05:45:37,399 - INFO - Validation loss decreased from 0.0462 to 0.0460. Saving model...
+2025-03-20 05:45:37,810 - INFO - Training completed. Best validation loss: 0.0460
+2025-03-20 05:45:37,816 - INFO - Model training completed!
+2025-03-20 05:49:21,610 - INFO - Using device: cpu
+2025-03-20 05:49:21,615 - INFO - Training on 720 examples, validating on 180 examples
+2025-03-20 05:52:36,329 - INFO - Epoch 1/10, Train Loss: 9.5189, Val Loss: 0.5706
+2025-03-20 05:52:36,329 - INFO - Validation loss decreased from inf to 0.5706. Saving model...
+2025-03-20 05:55:40,834 - INFO - Epoch 2/10, Train Loss: 0.6833, Val Loss: 0.1413
+2025-03-20 05:55:40,834 - INFO - Validation loss decreased from 0.5706 to 0.1413. Saving model...
+2025-03-20 05:58:45,209 - INFO - Epoch 3/10, Train Loss: 0.1458, Val Loss: 0.0849
+2025-03-20 05:58:45,210 - INFO - Validation loss decreased from 0.1413 to 0.0849. Saving model...
+2025-03-20 06:01:51,196 - INFO - Epoch 4/10, Train Loss: 0.0965, Val Loss: 0.0688
+2025-03-20 06:01:51,196 - INFO - Validation loss decreased from 0.0849 to 0.0688. Saving model...
+2025-03-20 06:04:55,781 - INFO - Epoch 5/10, Train Loss: 0.0794, Val Loss: 0.0580
+2025-03-20 06:04:55,782 - INFO - Validation loss decreased from 0.0688 to 0.0580. Saving model...
+2025-03-20 06:07:59,768 - INFO - Epoch 6/10, Train Loss: 0.0691, Val Loss: 0.0521
+2025-03-20 06:07:59,768 - INFO - Validation loss decreased from 0.0580 to 0.0521. Saving model...
+2025-03-20 06:11:03,745 - INFO - Epoch 7/10, Train Loss: 0.0631, Val Loss: 0.0488
+2025-03-20 06:11:03,746 - INFO - Validation loss decreased from 0.0521 to 0.0488. Saving model...
+2025-03-20 06:14:08,026 - INFO - Epoch 8/10, Train Loss: 0.0597, Val Loss: 0.0471
+2025-03-20 06:14:08,026 - INFO - Validation loss decreased from 0.0488 to 0.0471. Saving model...
+2025-03-20 06:17:13,054 - INFO - Epoch 9/10, Train Loss: 0.0581, Val Loss: 0.0462
+2025-03-20 06:17:13,054 - INFO - Validation loss decreased from 0.0471 to 0.0462. Saving model...
+2025-03-20 06:20:18,337 - INFO - Epoch 10/10, Train Loss: 0.0576, Val Loss: 0.0458
+2025-03-20 06:20:18,337 - INFO - Validation loss decreased from 0.0462 to 0.0458. Saving model...
+2025-03-20 06:20:18,807 - INFO - Training completed. Best validation loss: 0.0458
+2025-03-20 06:20:18,813 - INFO - Model training completed!
+2025-03-20 06:24:29,598 - INFO - Loading local model from ./trained_model
+2025-03-20 06:24:29,864 - INFO - Loaded 10 requirement pairs
+2025-03-20 06:25:55,567 - INFO - Analysis complete. Results saved to conflict_results.csv
+2025-03-20 06:25:55,582 - INFO - Prediction completed!
+2025-03-20 06:26:27,042 - INFO - Loading local model from ./trained_model
+2025-03-20 06:26:27,323 - INFO - Loaded 10 requirement pairs
+2025-03-20 06:27:53,037 - INFO - Analysis complete. Results saved to conflict_results.csv
+2025-03-20 06:27:53,052 - INFO - Prediction completed!
+2025-03-20 06:36:07,020 - INFO - Loading local model from ./trained_model
+2025-03-20 06:36:07,280 - INFO - Loaded 20 requirement pairs
+2025-03-20 07:46:37,086 - INFO - Loading local model from ./trained_model
+2025-03-20 07:46:37,539 - ERROR - Invalid test file format. Ensure it has either 'Requirement' or 'Requirement_1' & 'Requirement_2'.
+2025-03-20 07:46:37,542 - INFO - Prediction completed!
+2025-03-20 07:48:15,431 - INFO - Loading local model from ./trained_model
+2025-03-20 07:48:15,707 - INFO - Detected single-column requirements format. Generating requirement pairs...
+2025-03-20 07:48:15,708 - INFO - Generated 190 pairs from 20 requirements
+2025-03-20 07:48:15,709 - INFO - Loaded 190 requirement pairs
+2025-03-20 08:15:01,180 - INFO - Analysis complete. Results saved to conflict_results.csv
+2025-03-20 08:15:01,190 - INFO - Prediction completed!
+2025-03-20 08:41:03,226 - INFO - Loading local model from ./trained_model
+2025-03-20 08:41:03,498 - INFO - Loaded 20 requirement pairs
+2025-03-21 06:34:18,466 - INFO - Using device: cpu
+2025-03-21 06:34:18,477 - INFO - Training on 720 examples, validating on 180 examples
+2025-03-21 06:36:03,132 - INFO - Loaded 20 requirement pairs
+2025-03-21 07:40:38,061 - INFO - Loading local model from ./trained_model
+2025-03-21 07:40:46,727 - INFO - Loaded 10 requirement pairs
+2025-03-21 07:42:39,605 - INFO - Analysis complete. Results saved to conflict_results.csv
+2025-03-21 07:42:39,619 - INFO - Prediction completed!
+2025-03-21 08:13:48,087 - INFO - Starting pseudo-training with 900 examples using Hugging Face API
+2025-03-21 08:13:48,087 - INFO - Pseudo-training iteration 1/3
+2025-03-21 08:13:50,462 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:13:53,127 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:13:56,642 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:14:00,362 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:14:02,965 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:14:05,824 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:14:08,478 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:14:10,637 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:14:13,376 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:15:49,702 - INFO - Starting pseudo-training with 900 examples using Hugging Face API
+2025-03-21 08:15:49,703 - INFO - Pseudo-training iteration 1/3
+2025-03-21 08:15:49,993 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:15:50,283 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:15:50,582 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:15:50,908 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:15:51,211 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:15:51,519 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:15:51,833 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:15:52,134 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:15:52,418 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:15:52,701 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:15:54,976 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:15:59,144 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:01,719 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:05,078 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:08,399 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:10,652 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:13,448 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:16,470 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:18,620 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:21,418 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:26,693 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:30,253 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:47,440 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:52,480 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:55,302 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:57,211 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:16:59,543 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:02,934 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:05,338 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:08,156 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:10,824 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:13,130 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:18,538 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:21,899 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:23,875 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:26,691 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:28,665 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:30,715 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:33,809 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:35,941 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:38,893 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:42,294 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:44,738 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:47,112 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:49,543 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:52,048 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:55,287 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:17:59,372 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:02,368 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:04,294 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:06,236 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:08,665 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:11,357 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:13,261 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:15,550 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:18,056 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:19,978 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:22,033 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:23,945 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:30,849 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:33,125 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:35,071 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:38,624 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:41,356 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:43,212 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:45,218 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:47,590 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:51,257 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:54,868 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:18:59,062 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:01,516 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:03,660 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:05,924 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:08,711 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:10,986 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:13,688 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:17,644 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:20,316 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:24,701 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:28,612 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:31,047 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:33,289 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:35,656 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:38,443 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:40,697 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:44,770 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:46,926 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:49,134 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:53,477 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:19:55,628 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:00,159 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:03,617 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:06,318 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:08,391 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:10,537 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:12,838 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:15,398 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:18,403 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:25,124 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:30,002 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:34,317 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:41,454 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:45,081 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:48,365 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:52,942 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:20:56,253 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:01,487 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:03,549 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:05,572 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:08,685 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:12,363 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:14,657 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:17,710 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:20,170 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:23,028 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:25,895 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:27,940 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:31,438 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:36,152 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:41,459 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:48,810 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:51,163 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:53,253 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:55,771 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:57,467 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:21:59,631 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:02,459 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:08,197 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:12,113 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:14,748 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:17,855 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:20,880 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:24,112 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:27,618 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:30,297 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:33,508 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:36,893 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:43,125 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:45,808 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:49,951 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:53,731 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:56,006 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:22:58,823 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:00,733 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:03,222 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:19,275 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:21,155 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:23,340 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:25,126 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:27,553 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:31,081 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:33,800 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:37,349 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:40,547 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:43,241 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:47,027 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:50,507 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:52,629 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:54,468 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:56,780 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:23:59,981 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:02,224 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:05,364 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:11,572 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:13,917 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:16,941 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:19,974 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:22,477 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:25,246 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:27,634 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:29,610 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:31,855 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:34,198 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:36,483 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:39,144 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:41,764 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:43,308 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:45,464 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:47,845 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:51,503 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:53,321 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:55,974 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:24:58,324 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:25:01,055 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:25:03,806 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 08:25:04,511 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google-t5/t5-base
+2025-03-21 08:25:04,765 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google-t5/t5-base
+2025-03-21 08:25:05,410 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google-t5/t5-base
+2025-03-21 08:25:05,721 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google-t5/t5-base
+2025-03-21 08:25:06,348 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google-t5/t5-base
+2025-03-21 08:25:07,692 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google-t5/t5-base
+2025-03-21 08:25:08,308 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google-t5/t5-base
+2025-03-21 08:25:08,914 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google-t5/t5-base
+2025-03-21 08:25:09,186 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google-t5/t5-base
+2025-03-21 08:25:10,807 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google-t5/t5-base
+2025-03-21 08:25:11,426 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google-t5/t5-base
+2025-03-21 08:25:11,692 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google-t5/t5-base
+2025-03-21 09:13:30,656 - INFO - Starting pseudo-training with 900 examples using Hugging Face API
+2025-03-21 09:13:30,656 - INFO - Pseudo-training iteration 1/1
+2025-03-21 09:13:30,668 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:33,883 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 216
+2025-03-21 09:13:33,883 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:33,885 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:36,543 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:13:36,544 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:36,545 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:37,161 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 110
+2025-03-21 09:13:37,162 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:37,163 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:40,106 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:13:40,107 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:40,108 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:40,518 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 259
+2025-03-21 09:13:40,519 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:40,520 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:43,039 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:13:43,039 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:43,041 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:43,666 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 228
+2025-03-21 09:13:43,666 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:43,668 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:43,925 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 238
+2025-03-21 09:13:43,925 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:43,926 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:46,833 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:13:46,834 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:46,835 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:47,438 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 279
+2025-03-21 09:13:47,438 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:47,440 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:48,096 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 269
+2025-03-21 09:13:48,096 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:48,098 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:50,963 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:13:50,964 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:50,965 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:51,582 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 232
+2025-03-21 09:13:51,582 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:51,584 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:54,044 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:13:54,044 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:54,046 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:56,612 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:13:56,613 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:56,615 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:13:59,180 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:13:59,180 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:13:59,182 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:02,135 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:14:02,136 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:02,137 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:02,388 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 284
+2025-03-21 09:14:02,388 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:02,389 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:02,626 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 231
+2025-03-21 09:14:02,627 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:02,628 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:03,245 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 241
+2025-03-21 09:14:03,246 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:03,247 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:03,855 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 320
+2025-03-21 09:14:03,855 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:03,857 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:04,094 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 289
+2025-03-21 09:14:04,095 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:04,096 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:06,354 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:14:06,354 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:06,355 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:10,448 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:14:10,451 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:10,452 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:10,695 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 273
+2025-03-21 09:14:10,695 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:10,696 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:12,668 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:14:12,668 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:12,670 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:13,278 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 264
+2025-03-21 09:14:13,279 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:13,280 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:13,545 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 287
+2025-03-21 09:14:13,546 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:13,547 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:13,783 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 229
+2025-03-21 09:14:13,783 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:13,784 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:14,388 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 241
+2025-03-21 09:14:14,388 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:14,389 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:14,635 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 246
+2025-03-21 09:14:14,635 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:14,637 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:15,240 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 232
+2025-03-21 09:14:15,240 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:15,241 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:15,862 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 254
+2025-03-21 09:14:15,863 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:15,864 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:19,490 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:14:19,491 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:19,492 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:19,732 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 249
+2025-03-21 09:14:19,733 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:19,734 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:20,351 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 275
+2025-03-21 09:14:20,351 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:20,352 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:22,456 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:14:22,457 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:22,458 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:22,700 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 253
+2025-03-21 09:14:22,701 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:22,702 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:26,387 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:14:26,387 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:26,388 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:26,636 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 259
+2025-03-21 09:14:26,637 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:26,638 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:26,870 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 253
+2025-03-21 09:14:26,870 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:26,871 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:33,110 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 322
+2025-03-21 09:14:33,111 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:33,112 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:33,369 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 277
+2025-03-21 09:14:33,370 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:33,371 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:33,673 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 110
+2025-03-21 09:14:33,674 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:33,675 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:33,912 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 279
+2025-03-21 09:14:33,913 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:33,914 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:34,164 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 267
+2025-03-21 09:14:34,165 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:34,166 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:34,409 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 332
+2025-03-21 09:14:34,409 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:34,410 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:35,036 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 296
+2025-03-21 09:14:35,036 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:35,037 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:39,375 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:14:39,376 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:39,377 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:40,008 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 252
+2025-03-21 09:14:40,009 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:40,010 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:40,265 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 215
+2025-03-21 09:14:40,266 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:40,267 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:40,495 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 258
+2025-03-21 09:14:40,496 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:40,497 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:40,732 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 281
+2025-03-21 09:14:40,732 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:40,733 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:41,336 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 110
+2025-03-21 09:14:41,337 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:41,338 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:41,943 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 271
+2025-03-21 09:14:41,944 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:41,945 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:42,194 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 164
+2025-03-21 09:14:42,194 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:42,195 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:46,737 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:14:46,737 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:46,739 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:56,779 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:14:56,779 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:56,781 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:57,010 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 229
+2025-03-21 09:14:57,010 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:57,011 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:57,292 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 296
+2025-03-21 09:14:57,293 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:57,294 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:14:57,525 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 246
+2025-03-21 09:14:57,526 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:14:57,527 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:01,248 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:01,249 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:01,250 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:06,198 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:06,198 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:06,200 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:07,057 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 269
+2025-03-21 09:15:07,058 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:07,059 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:09,826 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:09,827 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:09,828 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:10,064 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 225
+2025-03-21 09:15:10,064 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:10,065 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:10,297 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 194
+2025-03-21 09:15:10,298 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:10,299 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:10,532 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 369
+2025-03-21 09:15:10,533 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:10,534 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:13,428 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:13,429 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:13,430 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:17,195 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:17,197 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:17,199 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:17,427 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 253
+2025-03-21 09:15:17,428 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:17,429 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:17,663 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 243
+2025-03-21 09:15:17,663 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:17,665 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:17,934 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 241
+2025-03-21 09:15:17,934 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:17,936 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:18,332 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 196
+2025-03-21 09:15:18,332 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:18,334 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:18,569 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 265
+2025-03-21 09:15:18,569 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:18,570 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:18,805 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 256
+2025-03-21 09:15:18,805 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:18,806 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:19,039 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 261
+2025-03-21 09:15:19,039 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:19,040 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:19,268 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 239
+2025-03-21 09:15:19,268 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:19,270 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:19,880 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 275
+2025-03-21 09:15:19,881 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:19,882 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:24,523 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:24,523 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:24,525 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:27,471 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:27,471 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:27,472 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:28,090 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 228
+2025-03-21 09:15:28,090 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:28,091 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:28,326 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 281
+2025-03-21 09:15:28,327 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:28,328 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:28,938 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 256
+2025-03-21 09:15:28,939 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:28,940 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:31,551 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:31,551 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:31,552 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:34,288 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:34,289 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:34,290 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:34,522 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 264
+2025-03-21 09:15:34,523 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:34,524 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:37,321 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:37,322 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:37,323 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:37,604 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 324
+2025-03-21 09:15:37,605 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:37,606 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:39,734 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:39,735 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:39,736 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:40,372 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 300
+2025-03-21 09:15:40,372 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:40,374 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:40,608 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 312
+2025-03-21 09:15:40,609 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:40,610 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:40,838 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 292
+2025-03-21 09:15:40,838 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:40,839 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:42,782 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:42,782 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:42,784 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:43,072 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 236
+2025-03-21 09:15:43,072 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:43,073 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:43,307 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 274
+2025-03-21 09:15:43,308 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:43,309 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:43,602 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 110
+2025-03-21 09:15:43,603 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:43,604 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:43,834 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 271
+2025-03-21 09:15:43,834 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:43,835 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:44,065 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 366
+2025-03-21 09:15:44,066 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:44,067 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:44,300 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 261
+2025-03-21 09:15:44,301 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:44,302 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:44,902 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 218
+2025-03-21 09:15:44,902 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:44,903 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:45,132 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 346
+2025-03-21 09:15:45,133 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:45,134 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:45,728 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 286
+2025-03-21 09:15:45,729 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:45,730 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:48,075 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:48,075 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:48,076 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:48,689 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 315
+2025-03-21 09:15:48,690 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:48,691 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:48,918 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 259
+2025-03-21 09:15:48,919 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:48,920 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:49,146 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 222
+2025-03-21 09:15:49,146 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:49,148 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:51,665 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:51,666 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:51,667 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:53,743 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:15:53,743 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:53,744 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:53,993 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 271
+2025-03-21 09:15:53,993 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:53,994 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:54,235 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 285
+2025-03-21 09:15:54,235 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:54,236 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:54,858 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 269
+2025-03-21 09:15:54,858 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:54,860 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:55,461 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 189
+2025-03-21 09:15:55,462 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:55,463 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:56,071 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 239
+2025-03-21 09:15:56,072 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:56,073 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:56,318 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 240
+2025-03-21 09:15:56,319 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:56,320 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:56,931 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 284
+2025-03-21 09:15:56,931 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:56,932 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:57,164 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 238
+2025-03-21 09:15:57,164 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:57,165 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:57,412 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 222
+2025-03-21 09:15:57,412 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:57,413 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:57,734 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 214
+2025-03-21 09:15:57,734 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:57,735 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:58,344 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 279
+2025-03-21 09:15:58,344 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:58,346 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:58,598 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 274
+2025-03-21 09:15:58,599 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:58,600 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:59,219 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 265
+2025-03-21 09:15:59,220 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:59,221 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:59,452 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 272
+2025-03-21 09:15:59,453 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:59,454 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:15:59,981 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 257
+2025-03-21 09:15:59,982 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:15:59,983 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:00,228 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 110
+2025-03-21 09:16:00,229 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:00,230 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:02,408 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:16:02,408 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:02,409 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:02,642 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 249
+2025-03-21 09:16:02,643 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:02,644 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:02,889 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 256
+2025-03-21 09:16:02,889 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:02,891 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:06,446 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 271
+2025-03-21 09:16:06,446 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:06,447 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:08,716 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:16:08,716 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:08,717 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:08,957 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 235
+2025-03-21 09:16:08,958 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:08,959 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:09,212 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 255
+2025-03-21 09:16:09,212 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:09,214 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:09,449 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 196
+2025-03-21 09:16:09,449 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:09,451 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:09,697 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 291
+2025-03-21 09:16:09,698 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:09,699 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:10,296 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 269
+2025-03-21 09:16:10,296 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:10,298 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:11,187 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 280
+2025-03-21 09:16:11,187 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:11,189 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:11,430 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 255
+2025-03-21 09:16:11,430 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:11,431 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:11,679 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 347
+2025-03-21 09:16:11,679 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:11,680 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:11,924 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 280
+2025-03-21 09:16:11,924 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:11,926 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:12,163 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 254
+2025-03-21 09:16:12,163 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:12,164 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:12,445 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 270
+2025-03-21 09:16:12,445 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:12,447 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:13,103 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 260
+2025-03-21 09:16:13,103 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:13,104 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:13,709 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 270
+2025-03-21 09:16:13,709 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:13,711 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:13,978 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 219
+2025-03-21 09:16:13,978 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:13,979 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:14,218 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 265
+2025-03-21 09:16:14,218 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:14,220 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:14,828 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 220
+2025-03-21 09:16:14,828 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:14,829 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:15,084 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 226
+2025-03-21 09:16:15,085 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:15,086 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:15,364 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 257
+2025-03-21 09:16:15,365 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:15,366 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:16,024 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 218
+2025-03-21 09:16:16,024 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:16,025 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:18,089 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:16:18,090 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:18,091 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:18,532 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 328
+2025-03-21 09:16:18,533 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:18,534 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:18,785 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 265
+2025-03-21 09:16:18,785 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:18,786 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:22,336 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:16:22,336 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:22,338 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:22,579 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 281
+2025-03-21 09:16:22,579 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:22,581 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:25,034 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:16:25,035 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:25,036 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:25,268 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 302
+2025-03-21 09:16:25,269 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:25,270 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:25,524 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 312
+2025-03-21 09:16:25,525 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:25,526 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:26,142 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 110
+2025-03-21 09:16:26,143 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:26,144 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:26,384 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 218
+2025-03-21 09:16:26,384 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:26,386 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:27,004 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 219
+2025-03-21 09:16:27,004 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:27,005 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:27,250 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 274
+2025-03-21 09:16:27,251 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:27,252 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:27,492 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 282
+2025-03-21 09:16:27,492 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:27,494 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:27,730 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 305
+2025-03-21 09:16:27,731 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:27,732 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:30,199 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 None
+2025-03-21 09:16:30,199 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:30,201 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:16:30,446 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google-t5/t5-base HTTP/11" 200 257
+2025-03-21 09:16:30,446 - ERROR - Hugging Face API error: 'generated_text'
+2025-03-21 09:16:30,447 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:18:50,064 - INFO - Starting pseudo-training with 900 examples using Hugging Face API
+2025-03-21 09:18:50,064 - INFO - Pseudo-training iteration 1/1
+2025-03-21 09:18:50,069 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:18:53,348 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:18:53,351 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:18:56,322 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:18:56,323 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:00,002 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:00,004 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:03,126 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:03,128 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:07,480 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:07,481 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:10,821 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:10,823 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:14,878 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:14,880 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:18,524 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:18,529 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:22,374 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:22,376 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:25,773 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:25,775 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:26,940 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:26,941 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:28,279 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:28,282 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:31,741 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:31,743 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:33,049 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:33,050 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:36,206 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:36,208 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:40,387 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:40,389 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:43,132 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:43,137 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:44,353 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:44,354 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:47,697 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:47,699 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:51,666 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:51,667 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:54,855 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:54,857 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:19:58,694 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:19:58,697 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:01,718 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:20:01,722 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:14,469 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:20:14,471 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:15,615 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:20:15,618 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:16,740 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:20:16,742 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:18,264 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:20:18,265 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:24,758 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:20:24,760 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:37,738 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:20:37,740 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:40,576 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:20:40,579 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:41,643 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:20:41,644 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:45,195 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:20:45,198 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:45,658 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:45,658 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:45,659 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:45,902 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:45,903 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:45,904 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:46,176 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:46,176 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:46,177 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:46,463 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:46,463 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:46,465 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:47,091 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:47,091 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:47,093 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:47,599 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:47,599 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:47,601 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:47,891 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:47,891 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:47,893 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:48,143 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:48,143 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:48,144 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:48,387 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:48,388 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:48,389 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:48,626 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:48,627 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:48,628 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:48,864 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:48,864 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:48,865 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:49,112 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:49,113 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:49,114 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:49,368 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:49,368 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:49,369 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:49,991 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:49,991 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:49,992 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:50,620 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:50,620 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:50,621 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:50,865 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:50,866 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:50,867 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:52,506 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:52,507 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:52,508 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:53,128 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:53,129 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:53,130 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:53,361 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:53,362 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:53,363 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:53,618 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:53,619 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:53,620 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:54,252 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:54,253 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:54,255 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:54,515 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:54,516 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:54,517 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:54,768 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:54,769 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:54,770 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:55,396 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:55,397 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:55,398 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:55,635 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:55,636 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:55,637 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:55,877 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:55,878 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:55,879 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:56,567 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:56,567 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:56,568 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:57,257 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:57,258 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:57,259 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:57,538 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:57,538 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:57,539 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:58,175 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:58,176 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:58,177 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:58,437 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:58,437 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:58,439 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:58,711 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:58,712 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:58,713 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:59,331 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:59,332 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:59,333 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:20:59,956 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:20:59,957 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:20:59,958 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:00,204 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:00,205 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:00,206 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:04,652 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:04,652 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:04,654 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:04,919 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:04,919 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:04,920 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:05,185 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:05,186 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:05,187 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:06,442 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:06,443 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:06,444 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:06,922 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:06,923 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:06,924 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:07,187 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:07,188 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:07,189 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:08,793 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:08,793 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:08,795 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:09,413 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:09,414 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:09,415 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:09,667 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:09,668 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:09,669 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:09,909 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:09,910 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:09,911 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:10,158 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:10,159 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:10,160 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:10,410 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:10,410 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:10,412 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:10,664 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:10,665 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:10,666 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:11,284 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:11,285 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:11,286 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:11,941 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:11,941 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:11,943 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:12,194 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:12,195 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:12,196 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:13,463 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:13,464 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:13,465 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:14,087 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:14,087 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:14,088 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:15,784 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:15,785 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:15,786 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:16,071 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:16,072 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:16,074 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:16,739 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:16,740 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:16,741 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:17,001 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:17,002 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:17,003 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:17,633 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:17,633 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:17,634 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:18,308 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:18,308 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:18,309 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:18,564 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:18,565 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:18,566 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:19,287 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:19,287 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:19,288 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:19,922 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:19,923 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:19,924 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:20,537 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:20,537 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:20,538 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:21,166 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:21,167 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:21,168 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:21,877 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:21,877 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:21,879 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:22,521 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 503 None
+2025-03-21 09:21:22,522 - ERROR - Hugging Face API error: 503 Server Error: Service Temporarily Unavailable for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:21:22,523 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:41,412 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:21:41,414 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:21:51,733 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:21:51,735 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:05,962 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:05,963 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:11,418 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:11,419 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:13,726 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:13,727 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:15,697 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:15,699 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:27,714 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:27,715 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:29,528 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:29,531 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:31,311 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:31,313 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:32,607 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:32,608 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:35,249 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:35,250 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:36,628 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:36,630 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:38,281 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:38,283 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:39,434 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:39,436 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:40,797 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:40,799 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:42,332 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:42,333 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:43,943 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:43,944 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:45,564 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:45,566 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:47,727 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:47,728 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:49,122 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:49,125 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:50,847 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:50,849 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:52,152 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:52,154 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:53,385 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:53,387 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:22:54,539 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:22:54,541 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:05,609 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:05,611 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:07,040 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:07,043 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:08,998 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:09,001 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:10,302 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:10,304 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:12,588 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:12,589 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:13,905 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:13,906 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:16,155 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:16,157 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:18,217 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:18,218 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:20,994 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:20,999 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:23,266 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:23,267 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:25,312 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:25,316 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:31,603 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:31,605 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:23:50,405 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:23:50,407 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:24:11,980 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:24:11,982 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:24:14,781 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:24:14,782 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:24:34,164 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:24:34,166 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:24:35,778 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:24:35,780 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:24:39,607 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:24:39,608 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:24:40,843 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:24:40,845 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:24:58,579 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:24:58,582 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:25:20,677 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:25:20,681 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:25:22,218 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:25:22,220 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:25:26,520 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:25:26,522 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:25:28,201 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:25:28,203 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:25:30,061 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:25:30,063 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:25:31,314 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:25:31,316 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:25:33,668 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:25:33,670 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:25:34,904 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:25:34,906 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:25:40,492 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:25:40,494 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:25:48,446 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:25:48,447 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:25:52,104 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:25:52,106 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:25:55,876 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:25:55,878 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:26:17,546 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:26:17,548 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:26:19,100 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:26:19,101 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:26:41,634 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:26:41,636 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:26:43,106 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:26:43,107 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:26:44,959 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:26:44,961 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:19,697 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:19,699 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:21,057 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:21,059 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:22,947 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:22,949 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:27,013 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:27,017 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:28,603 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:28,604 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:36,254 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:36,258 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:39,173 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:39,174 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:40,541 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:40,543 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:42,336 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:42,338 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:44,331 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:44,333 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:46,291 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:46,293 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:49,444 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:49,446 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:52,811 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:52,813 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:56,084 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:56,085 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:27:59,153 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:27:59,155 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:28:02,639 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:28:02,640 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:28:06,197 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:28:06,199 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:28:08,886 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:28:08,888 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:28:17,593 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:28:17,595 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:28:18,914 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:28:18,916 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:28:20,187 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:28:20,189 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:28:21,782 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:28:21,783 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:28:23,024 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 200 None
+2025-03-21 09:28:23,026 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-03-21 09:29:28,498 - DEBUG - https://api-inference.huggingface.co:443 "POST /models/google/flan-t5-base HTTP/11" 500 77
+2025-03-21 09:29:28,499 - ERROR - Hugging Face API error: 500 Server Error: Internal Server Error for url: https://api-inference.huggingface.co/models/google/flan-t5-base
+2025-03-21 09:29:28,500 - DEBUG - Starting new HTTPS connection (1): api-inference.huggingface.co:443
