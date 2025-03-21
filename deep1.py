@@ -15,6 +15,7 @@ from tqdm import tqdm
 import json
 import requests
 import warnings
+import itertools
 
 # Suppress deprecation warnings from transformers
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -86,52 +87,31 @@ class RequirementConflictDataset(Dataset):
             "labels": targets.input_ids.squeeze()
         }
 
-# Load Sample Data
-def load_sample_data():
-    """Load initial sample training data"""
-    train_data = [
-        ("The vehicle must achieve a fuel efficiency of at least 50 km/l.",
-         "The engine should have a minimum power output of 25 HP.",
-         "Performance Conflict"),
-        ("The bike should include an always-on headlight for safety compliance.",
-         "Users should be able to turn off the headlight manually.",
-         "Compliance Conflict"),
-        ("The car's doors should automatically lock when the vehicle is in motion.",
-         "Passengers must be able to open the doors at any time.",
-         "Safety Conflict"),
-    ]
-    return pd.DataFrame(train_data, columns=["Requirement_1", "Requirement_2", "Conflict_Type"])
+# Generate all possible requirement pairs using n(n-1)/2
+import itertools
 
-# Data Augmentation
-def augment_dataset(df, multiplier=2):
-    """Augment dataset with simple techniques"""
-    original_len = len(df)
-    augmented_data = []
+def generate_requirement_pairs(requirements_file):
+    """Generate all possible pairs from a single-column requirements file"""
+    # Load requirements from file
+    df = pd.read_csv(requirements_file, encoding='utf-8')
     
-    replacements = {
-        "vehicle": ["machine", "transport", "automobile"],
-        "should": ["must", "needs to", "is required to"],
-        "must": ["should", "is required to", "needs to"],
-    }
+    # Ensure the file has a 'Requirement' column
+    if "Requirement ID" not in df.columns or "Requirement Text" not in df.columns:
+        logger.error("Input file must contain 'Requirement ID' and 'Requirement Text' columns.")
+        return pd.DataFrame()
     
-    for _, row in df.iterrows():
-        augmented_data.append([row["Requirement_2"], row["Requirement_1"], row["Conflict_Type"]])
+    # Format requirements as "Rxxx: Text"
+    requirements = [f"{row['Requirement ID']}: {row['Requirement Text']}" for _, row in df.iterrows()]
     
-    for _, row in df.iterrows():
-        req1, req2 = row["Requirement_1"], row["Requirement_2"]
-        for word, alternates in replacements.items():
-            if word in req1.lower() and np.random.random() > 0.5:
-                req1 = req1.replace(word, np.random.choice(alternates))
-            if word in req2.lower() and np.random.random() > 0.5:
-                req2 = req2.replace(word, np.random.choice(alternates))
-        augmented_data.append([req1, req2, row["Conflict_Type"]])
+    # Generate all unique pairs: n(n-1)/2
+    pairs = list(itertools.combinations(requirements, 2))
+    logger.info(f"Generated {len(pairs)} pairs from {len(requirements)} requirements")
     
-    augmented_df = pd.DataFrame(augmented_data, columns=["Requirement_1", "Requirement_2", "Conflict_Type"])
-    combined_df = pd.concat([df, augmented_df], ignore_index=True).sample(frac=1).reset_index(drop=True)
-    logger.info(f"Augmented dataset from {original_len} to {len(combined_df)} examples")
-    return combined_df
+    # Create DataFrame with pairs
+    pairs_df = pd.DataFrame(pairs, columns=["Requirement_1", "Requirement_2"])
+    return pairs_df
 
-# Training Function
+# Training Function (unchanged for now, will be used if labeled data provided)
 def train_model(args):
     """Train the conflict detection model"""
     device = torch.device(args.device)
@@ -140,11 +120,12 @@ def train_model(args):
     if os.path.exists(args.input_file):
         df_train = pd.read_csv(args.input_file)
     else:
-        logger.warning(f"Input file {args.input_file} not found. Using sample data.")
-        df_train = load_sample_data()
+        logger.warning(f"Input file {args.input_file} not found. Generating pairs.")
+        df_train = generate_requirement_pairs(args.requirements_file)
+        # Note: For training, we need labeled conflict types, so this would need augmentation
     
     if args.augment:
-        df_train = augment_dataset(df_train, args.augment_multiplier)
+        logger.warning("Augmentation not implemented for generated pairs yet.")
     
     train_df, val_df = train_test_split(df_train, test_size=args.validation_split, random_state=42)
     logger.info(f"Training on {len(train_df)} examples, validating on {len(val_df)} examples")
@@ -171,25 +152,21 @@ def train_model(args):
         train_loss = 0
         progress_bar = tqdm(train_loader, desc=f"Epoch {epoch+1}/{args.epochs} [Train]")
         for batch in progress_bar:
-            try:
-                input_ids = batch["input_ids"].to(device)
-                attention_mask = batch["attention_mask"].to(device)
-                labels = batch["labels"].to(device)
-                
-                outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
-                loss = outputs.loss
-                
-                optimizer.zero_grad()
-                loss.backward()
-                torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
-                optimizer.step()
-                scheduler.step()
-                
-                train_loss += loss.item()
-                progress_bar.set_postfix({"loss": loss.item()})
-            except Exception as e:
-                logger.error(f"Error in training loop: {e}")
-                raise
+            input_ids = batch["input_ids"].to(device)
+            attention_mask = batch["attention_mask"].to(device)
+            labels = batch["labels"].to(device)
+            
+            outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
+            loss = outputs.loss
+            
+            optimizer.zero_grad()
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
+            optimizer.step()
+            scheduler.step()
+            
+            train_loss += loss.item()
+            progress_bar.set_postfix({"loss": loss.item()})
         
         avg_train_loss = train_loss / len(train_loader)
         training_history["train_loss"].append(avg_train_loss)
@@ -199,16 +176,12 @@ def train_model(args):
         progress_bar = tqdm(val_loader, desc=f"Epoch {epoch+1}/{args.epochs} [Val]")
         with torch.no_grad():
             for batch in progress_bar:
-                try:
-                    input_ids = batch["input_ids"].to(device)
-                    attention_mask = batch["attention_mask"].to(device)
-                    labels = batch["labels"].to(device)
-                    outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
-                    val_loss += outputs.loss.item()
-                    progress_bar.set_postfix({"loss": outputs.loss.item()})
-                except Exception as e:
-                    logger.error(f"Error in validation loop: {e}")
-                    raise
+                input_ids = batch["input_ids"].to(device)
+                attention_mask = batch["attention_mask"].to(device)
+                labels = batch["labels"].to(device)
+                outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
+                val_loss += outputs.loss.item()
+                progress_bar.set_postfix({"loss": outputs.loss.item()})
         
         avg_val_loss = val_loss / len(val_loader)
         training_history["val_loss"].append(avg_val_loss)
@@ -233,9 +206,9 @@ def train_model(args):
     logger.info(f"Training completed. Best validation loss: {best_val_loss:.4f}")
     return model, tokenizer
 
-# Prediction Function
+# Prediction Function (Modified for Pairs)
 def predict_conflicts(args, model=None, tokenizer=None):
-    """Predict conflicts with structured output, using local model or Hugging Face API"""
+    """Predict conflicts with structured output, supporting both pairwise and single-column requirement lists"""
     device = torch.device(args.device)
     use_hf_api = args.use_hf_api
     
@@ -248,12 +221,24 @@ def predict_conflicts(args, model=None, tokenizer=None):
             logger.error(f"Error loading model: {e}")
             return
     
-    try:
+    # Load requirements file
+    if os.path.exists(args.test_file):
         df_input = pd.read_csv(args.test_file, encoding='utf-8')
-        logger.info(f"Loaded {len(df_input)} requirement pairs")
-    except Exception as e:
-        logger.error(f"Error reading test file: {e}")
+    else:
+        logger.error("Test file not found.")
         return
+    
+    # Check for format type (single-column or pairwise)
+    if "Requirement_1" in df_input.columns and "Requirement_2" in df_input.columns:
+        logger.info("Detected pairwise requirements format.")
+    elif "Requirements" in df_input.columns:
+        logger.info("Detected single-column requirements format. Generating requirement pairs...")
+        df_input = generate_requirement_pairs(args.test_file)
+    else:
+        logger.error("Invalid test file format. Ensure it has either 'Requirement' or 'Requirement_1' & 'Requirement_2'.")
+        return
+
+    logger.info(f"Loaded {len(df_input)} requirement pairs")
 
     PREDEFINED_CONFLICTS = {
         "Performance Conflict", "Compliance Conflict", "Safety Conflict",
@@ -318,12 +303,13 @@ def predict_conflicts(args, model=None, tokenizer=None):
 def main():
     parser = argparse.ArgumentParser(description="Requirements Conflict Detection with Hugging Face API")
     
-    parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="train")
+    parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="predict")
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument("--input_file", type=str, default="TwoWheeler_Requirement_Conflicts.csv")
+    parser.add_argument("--requirements_file", type=str, default="requirements.csv", help="File with raw requirements")
     parser.add_argument("--output_dir", type=str, default="./trained_model")
-    parser.add_argument("--model_name", type=str, default="t5-base")
-    parser.add_argument("--epochs", type=int, default=14)
+    parser.add_argument("--model_name", type=str, default="t5-small")
+    parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--learning_rate", type=float, default=3e-5)
     parser.add_argument("--weight_decay", type=float, default=0.01)
@@ -332,7 +318,7 @@ def main():
     parser.add_argument("--patience", type=int, default=3)
     parser.add_argument("--augment", action="store_true")
     parser.add_argument("--augment_multiplier", type=int, default=2)
-    parser.add_argument("--test_file", type=str, default="./test_data.csv")
+    parser.add_argument("--test_file", type=str, default="./test_data1.csv")
     parser.add_argument("--output_file", type=str, default="conflict_results.csv")
     parser.add_argument("--use_hf_api", action="store_true", help="Use Hugging Face Inference API for predictions")
     
