@@ -236,52 +236,112 @@ def predict_conflicts(args):
         logger.error(f"Error reading test file: {e}")
         return
 
+    # Check if Expected_Conflict exists in the input file
+    has_expected_conflict = "Expected_Conflict" in df_input.columns
+    if has_expected_conflict:
+        logger.info("Found 'Expected_Conflict' column in input file; will use it for mapping.")
+
     requirements = df_input["Requirements"].tolist()
     results = []
 
-    # Define the prompt template
+    PREDEFINED_CONFLICTS = {
+        "Performance Conflict", "Compliance Conflict", "Safety Conflict", "Cost Conflict", "Battery Conflict",
+        "Environmental Conflict", "Structural Conflict", "Comfort Conflict", "Power Source Conflict", "Reliability Conflict",
+        "Scalability Conflict", "Security Conflict", "Usability Conflict", "Maintenance Conflict", "Weight Conflict",
+        "Time-to-Market Conflict", "Compatibility Conflict", "Aesthetic Conflict", "Noise Conflict", "Regulatory Conflict",
+        "Technology Conflict", "Sustainability Conflict", "Design Conflict", "Resource Conflict", "Other"
+    }
+
     prompt_template = (
-        "Analyze two vehicle-related requirements for potential conflicts based on these 20 conflict types: "
-        "Performance Conflict, Compliance Conflict, Safety Conflict, Cost Conflict, Battery Conflict, "
-        "Environmental Conflict, Structural Conflict, Comfort Conflict, Power Source Conflict, "
-        "Reliability Conflict, Scalability Conflict, Security Conflict, Usability Conflict, "
-        "Maintenance Conflict, Weight Conflict, Time-to-Market Conflict, Compatibility Conflict, "
-        "Aesthetic Conflict, Noise Conflict, Other Conflict.\n\n"
-        "Input:\n"
-        "- Requirement 1: \"{req1}\"\n"
-        "- Requirement 2: \"{req2}\"\n\n"
-        "Task:\n"
-        "1. Determine if the two requirements potentially conflict based on the 20 conflict types.\n"
-        "2. If a conflict is detected, output only: \"Requirement 1: {req1} | Requirement 2: {req2} - Needs manual review for {conflict type(s)}.\"\n"
-        "3. If no conflict is detected, output nothing (empty string: \"\").\n"
-        "4. Do not include explanations, suggestions, or non-conflicting pairs.\n\n"
+        "Analyze two vehicle-related requirements for potential conflicts based on these conflict types: "
+        f"{', '.join(PREDEFINED_CONFLICTS)}.\n\n"
+        "Input:\n- Requirement 1: \"{req1}\"\n- Requirement 2: \"{req2}\"\n\n"
+        "Task:\n1. Identify any conflict and classify it.\n"
+        "2. If a conflict exists, output: \"Conflict_Type: {type}||Reason: {reason}||Resolution: {resolution}\"\n"
+        "3. If no conflict, output: \"\"\n"
     )
 
-    # Generate all unique pairwise combinations of requirements
+    def map_and_adjust_conflict(conflict_type, reason, resolution, req1, req2, expected_conflict=None):
+        if conflict_type == "Other":
+            if has_expected_conflict and expected_conflict and expected_conflict in PREDEFINED_CONFLICTS:
+                # Use Expected_Conflict if available and valid
+                conflict_type = expected_conflict
+                reason += f" (Mapped from Expected_Conflict: {expected_conflict})"
+                resolution = f"Address {expected_conflict} specifics"
+            else:
+                # Infer specific type based on keywords
+                req1_lower, req2_lower, reason_lower = req1.lower(), req2.lower(), reason.lower()
+                if "safety" in req1_lower or "safety" in req2_lower or "compliance" in reason_lower:
+                    conflict_type = "Compliance Conflict"
+                    reason += " (Inferred as compliance-related)"
+                    resolution = "Ensure regulatory compliance"
+                elif "speed" in req1_lower or "speed" in req2_lower or "performance" in reason_lower:
+                    conflict_type = "Performance Conflict"
+                    reason += " (Inferred as performance-related)"
+                    resolution = "Optimize performance parameters"
+                elif "battery" in req1_lower or "battery" in req2_lower or "range" in reason_lower:
+                    conflict_type = "Battery Conflict"
+                    reason += " (Inferred as battery-related)"
+                    resolution = "Adjust battery design"
+                elif "eco" in req1_lower or "eco" in req2_lower or "electricity" in reason_lower:
+                    conflict_type = "Sustainability Conflict"
+                    reason += " (Inferred as sustainability-related)"
+                    resolution = "Balance eco-friendly features"
+                # Add more inference rules as needed
+                else:
+                    conflict_type = "Other"  # Retain as "Other" if no match
+                    reason += " (No specific type inferred)"
+                    resolution = "Requires manual review"
+        return conflict_type, reason, resolution
+
     pairs = list(itertools.combinations(requirements, 2))
     logger.info(f"Generated {len(pairs)} unique pairwise combinations for analysis")
 
+    # If Expected_Conflict exists, create a mapping for quick lookup
+    expected_conflict_map = {}
+    if has_expected_conflict:
+        for idx, row in df_input.iterrows():
+            expected_conflict_map[row["Requirements"]] = row["Expected_Conflict"]
+
     for req1, req2 in tqdm(pairs, desc="Analyzing conflicts"):
         input_text = prompt_template.format(req1=req1, req2=req2)
-        
         full_output = call_inference_api(input_text)
-        if full_output and "Needs manual review" in full_output:  # Only include pairs with conflicts
+        conflict_type, reason, resolution = parse_api_output(full_output)
+
+        # Get Expected_Conflict if available (assuming it’s tied to one of the requirements)
+        expected_conflict = None
+        if has_expected_conflict:
+            expected_conflict = expected_conflict_map.get(req1) or expected_conflict_map.get(req2)
+
+        # Map "Other" and adjust columns before adding to results
+        conflict_type, reason, resolution = map_and_adjust_conflict(
+            conflict_type, reason, resolution, req1, req2, expected_conflict
+        )
+
+        if conflict_type != "":
             results.append({
                 "Requirement_1": req1,
                 "Requirement_2": req2,
-                "Output": full_output.strip()
+                "Conflict_Type": conflict_type,
+                "Conflict_Reason": reason,
+                "Resolution_Suggestion": resolution
             })
-    
+
+    # Create DataFrame with updated results
     output_df = pd.DataFrame(results)
-    
+
+    # Log the replacements made
+    other_count = len(output_df[output_df["Conflict_Type"] == "Other"])
+    logger.info(f"Rows still containing 'Other' after mapping: {other_count}")
+
     # Save to CSV and XLSX
     csv_dir, xlsx_dir = ensure_directories()
     csv_output = os.path.join(csv_dir, "results.csv")
     xlsx_output = os.path.join(xlsx_dir, "results.xlsx")
     output_df.to_csv(csv_output, index=False)
     output_df.to_excel(xlsx_output, index=False, engine='openpyxl')
-    
-    logger.info(f"Analysis complete. Results saved to {csv_output} (CSV) and {xlsx_output} (XLSX)")
+
+    logger.info(f"Analysis complete. Results saved to {csv_output} and {xlsx_output}")
     return output_df
 
 def main():
