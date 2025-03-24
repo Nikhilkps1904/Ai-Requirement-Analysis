@@ -8,8 +8,6 @@ from tqdm import tqdm
 import warnings
 from dotenv import load_dotenv
 import itertools
-import aiohttp
-import asyncio
 
 # Suppress warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -32,8 +30,8 @@ HF_API_TOKEN = os.getenv("HF_API_TOKEN")  # Your OpenRouter API key
 HF_MODEL = "mistralai/mistral-7b-instruct"  # Model for inference
 HF_API_URL = "https://openrouter.ai/api/v1/chat/completions"  # Correct OpenRouter endpoint
 
-async def call_inference_api_async(prompt, api_token=HF_API_TOKEN, api_url=HF_API_URL):
-    """Call OpenRouter API for inference asynchronously"""
+def call_inference_api(prompt, api_token=HF_API_TOKEN, api_url=HF_API_URL):
+    """Call OpenRouter API for inference"""
     headers = {
         "Authorization": f"Bearer {api_token}",
         "Content-Type": "application/json"
@@ -46,22 +44,21 @@ async def call_inference_api_async(prompt, api_token=HF_API_TOKEN, api_url=HF_AP
     }
     try:
         logger.debug(f"Sending request to {api_url} with prompt: {prompt[:100]}...")  # Truncate for readability
-        async with aiohttp.ClientSession() as session:
-            async with session.post(api_url, headers=headers, json=payload, timeout=10) as response:
-                response.raise_for_status()
-                result = await response.json()
-                logger.debug(f"Raw API response: {json.dumps(result, indent=2)}")
-                
-                if "choices" in result and len(result["choices"]) > 0:
-                    output = result["choices"][0].get("text", result["choices"][0].get("message", {}).get("content", "No output"))
-                    return output.strip()
-                elif "error" in result:
-                    logger.error(f"API error message: {result['error']}")
-                    return f"Inference failed: {result['error']}"
-                else:
-                    logger.error(f"Unexpected response format: {result}")
-                    return "Inference failed: Unexpected response format"
-    except Exception as e:
+        response = requests.post(api_url, headers=headers, json=payload, timeout=10)  # Added timeout
+        response.raise_for_status()
+        result = response.json()
+        logger.debug(f"Raw API response: {json.dumps(result, indent=2)}")
+        
+        if "choices" in result and len(result["choices"]) > 0:
+            output = result["choices"][0].get("text", result["choices"][0].get("message", {}).get("content", "No output"))
+            return output.strip()
+        elif "error" in result:
+            logger.error(f"API error message: {result['error']}")
+            return f"Inference failed: {result['error']}"
+        else:
+            logger.error(f"Unexpected response format: {result}")
+            return "Inference failed: Unexpected response format"
+    except requests.exceptions.RequestException as e:
         logger.error(f"Request failed: {str(e)}")
         return f"Inference failed: Request error - {str(e)}"
 
@@ -109,29 +106,8 @@ def ensure_directories():
     os.makedirs(xlsx_dir, exist_ok=True)
     return csv_dir, xlsx_dir
 
-async def process_example(req1, req2, expected_conflict, max_retries=3):
-    """Process a single example with retries for malformed outputs"""
-    input_text = (
-        f"Analyze the following requirements for conflicts: "
-        f"Requirement 1: {req1} "
-        f"Requirement 2: {req2} "
-        f"Expected conflict type: {expected_conflict}. "
-        "Generate your response in the following format: "
-        "Conflict_Type||Conflict_Reason||Resolution_Suggestion"
-    )
-    
-    for attempt in range(max_retries):
-        full_output = await call_inference_api_async(input_text)
-        conflict_type, conflict_reason, resolution = parse_api_output(full_output)
-        
-        if conflict_type != "Other":
-            return conflict_type, conflict_reason, resolution
-        logger.warning(f"Retry {attempt + 1} for malformed output: {full_output}")
-    
-    return "Other", "Max retries reached", "Requires manual review"
-
-async def api_pseudo_train(args):
-    """Use OpenRouter API to iteratively 'train' on the dataset asynchronously"""
+def api_pseudo_train(args):
+    """Use OpenRouter API to iteratively 'train' on the dataset"""
     if os.path.exists(args.input_file):
         df_train = pd.read_csv(args.input_file)
     else:
@@ -155,17 +131,20 @@ async def api_pseudo_train(args):
         iteration += 1
         logger.info(f"Pseudo-training iteration {iteration}/{max_iterations}")
         
-        tasks = []
-        for _, row in df_train.iterrows():
+        for _, row in tqdm(df_train.iterrows(), total=len(df_train), desc=f"Iteration {iteration}"):
             req1 = row["Requirement_1"]
             req2 = row["Requirement_2"]
             expected_conflict = row["Conflict_Type"]
-            tasks.append(process_example(req1, req2, expected_conflict))
-        
-        # Run all tasks concurrently
-        conflict_results = await asyncio.gather(*tasks)
-        
-        for (req1, req2, expected_conflict), (conflict_type, conflict_reason, resolution) in zip(df_train.values, conflict_results):
+            
+            input_text = (
+                f"Analyze requirements conflict: {req1} AND {req2} "
+                f"Expected conflict type: {expected_conflict}. "
+                "Generate output format: Conflict_Type||Conflict_Reason||Resolution_Suggestion"
+            )
+            
+            full_output = call_inference_api(input_text)
+            conflict_type, conflict_reason, resolution = parse_api_output(full_output)
+            
             if conflict_type not in PREDEFINED_CONFLICTS:
                 conflict_type = "Other"
             
@@ -201,8 +180,8 @@ async def api_pseudo_train(args):
     logger.info(f"Pseudo-training complete after {max_iterations} iterations. Results saved to {csv_output} (CSV) and {xlsx_output} (XLSX)")
     return output_df
 
-async def predict_conflicts(args):
-    """Predict conflicts for a single-column requirements file by analyzing pairwise combinations asynchronously"""
+def predict_conflicts(args):
+    """Predict conflicts for a single-column requirements file by analyzing pairwise combinations"""
     try:
         df_input = pd.read_csv(args.test_file, encoding='utf-8')
         if "Requirements" not in df_input.columns:
@@ -227,14 +206,15 @@ async def predict_conflicts(args):
     pairs = list(itertools.combinations(requirements, 2))
     logger.info(f"Generated {len(pairs)} unique pairwise combinations for analysis")
 
-    tasks = []
-    for req1, req2 in pairs:
-        tasks.append(process_example(req1, req2, "Unknown"))
-    
-    # Run all tasks concurrently
-    conflict_results = await asyncio.gather(*tasks)
-    
-    for (req1, req2), (conflict_type, conflict_reason, resolution) in zip(pairs, conflict_results):
+    for req1, req2 in tqdm(pairs, desc="Analyzing conflicts"):
+        input_text = (
+            f"Analyze requirements conflict: {req1} AND {req2} "
+            "Generate output format: Conflict_Type||Conflict_Reason||Resolution_Suggestion"
+        )
+        
+        full_output = call_inference_api(input_text)
+        conflict_type, conflict_reason, resolution = parse_api_output(full_output)
+        
         if conflict_type not in PREDEFINED_CONFLICTS:
             conflict_type = "Other"
         
@@ -262,7 +242,7 @@ async def predict_conflicts(args):
     logger.info(f"Analysis complete. Results saved to {csv_output} (CSV) and {xlsx_output} (XLSX)")
     return output_df
 
-async def main():
+def main():
     parser = argparse.ArgumentParser(description="Requirements Conflict Detection with OpenRouter API")
     
     parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="train")
@@ -274,12 +254,12 @@ async def main():
     args = parser.parse_args()
     
     if args.mode in ["train", "both"]:
-        await api_pseudo_train(args)
+        api_pseudo_train(args)
         logger.info("API pseudo-training completed!")
     
     if args.mode in ["predict", "both"]:
-        await predict_conflicts(args)
+        predict_conflicts(args)
         logger.info("Prediction completed!")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

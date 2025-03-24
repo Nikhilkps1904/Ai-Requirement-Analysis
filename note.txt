@@ -1,2 +1,4 @@
 python cust.py --mode train --input_file TwoWheeler_Requirement_Conflicts.csv --output_dir ./trained_model  "for training the models"
 python cust.py --mode predict --test_file TwoWheeler_Requirement_Conflicts.csv --output_dir ./trained_model --output_file conflict_results.csv "For Predicting the Models"
+pip install pandas requests tqdm python-dotenv aiohttp openpyxl
+python api1.py --mode train --iterations 1 --input_file reduced_requirements.csv
