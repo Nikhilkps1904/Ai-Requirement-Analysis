@@ -8,6 +8,7 @@ from tqdm import tqdm
 import warnings
 from dotenv import load_dotenv
 import itertools
+import time  # Added for time.sleep
 
 # Suppress warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -25,32 +26,32 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# API setup for OpenRouter
-HF_API_TOKEN = os.getenv("HF_API_TOKEN")  # Your OpenRouter API key
-HF_MODEL = "mistralai/mistral-7b-instruct"  # Model for inference
-HF_API_URL = "https://openrouter.ai/api/v1/chat/completions"  # Correct OpenRouter endpoint
+# API setup for Gemini
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")  # Your Gemini API key
+GEMINI_MODEL = "gemini-2.0-flash"  # Adjust as needed
+GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
 
-def call_inference_api(prompt, api_token=HF_API_TOKEN, api_url=HF_API_URL):
-    """Call OpenRouter API for inference"""
+def call_inference_api(prompt, api_key=GEMINI_API_KEY, api_url=GEMINI_API_URL):
+    """Call Gemini API for inference with a delay"""
     headers = {
-        "Authorization": f"Bearer {api_token}",
         "Content-Type": "application/json"
     }
     payload = {
-        "model": HF_MODEL,
-        "prompt": prompt,
-        "max_tokens": 256,
-        "num_beams": 5
+        "contents": [{
+            "parts": [{"text": prompt}]
+        }]
     }
     try:
-        logger.debug(f"Sending request to {api_url} with prompt: {prompt[:100]}...")  # Truncate for readability
-        response = requests.post(api_url, headers=headers, json=payload, timeout=10)  # Added timeout
+        logger.debug(f"Sending request to {api_url} with prompt: {prompt[:100]}...")
+        response = requests.post(f"{api_url}?key={api_key}", headers=headers, json=payload, timeout=10)
         response.raise_for_status()
         result = response.json()
         logger.debug(f"Raw API response: {json.dumps(result, indent=2)}")
         
-        if "choices" in result and len(result["choices"]) > 0:
-            output = result["choices"][0].get("text", result["choices"][0].get("message", {}).get("content", "No output"))
+        # Gemini response structure: extract the generated text
+        if "candidates" in result and len(result["candidates"]) > 0:
+            output = result["candidates"][0]["content"]["parts"][0]["text"]
+            time.sleep(5)  # Add 1-second delay after successful request
             return output.strip()
         elif "error" in result:
             logger.error(f"API error message: {result['error']}")
@@ -83,7 +84,6 @@ def parse_api_output(full_output):
         logger.warning(f"Blank or failed output: {full_output}")
         return "Other", full_output or "No response from API", "Requires manual review"
     
-    # Split by "||" and handle cases where format varies
     parts = [p.strip() for p in full_output.split("||") if p.strip()]
     
     if len(parts) < 3:
@@ -92,7 +92,9 @@ def parse_api_output(full_output):
         conflict_reason = parts[1] if len(parts) > 1 else "Malformed or incomplete output"
         resolution = "Requires manual review"
     else:
-        conflict_type, conflict_reason, resolution = parts[0], parts[1], parts[2]
+        conflict_type = parts[0].replace("Conflict_Type: ", "")
+        conflict_reason = parts[1].replace("Reason: ", "")
+        resolution = parts[2].replace("Resolution: ", "")
     
     return conflict_type, conflict_reason, resolution
 
@@ -107,14 +109,14 @@ def ensure_directories():
     return csv_dir, xlsx_dir
 
 def api_pseudo_train(args):
-    """Use OpenRouter API to iteratively 'train' on the dataset"""
+    """Use Gemini API to iteratively 'train' on the dataset"""
     if os.path.exists(args.input_file):
         df_train = pd.read_csv(args.input_file)
     else:
         logger.warning(f"Input file {args.input_file} not found. Using sample data.")
         df_train = load_sample_data()
     
-    logger.info(f"Starting pseudo-training with {len(df_train)} examples using {HF_MODEL} via OpenRouter")
+    logger.info(f"Starting pseudo-training with {len(df_train)} examples using {GEMINI_MODEL} via Gemini API")
     
     PREDEFINED_CONFLICTS = {
         "Performance Conflict", "Compliance Conflict", "Safety Conflict", "Cost Conflict", "Battery Conflict",
@@ -124,7 +126,6 @@ def api_pseudo_train(args):
         "Sustainability Conflict", "Regulatory Conflict", "Resource Conflict", "Technology Conflict", "Design Conflict", "Contradiction"
     }
 
-    # Corrected prompt template with escaped curly braces
     prompt_template = (
         "Analyze two vehicle-related requirements for potential conflicts based on these conflict types: "
         f"{', '.join(PREDEFINED_CONFLICTS)}.\n\n"
@@ -148,7 +149,6 @@ def api_pseudo_train(args):
             req2 = row["Requirement_2"]
             expected_conflict = row["Conflict_Type"]
             
-            # Use the corrected prompt template
             input_text = prompt_template.format(req1=req1, req2=req2)
             
             full_output = call_inference_api(input_text)
@@ -175,14 +175,11 @@ def api_pseudo_train(args):
     
     output_df = pd.DataFrame(df_train)
     
-    # Ensure directories exist
     csv_dir, xlsx_dir = ensure_directories()
     
-    # Save to CSV in Results/CSV
     csv_output = os.path.join(csv_dir, "results.csv")
     output_df.to_csv(csv_output, index=False)
     
-    # Save to XLSX in Results/XLSX
     xlsx_output = os.path.join(xlsx_dir, "results.xlsx")
     output_df.to_excel(xlsx_output, index=False, engine='openpyxl')
     
@@ -209,26 +206,23 @@ def predict_conflicts(args):
         "Sustainability Conflict", "Regulatory Conflict", "Resource Conflict", "Technology Conflict", "Design Conflict", "Contradiction"
     }
 
-    # Define the prompt template
     prompt_template = (
-    "Analyze two vehicle-related requirements for potential conflicts based on these conflict types: "
-    f"{', '.join(PREDEFINED_CONFLICTS)}.\n\n"
-    "Input:\n- Requirement 1: \"{req1}\"\n- Requirement 2: \"{req2}\"\n\n"
-    "Task:\n1. Identify any conflict and give one line expert answer for all, using vehicle engineering principles.\n"
-    "2. If a conflict exists, output: \"Conflict_Type: {{type}}||Reason: {{reason}}||Resolution: {{resolution}}\"\n"
-    "3. If no conflict, output: \"\"\n"
-    "4. If analysis fails, output: \"Inference failed||Reason unknown||Manual review required\""
-)
+        "Analyze two vehicle-related requirements for potential conflicts based on these conflict types: "
+        f"{', '.join(PREDEFINED_CONFLICTS)}.\n\n"
+        "Input:\n- Requirement 1: \"{req1}\"\n- Requirement 2: \"{req2}\"\n\n"
+        "Task:\n1. Identify any conflict and give one line expert answer for all, using vehicle engineering principles.\n"
+        "2. If a conflict exists, output: \"Conflict_Type: {{type}}||Reason: {{reason}}||Resolution: {{resolution}}\"\n"
+        "3. If no conflict, output: \"\"\n"
+        "4. If analysis fails, output: \"Inference failed||Reason unknown||Manual review required\""
+    )
 
     requirements = df_input["Requirements"].tolist()
     results = []
 
-    # Generate all unique pairwise combinations of requirements
     pairs = list(itertools.combinations(requirements, 2))
     logger.info(f"Generated {len(pairs)} unique pairwise combinations for analysis")
 
     for req1, req2 in tqdm(pairs, desc="Analyzing conflicts"):
-        # Use the prompt template
         input_text = prompt_template.format(req1=req1, req2=req2)
         
         full_output = call_inference_api(input_text)
@@ -247,14 +241,11 @@ def predict_conflicts(args):
     
     output_df = pd.DataFrame(results)
     
-    # Ensure directories exist
     csv_dir, xlsx_dir = ensure_directories()
     
-    # Save to CSV in Results/CSV
     csv_output = os.path.join(csv_dir, "results.csv")
     output_df.to_csv(csv_output, index=False)
     
-    # Save to XLSX in Results/XLSX
     xlsx_output = os.path.join(xlsx_dir, "results.xlsx")
     output_df.to_excel(xlsx_output, index=False, engine='openpyxl')
     
@@ -262,19 +253,19 @@ def predict_conflicts(args):
     return output_df
 
 def main():
-    parser = argparse.ArgumentParser(description="Requirements Conflict Detection with OpenRouter API")
+    parser = argparse.ArgumentParser(description="Requirements Conflict Detection with Gemini API")
     
     parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="train")
     parser.add_argument("--input_file", type=str, default="reduced_requirements.csv")
     parser.add_argument("--test_file", type=str, default="./test_data.csv")
-    parser.add_argument("--output_file", type=str, default="/workspaces/PC-user-Task3/Test_data/data.csv")  # Kept for compatibility, but ignored for fixed paths
+    parser.add_argument("--output_file", type=str, default="/workspaces/PC-user-Task3/Test_data/data.csv")
     parser.add_argument("--iterations", type=int, default=2, help="Number of pseudo-training iterations")
     
     args = parser.parse_args()
     
     if args.mode in ["train", "both"]:
         api_pseudo_train(args)
-        logger.info("API pseudo-training completed!")
+        logger.info("Gemini API pseudo-training completed!")
     
     if args.mode in ["predict", "both"]:
         predict_conflicts(args)
