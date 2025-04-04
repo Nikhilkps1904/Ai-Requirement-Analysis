@@ -306,12 +306,7 @@ def predict_conflicts(args):
     }
 
     prompt_template = (
-        "Analyze two vehicle-related requirements for potential conflicts based on these conflict types: "
-        f"{', '.join(PREDEFINED_CONFLICTS)}.\n\n"
-        "Input:\n- Requirement 1: \"{req1}\"\n- Requirement 2: \"{req2}\"\n\n"
-        "Task:\n1. Identify any conflict and give one line expert answer for all.\n"
-        "2. If a conflict exists, output: \"Conflict_Type: {type}||Reason: {reason}||Resolution: {resolution}\"\n"
-        "3. If no conflict, output: \"\"\n"
+        "Analyze the provided {req1} and {req2} from the uploaded CSV or Excel file, which must contain a single column labeled 'Requirements.' Identify any conflicts between {req1} and {req2}. For each pair, determine if there is a conflict, and if so, specify the type of conflict (including all possible types), the reason for the conflict (as a one-line sentence), and a suggested resolution. The output should be in Excel format, displaying the following columns: Requirement 1, Requirement 2, Conflict Type, and Reason. Include all pairs in the output, even those with no conflicts. This analysis is intended for engineers and analysts. The analysis should also include specific metrics or performance indicators related to the conflicts.\n\n"
     )
 
     pairs = list(itertools.combinations(requirements, 2))

@@ -8,7 +8,8 @@ from tqdm import tqdm
 import warnings
 from dotenv import load_dotenv
 import itertools
-import time  # Added for time.sleep
+import time
+import shutil
 
 # Suppress warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -28,11 +29,11 @@ logger = logging.getLogger(__name__)
 
 # API setup for Gemini
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")  # Your Gemini API key
-GEMINI_MODEL = "gemini-2.0-flash"  # Adjust as needed
+GEMINI_MODEL = "gemini-2.0-flash"  # Model with 15 RPM, 1M TPM, 1500 RPD
 GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
 
 def call_inference_api(prompt, api_key=GEMINI_API_KEY, api_url=GEMINI_API_URL):
-    """Call Gemini API for inference with a delay"""
+    """Call Gemini API for inference with a delay respecting 15 RPM"""
     headers = {
         "Content-Type": "application/json"
     }
@@ -51,7 +52,7 @@ def call_inference_api(prompt, api_key=GEMINI_API_KEY, api_url=GEMINI_API_URL):
         # Gemini response structure: extract the generated text
         if "candidates" in result and len(result["candidates"]) > 0:
             output = result["candidates"][0]["content"]["parts"][0]["text"]
-            time.sleep(5)  # Add 1-second delay after successful request
+            time.sleep(4)  # 4-second delay to respect 15 RPM (60/15 = 4)
             return output.strip()
         elif "error" in result:
             logger.error(f"API error message: {result['error']}")
@@ -79,22 +80,23 @@ def load_sample_data():
     return pd.DataFrame(train_data, columns=["Requirement_1", "Requirement_2", "Conflict_Type"])
 
 def parse_api_output(full_output):
-    """Robustly parse API output, handling malformed or blank responses"""
+    """Robustly parse API output, expecting two parts"""
     if not full_output or "Inference failed" in full_output:
         logger.warning(f"Blank or failed output: {full_output}")
-        return "Other", full_output or "No response from API", "Requires manual review"
+        return "Other", full_output or "No response from API", "Not applicable"
     
     parts = [p.strip() for p in full_output.split("||") if p.strip()]
     
-    if len(parts) < 3:
+    if len(parts) < 2:
         logger.warning(f"Malformed output: {full_output}")
         conflict_type = parts[0] if parts else "Other"
-        conflict_reason = parts[1] if len(parts) > 1 else "Malformed or incomplete output"
-        resolution = "Requires manual review"
+        conflict_reason = "Malformed or incomplete output"
     else:
         conflict_type = parts[0].replace("Conflict_Type: ", "")
         conflict_reason = parts[1].replace("Reason: ", "")
-        resolution = parts[2].replace("Resolution: ", "")
+    
+    # Resolution is not expected
+    resolution = "Not applicable"
     
     return conflict_type, conflict_reason, resolution
 
@@ -127,13 +129,7 @@ def api_pseudo_train(args):
     }
 
     prompt_template = (
-        "Analyze two vehicle-related requirements for potential conflicts based on these conflict types: "
-        f"{', '.join(PREDEFINED_CONFLICTS)}.\n\n"
-        "Input:\n- Requirement 1: \"{req1}\"\n- Requirement 2: \"{req2}\"\n\n"
-        "Task:\n1. Identify any conflict and give one line expert answer for all, using vehicle engineering principles.\n"
-        "2. If a conflict exists, output: \"Conflict_Type: {{type}}||Reason: {{reason}}||Resolution: {{resolution}}\"\n"
-        "3. If no conflict, output: \"\"\n"
-        "4. If analysis fails, output: \"Inference failed||Reason unknown||Manual review required\""
+        "Analyze the provided {req1} and {req2} from the uploaded CSV or Excel file, which must contain a single column labeled 'Requirements.' Identify any conflicts between {req1} and {req2}. For each pair, determine if there is a conflict, and if so, specify the type of conflict (including all possible types) and the reason for the conflict (as a one-line sentence). The output should be in the format: \"Conflict_Type: <type>||Reason: <reason>\" where <type> is one of {conflict_types}, <reason> is a one-line explanation. If no conflict exists, output: \"No Conflict||Requirements are compatible\". Ensure the output is concise and follows the exact format specified, using angle brackets < > to indicate placeholders."
     )
 
     results = []
@@ -149,12 +145,12 @@ def api_pseudo_train(args):
             req2 = row["Requirement_2"]
             expected_conflict = row["Conflict_Type"]
             
-            input_text = prompt_template.format(req1=req1, req2=req2)
+            input_text = prompt_template.format(req1=req1, req2=req2, conflict_types=', '.join(PREDEFINED_CONFLICTS))
             
             full_output = call_inference_api(input_text)
             conflict_type, conflict_reason, resolution = parse_api_output(full_output)
             
-            if conflict_type not in PREDEFINED_CONFLICTS:
+            if conflict_type not in PREDEFINED_CONFLICTS and conflict_type != "No Conflict":
                 conflict_type = "Other"
             
             results.append({
@@ -162,7 +158,7 @@ def api_pseudo_train(args):
                 "Requirement_2": req2,
                 "Conflict_Type": conflict_type,
                 "Conflict_Reason": conflict_reason,
-                "Resolution_Suggestion": resolution,
+                "Resolution_Suggestion": resolution,  # Will be "Not applicable"
                 "Expected_Conflict": expected_conflict
             })
         
@@ -189,7 +185,7 @@ def api_pseudo_train(args):
 def predict_conflicts(args):
     """Predict conflicts for a single-column requirements file by analyzing pairwise combinations"""
     try:
-        df_input = pd.read_csv(args.test_file, encoding='utf-8')
+        df_input = pd.read_csv(args.input_file, encoding='utf-8')
         if "Requirements" not in df_input.columns:
             logger.error("Input file must contain a 'Requirements' column")
             return
@@ -207,13 +203,7 @@ def predict_conflicts(args):
     }
 
     prompt_template = (
-        "Analyze two vehicle-related requirements for potential conflicts based on these conflict types: "
-        f"{', '.join(PREDEFINED_CONFLICTS)}.\n\n"
-        "Input:\n- Requirement 1: \"{req1}\"\n- Requirement 2: \"{req2}\"\n\n"
-        "Task:\n1. Identify any conflict and give one line expert answer for all, using vehicle engineering principles.\n"
-        "2. If a conflict exists, output: \"Conflict_Type: {{type}}||Reason: {{reason}}||Resolution: {{resolution}}\"\n"
-        "3. If no conflict, output: \"\"\n"
-        "4. If analysis fails, output: \"Inference failed||Reason unknown||Manual review required\""
+        "Analyze the provided {req1} and {req2} from the uploaded CSV or Excel file, which must contain a single column labeled 'Requirements,' to identify any conflicts between them based on the following conflict types: {conflict_types}. Input: - Requirement 1: \"{req1}\" - Requirement 2: \"{req2}\". Task: 1. Determine if there is a conflict using vehicle engineering principles and provide a one-line expert explanation. 2. If a conflict exists, output: \"Conflict_Type: <type>||Reason: <reason>\" where <type> is one of the conflict types, <reason> is a one-line explanation. 3. If no conflict exists, output: \"No Conflict||Requirements are compatible\". 4. Ensure the output is concise and follows the exact format specified, using angle brackets < > to indicate placeholders."
     )
 
     requirements = df_input["Requirements"].tolist()
@@ -223,12 +213,12 @@ def predict_conflicts(args):
     logger.info(f"Generated {len(pairs)} unique pairwise combinations for analysis")
 
     for req1, req2 in tqdm(pairs, desc="Analyzing conflicts"):
-        input_text = prompt_template.format(req1=req1, req2=req2)
+        input_text = prompt_template.format(req1=req1, req2=req2, conflict_types=', '.join(PREDEFINED_CONFLICTS))
         
         full_output = call_inference_api(input_text)
         conflict_type, conflict_reason, resolution = parse_api_output(full_output)
         
-        if conflict_type not in PREDEFINED_CONFLICTS:
+        if conflict_type not in PREDEFINED_CONFLICTS and conflict_type != "No Conflict":
             conflict_type = "Other"
         
         results.append({
@@ -236,7 +226,7 @@ def predict_conflicts(args):
             "Requirement_2": req2,
             "Conflict_Type": conflict_type,
             "Conflict_Reason": conflict_reason,
-            "Resolution_Suggestion": resolution
+            "Resolution_Suggestion": resolution  # Will be "Not applicable"
         })
     
     output_df = pd.DataFrame(results)
@@ -256,7 +246,7 @@ def main():
     parser = argparse.ArgumentParser(description="Requirements Conflict Detection with Gemini API")
     
     parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="train")
-    parser.add_argument("--input_file", type=str, default="reduced_requirements.csv")
+    parser.add_argument("--input_file", type=str, default="/workspaces/PC-user-Task3/Test_data/data.csv")
     parser.add_argument("--test_file", type=str, default="./test_data.csv")
     parser.add_argument("--output_file", type=str, default="/workspaces/PC-user-Task3/Test_data/data.csv")
     parser.add_argument("--iterations", type=int, default=2, help="Number of pseudo-training iterations")

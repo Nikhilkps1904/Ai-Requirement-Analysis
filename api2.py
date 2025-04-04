@@ -126,13 +126,7 @@ def api_pseudo_train(args):
 
     # Corrected prompt template with escaped curly braces
     prompt_template = (
-        "Analyze two vehicle-related requirements for potential conflicts based on these conflict types: "
-        f"{', '.join(PREDEFINED_CONFLICTS)}.\n\n"
-        "Input:\n- Requirement 1: \"{req1}\"\n- Requirement 2: \"{req2}\"\n\n"
-        "Task:\n1. Identify any conflict and give one line expert answer for all, using vehicle engineering principles.\n"
-        "2. If a conflict exists, output: \"Conflict_Type: {{type}}||Reason: {{reason}}||Resolution: {{resolution}}\"\n"
-        "3. If no conflict, output: \"\"\n"
-        "4. If analysis fails, output: \"Inference failed||Reason unknown||Manual review required\""
+        "Analyze the provided {req1} and {req2} from the uploaded CSV or Excel file, which must contain a single column labeled 'Requirements.' Identify any conflicts between {req1} and {req2}. For each pair, determine if there is a conflict, and if so, specify the type of conflict (including all possible types), the reason for the conflict (as a one-line sentence), and a suggested resolution. The output should be in Excel format, displaying the following columns: Requirement 1, Requirement 2, Conflict Type, and Reason. Include all pairs in the output, even those with no conflicts. This analysis is intended for engineers and analysts. The analysis should also include specific metrics or performance indicators related to the conflicts.\n\n"
     )
 
     results = []
@@ -192,7 +186,7 @@ def api_pseudo_train(args):
 def predict_conflicts(args):
     """Predict conflicts for a single-column requirements file by analyzing pairwise combinations"""
     try:
-        df_input = pd.read_csv(args.test_file, encoding='utf-8')
+        df_input = pd.read_csv(args.input_file, encoding='utf-8')
         if "Requirements" not in df_input.columns:
             logger.error("Input file must contain a 'Requirements' column")
             return
@@ -265,7 +259,7 @@ def main():
     parser = argparse.ArgumentParser(description="Requirements Conflict Detection with OpenRouter API")
     
     parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="train")
-    parser.add_argument("--input_file", type=str, default="reduced_requirements.csv")
+    parser.add_argument("--input_file", type=str, default="/workspaces/PC-user-Task3/Test_data/data.csv")
     parser.add_argument("--test_file", type=str, default="./test_data.csv")
     parser.add_argument("--output_file", type=str, default="/workspaces/PC-user-Task3/Test_data/data.csv")  # Kept for compatibility, but ignored for fixed paths
     parser.add_argument("--iterations", type=int, default=2, help="Number of pseudo-training iterations")
