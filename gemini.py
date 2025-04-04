@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 import itertools
 import time
 import shutil
+import random  # For shuffling combinations
 
 # Suppress warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -158,7 +159,6 @@ def api_pseudo_train(args):
                 "Requirement_2": req2,
                 "Conflict_Type": conflict_type,
                 "Conflict_Reason": conflict_reason,
-                "Resolution_Suggestion": resolution,  # Will be "Not applicable"
                 "Expected_Conflict": expected_conflict
             })
         
@@ -183,9 +183,9 @@ def api_pseudo_train(args):
     return output_df
 
 def predict_conflicts(args):
-    """Predict conflicts for a single-column requirements file by analyzing pairwise combinations"""
+    """Predict conflicts for a single-column requirements file by analyzing all shuffled combinations"""
     try:
-        df_input = pd.read_csv(args.input_file, encoding='utf-8')
+        df_input = pd.read_csv(args.test_file, encoding='utf-8')
         if "Requirements" not in df_input.columns:
             logger.error("Input file must contain a 'Requirements' column")
             return
@@ -209,10 +209,15 @@ def predict_conflicts(args):
     requirements = df_input["Requirements"].tolist()
     results = []
 
-    pairs = list(itertools.combinations(requirements, 2))
-    logger.info(f"Generated {len(pairs)} unique pairwise combinations for analysis")
+    # Generate all possible combinations
+    all_pairs = list(itertools.combinations(requirements, 2))
+    logger.info(f"Generated {len(all_pairs)} unique pairwise combinations for analysis")
+    
+    # Shuffle the list of all pairs
+    random.shuffle(all_pairs)
+    logger.info("Shuffled all possible combinations for random order processing")
 
-    for req1, req2 in tqdm(pairs, desc="Analyzing conflicts"):
+    for req1, req2 in tqdm(all_pairs, desc="Analyzing conflicts"):
         input_text = prompt_template.format(req1=req1, req2=req2, conflict_types=', '.join(PREDEFINED_CONFLICTS))
         
         full_output = call_inference_api(input_text)
@@ -225,8 +230,7 @@ def predict_conflicts(args):
             "Requirement_1": req1,
             "Requirement_2": req2,
             "Conflict_Type": conflict_type,
-            "Conflict_Reason": conflict_reason,
-            "Resolution_Suggestion": resolution  # Will be "Not applicable"
+            "Conflict_Reason": conflict_reason
         })
     
     output_df = pd.DataFrame(results)
@@ -246,8 +250,8 @@ def main():
     parser = argparse.ArgumentParser(description="Requirements Conflict Detection with Gemini API")
     
     parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="train")
-    parser.add_argument("--input_file", type=str, default="/workspaces/PC-user-Task3/Test_data/data.csv")
-    parser.add_argument("--test_file", type=str, default="./test_data.csv")
+    parser.add_argument("--input_file", type=str, default="reduced_requirements.csv")
+    parser.add_argument("--test_file", type=str, default="/workspaces/PC-user-Task3/Test_data/data.csv")
     parser.add_argument("--output_file", type=str, default="/workspaces/PC-user-Task3/Test_data/data.csv")
     parser.add_argument("--iterations", type=int, default=2, help="Number of pseudo-training iterations")
     
