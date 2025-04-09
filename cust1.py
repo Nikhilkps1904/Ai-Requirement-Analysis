@@ -1,15 +1,3 @@
-python cust.py --mode train --input_file TwoWheeler_Requirement_Conflicts.csv --output_dir ./trained_model  "for training the models"
-python cust.py --mode predict --test_file TwoWheeler_Requirement_Conflicts.csv --output_dir ./trained_model --output_file conflict_results.csv "For Predicting the Models"
-pip install pandas requests tqdm python-dotenv aiohttp openpyxl
-python api1.py --mode train --iterations 1 --input_file reduced_requirements.csv
-
-"You act as software Engineer who is expert in analysis the requirements where you need to focus on giving the output only on the requirements provide and how the output they have asked to give.""Analyze the provided {req1} and {req2} from the uploaded CSV or Excel file. Identify any conflicts between {req1} and {req2}. You MUST choose the conflict type ONLY from the following list: {conflict_types}. For each pair, determine if there is a conflict, and if so, specify the type of conflict and the reason (as a one-line sentence). The output should be in the format: \"Conflict_Type: <type>||Reason: <reason>\" where <type> is exactly one of {conflict_types}, <reason> is a one-line explanation. If no conflict exists, output: \"No Conflict||Requirements are compatible\". Ensure the output is concise and follows the exact format."
-
-
-
-
-### properly working code ###
-
 import os
 import argparse
 import pandas as pd
@@ -32,7 +20,7 @@ load_dotenv()
 
 # Configure logging
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.DEBUG,  # Changed to DEBUG as per your latest code
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler("conflict_detection.log"),
@@ -52,7 +40,8 @@ PREDEFINED_CONFLICTS = {
     "Environmental Conflict", "Structural Conflict", "Comfort Conflict", "Power Source Conflict", "Reliability Conflict",
     "Scalability Conflict", "Security Conflict", "Usability Conflict", "Maintenance Conflict", "Weight Conflict",
     "Time-to-Market Conflict", "Compatibility Conflict", "Aesthetic Conflict", "Noise Conflict", "Other Conflict",
-    "Sustainability Conflict", "Regulatory Conflict", "Resource Conflict", "Technology Conflict", "Design Conflict", "Contradiction"
+    "Sustainability Conflict", "Regulatory Conflict", "Resource Conflict", "Technology Conflict", "Design Conflict", "Contradiction",
+    "No Conflict"  # Added "No Conflict" to the predefined conflicts
 }
 
 def call_inference_api(prompt, api_key=GEMINI_API_KEY, api_url=GEMINI_API_URL):
@@ -87,7 +76,7 @@ def cached_call_inference_api(prompt):
     return result.strip()
 
 def parse_api_output(full_output):
-    """Parse API output, prioritizing '<type>: <reason>' format"""
+    """Parse API output expecting 'Conflict_Type: <type>||Reason: <reason>'"""
     if not full_output or "Inference failed" in full_output:
         logger.warning(f"Blank or failed output: {full_output}")
         return "Other", full_output or "No response from API", "Not applicable"
@@ -95,46 +84,33 @@ def parse_api_output(full_output):
     full_output = full_output.strip()
     logger.debug(f"Parsing API output: '{full_output}'")
     
-    # First, try splitting by "||" (expected format)
+    # Split by "||" as per the required format
     parts = [p.strip() for p in full_output.split("||") if p.strip()]
+    
     if len(parts) >= 2:
-        # Handle "Conflict_Type: <type>||Reason: <reason>"
+        # Extract conflict type and reason
         conflict_type_part = parts[0].replace("Conflict_Type: ", "").strip()
         conflict_reason = parts[1].replace("Reason: ", "").strip()
         
-        # Check if conflict_type_part is a valid predefined conflict type
         if conflict_type_part in PREDEFINED_CONFLICTS:
             conflict_type = conflict_type_part
-            logger.debug(f"Parsed || format - Type: '{conflict_type}', Reason: '{conflict_reason}'")
+            logger.debug(f"Parsed - Type: '{conflict_type}', Reason: '{conflict_reason}'")
         else:
-            # If not, try splitting conflict_type_part by colon for "<type>: <type>"
-            sub_parts = [p.strip() for p in conflict_type_part.split(":") if p.strip()]
-            if sub_parts and sub_parts[-1] in PREDEFINED_CONFLICTS:
-                conflict_type = sub_parts[-1]
-                logger.debug(f"Parsed repeated type in || - Type: '{conflict_type}', Reason: '{conflict_reason}'")
-            else:
-                logger.warning(f"Unexpected conflict type in || format: '{conflict_type_part}'")
-                conflict_type = "Other"
-                conflict_reason = full_output
+            logger.warning(f"Unexpected conflict type '{conflict_type_part}' not in predefined list, defaulting to 'Other'")
+            conflict_type = "Other"
+            conflict_reason = full_output
     else:
-        # Fallback to "<type>: <reason>" format
+        logger.warning(f"Malformed output, expected 'Conflict_Type: <type>||Reason: <reason>': '{full_output}'")
+        # Fallback to check if it's a simple "<type>: <reason>" format
         colon_parts = [p.strip() for p in full_output.split(":", 1) if p.strip()]
         if len(colon_parts) == 2 and colon_parts[0] in PREDEFINED_CONFLICTS:
             conflict_type = colon_parts[0]
             conflict_reason = colon_parts[1]
-            logger.debug(f"Parsed colon format - Type: '{conflict_type}', Reason: '{conflict_reason}'")
+            logger.debug(f"Parsed fallback - Type: '{conflict_type}', Reason: '{conflict_reason}'")
         else:
-            logger.warning(f"Malformed output, expected '<type>: <reason>' or 'Conflict_Type: <type>||Reason: <reason>': '{full_output}'")
             conflict_type = "Other"
-            conflict_reason = full_output
+            conflict_reason = full_output or "Malformed or incomplete output"
     
-    # Final validation
-    if conflict_type not in PREDEFINED_CONFLICTS:
-        logger.warning(f"Unexpected conflict type '{conflict_type}' detected, defaulting to 'Other'")
-        conflict_type = "Other"
-        conflict_reason = full_output
-    
-    logger.debug(f"Final - Conflict Type: '{conflict_type}', Reason: '{conflict_reason}'")
     resolution = "Not applicable"
     return conflict_type, conflict_reason, resolution
 
@@ -155,24 +131,28 @@ def api_pseudo_train(args):
         sys.exit(1)
 
     try:
-        df_train = pd.read_csv(args.test_file)
-        if "Requirement_1" not in df_train.columns or "Requirement_2" not in df_train.columns or "Conflict_Type" not in df_train.columns:
-            logger.error("Input file must contain 'Requirement_1', 'Requirement_2', and 'Conflict_Type' columns")
+        original_df = pd.read_csv(args.test_file)
+        if "Requirement_1" not in original_df.columns or "Requirement_2" not in original_df.columns:
+            logger.error("Input file must contain 'Requirement_1' and 'Requirement_2' columns")
             sys.exit(1)
+        
+        # Check if Conflict_Type exists, if not, create it with default value
+        if "Conflict_Type" not in original_df.columns:
+            logger.warning("'Conflict_Type' column not found, creating with default value 'Other'")
+            original_df["Conflict_Type"] = "Other"
+            
+        # Make sure to have the Expected_Conflict column for accuracy calculation
+        if "Expected_Conflict" not in original_df.columns:
+            logger.info("Creating 'Expected_Conflict' column from 'Conflict_Type'")
+            original_df["Expected_Conflict"] = original_df["Conflict_Type"]
     except Exception as e:
         logger.error(f"Error reading test file: {e}")
         sys.exit(1)
     
-    logger.info(f"Starting pseudo-training with {len(df_train)} examples using {GEMINI_MODEL} via Gemini API")
+    logger.info(f"Starting pseudo-training with {len(original_df)} examples using {GEMINI_MODEL} via Gemini API")
     
-    base_prompt_template = (
-        "You act as software Engineer who is expert in analysis the requirements where you need to focus on giving the output only on the requirements provide and how the output they have asked to give."
-        "Analyze the provided {req1} and {req2} to identify any conflicts between them. "
-        "You MUST choose the conflict type ONLY from the following list: {conflict_types}. "
-        "For each pair, determine if there is a conflict, and if so, specify the type of conflict and the reason (as a one-line sentence). "
-        "Output in the format: \"<type>: <reason>\" where <type> is exactly one of {conflict_types}, "
-        "<reason> is a one-line explanation. If no conflict exists, output: \"No Conflict: Requirements are compatible\". "
-        "Ensure the output is concise and follows this exact format."
+    prompt_template = (
+        "Analyze the provided {req1} and {req2} from the uploaded CSV or Excel file. Identify any conflicts between {req1} and {req2}. You MUST choose the conflict type ONLY from the following list: {conflict_types}. For each pair, determine if there is a conflict, and if so, specify the type of conflict and the reason (as a one-line sentence). The output should be in the format: \"Conflict_Type: <type>||Reason: <reason>\" where <type> is exactly one of {conflict_types}, <reason> is a one-line explanation. If no conflict exists, output: \"Conflict_Type: No Conflict||Reason: Requirements are compatible\". Ensure the output is concise and follows the exact format."
     )
 
     results = []
@@ -180,14 +160,31 @@ def api_pseudo_train(args):
     max_iterations = args.iterations
     conflict_type_weights = {conflict: 1.0 for conflict in PREDEFINED_CONFLICTS}
 
+    # Use original_df to preserve Expected_Conflict across iterations
+    df_train = original_df.copy()
+
     for _ in range(max_iterations):
         iteration += 1
         logger.info(f"Pseudo-training iteration {iteration}/{max_iterations}")
         
-        prompt_template = base_prompt_template
+        prompt_template_iter = prompt_template
         if iteration > 1 and results:
+            # Make sure all results have Expected_Conflict key before calculating accuracy
+            for r in results:
+                if "Expected_Conflict" not in r:
+                    # Find the corresponding row in original_df to get Expected_Conflict
+                    matching_row = original_df[(original_df["Requirement_1"] == r["Requirement_1"]) & 
+                                             (original_df["Requirement_2"] == r["Requirement_2"])]
+                    if not matching_row.empty:
+                        r["Expected_Conflict"] = matching_row.iloc[0]["Expected_Conflict"]
+                    else:
+                        r["Expected_Conflict"] = "Other"  # Default if not found
+            
+            # Now calculate accuracy
             correct = sum(1 for r in results if r["Conflict_Type"] == r["Expected_Conflict"])
-            accuracy = correct / len(results)
+            accuracy = correct / len(results) if results else 0
+            logger.info(f"Accuracy before iteration {iteration}: {accuracy:.2%}")
+            
             if accuracy < 0.8:
                 for r in results:
                     if r["Conflict_Type"] != r["Expected_Conflict"]:
@@ -195,13 +192,15 @@ def api_pseudo_train(args):
                     else:
                         conflict_type_weights[r["Conflict_Type"]] += 0.05
                 weighted_conflicts = ', '.join([f"{k} (weight: {v:.2f})" for k, v in sorted(conflict_type_weights.items(), key=lambda x: x[1], reverse=True)])
-                prompt_template += f" Prioritize conflict types based on these weights: {weighted_conflicts}."
+                prompt_template_iter += f" Prioritize conflict types based on these weights: {weighted_conflicts}."
         
         results.clear()
 
         for _, row in tqdm(df_train.iterrows(), total=len(df_train), desc=f"Iteration {iteration}"):
-            req1, req2, expected_conflict = row["Requirement_1"], row["Requirement_2"], row["Conflict_Type"]
-            input_text = prompt_template.format(req1=req1, req2=req2, conflict_types=', '.join(sorted(PREDEFINED_CONFLICTS)))
+            req1, req2 = row["Requirement_1"], row["Requirement_2"]
+            expected_conflict = row["Expected_Conflict"] if "Expected_Conflict" in row else row["Conflict_Type"]
+            
+            input_text = prompt_template_iter.format(req1=req1, req2=req2, conflict_types=', '.join(sorted(PREDEFINED_CONFLICTS)))
             
             full_output = cached_call_inference_api(input_text)
             conflict_type, conflict_reason, _ = parse_api_output(full_output)
@@ -215,19 +214,25 @@ def api_pseudo_train(args):
                 "Requirement_2": req2,
                 "Conflict_Type": conflict_type,
                 "Conflict_Reason": conflict_reason,
-                #"Expected_Conflict": expected_conflict
+                "Expected_Conflict": expected_conflict
             })
         
+        # Now calculate accuracy for this iteration
         correct = sum(1 for r in results if r["Conflict_Type"] == r["Expected_Conflict"])
         logger.info(f"Iteration {iteration} accuracy: {correct / len(results):.2%}")
         
         df_train = pd.DataFrame(results)
 
-    output_df = pd.DataFrame(df_train)
+    # Process results for output, excluding Expected_Conflict
+    output_results = [{k: v for k, v in r.items() if k != "Expected_Conflict"} for r in results]
+    output_df = pd.DataFrame(output_results)
+
     csv_dir, xlsx_dir = ensure_directories()
     csv_output = os.path.join(csv_dir, "training_results.csv")
-    output_df.to_csv(csv_output, index=False)
     xlsx_output = os.path.join(xlsx_dir, "training_results.xlsx")
+    
+    # Save without Expected_Conflict
+    output_df.to_csv(csv_output, index=False)
     output_df.to_excel(xlsx_output, index=False, engine='openpyxl')
     
     logger.info(f"Pseudo-training complete after {max_iterations} iterations. Results saved to {csv_output} (CSV) and {xlsx_output} (XLSX)")
@@ -239,12 +244,7 @@ def check_new_requirement(new_req, all_existing_requirements, predefined_conflic
 
     results = []
     prompt_template = (
-        "You act as software Engineer who is expert in analysis the requirements where you need to focus on giving the output only on the requirements provide and how the output they have asked to give."
-        "Analyze the following pairs of requirements to identify any conflicts: {pairs}. "
-        "You MUST choose the conflict type ONLY from: {conflict_types}. "
-        "For each pair, output: \"<type>: <reason>\" where <type> is one of {conflict_types}, "
-        "<reason> is a one-line explanation. If no conflict exists, output: \"No Conflict: Requirements are compatible\". "
-        "Ensure the output is concise and follows this exact format."
+        "Analyze the provided {req1} and {req2} from the uploaded CSV or Excel file. Identify any conflicts between {req1} and {req2}. You MUST choose the conflict type ONLY from the following list: {conflict_types}. For each pair, determine if there is a conflict, and if so, specify the type of conflict and the reason (as a one-line sentence). The output should be in the format: \"Conflict_Type: <type>||Reason: <reason>\" where <type> is exactly one of {conflict_types}, <reason> is a one-line explanation. If no conflict exists, output: \"Conflict_Type: No Conflict||Reason: Requirements are compatible\". Ensure the output is concise and follows the exact format."
     )
     if conflict_type_weights:
         weighted_conflicts = ', '.join([f"{k} (weight: {v:.2f})" for k, v in sorted(conflict_type_weights.items(), key=lambda x: x[1], reverse=True)])
@@ -256,7 +256,7 @@ def check_new_requirement(new_req, all_existing_requirements, predefined_conflic
             continue
 
         pairs_str = f"Requirement 1: \"{new_req}\" - Requirement 2: \"{existing_req}\""
-        input_text = prompt_template.format(conflict_types=', '.join(sorted(predefined_conflicts)), pairs=pairs_str)
+        input_text = prompt_template.format(req1=new_req, req2=existing_req, conflict_types=', '.join(sorted(predefined_conflicts)))
 
         full_output = cached_call_inference_api(input_text)
         conflict_type, conflict_reason, _ = parse_api_output(full_output)
@@ -286,21 +286,15 @@ def predict_conflicts(args, conflict_type_weights=None):
         if "Requirements" not in df_input.columns:
             logger.error("Input file must contain a 'Requirements' column")
             sys.exit(1)
-        logger.info(f"Loaded {len(df_input)} requirements from {args.test_file}")
+        logger.info(f"Loaded {len(df_input)} requirements from {args.input_file}")
     except Exception as e:
-        logger.error(f"Error reading test file: {e}")
+        logger.error(f"Error reading input file: {e}")
         sys.exit(1)
 
     all_original_requirements = df_input["Requirements"].tolist()
 
     prompt_template_single = (
-        "You act as software Engineer who is expert in analysis the requirements where you need to focus on giving the output only on the requirements provide and how the output they have asked to give."
-        "Analyze the provided {req1} and {req2} to identify any conflicts based on: {conflict_types}. "
-        "You MUST choose the conflict type ONLY from: {conflict_types}. "
-        "Input: - Requirement 1: \"{req1}\" - Requirement 2: \"{req2}\". "
-        "Output: \"<type>: <reason>\" where <type> is one of {conflict_types}, "
-        "<reason> is a one-line explanation. If no conflict exists, output: \"No Conflict: Requirements are compatible\". "
-        "Ensure the output is concise and follows this exact format."
+        "Analyze the provided {req1} and {req2} from the uploaded CSV or Excel file. Identify any conflicts between {req1} and {req2}. You MUST choose the conflict type ONLY from the following list: {conflict_types}. For each pair, determine if there is a conflict, and if so, specify the type of conflict and the reason (as a one-line sentence). The output should be in the format: \"Conflict_Type: <type>||Reason: <reason>\" where <type> is exactly one of {conflict_types}, <reason> is a one-line explanation. If no conflict exists, output: \"Conflict_Type: No Conflict||Reason: Requirements are compatible\". Ensure the output is concise and follows the exact format."
     )
     if conflict_type_weights:
         weighted_conflicts = ', '.join([f"{k} (weight: {v:.2f})" for k, v in sorted(conflict_type_weights.items(), key=lambda x: x[1], reverse=True)])
@@ -331,11 +325,16 @@ def predict_conflicts(args, conflict_type_weights=None):
             })
         checked_pairs.add(pair_key)
 
-    output_df = pd.DataFrame(results)
+    # Process results for output, excluding Expected_Conflict
+    output_results = [{k: v for k, v in r.items() if k != "Expected_Conflict"} for r in results]
+    output_df = pd.DataFrame(output_results) if output_results else pd.DataFrame(columns=["Requirement_1", "Requirement_2", "Conflict_Type", "Conflict_Reason"])
+
     csv_dir, xlsx_dir = ensure_directories()
     csv_output = os.path.join(csv_dir, "results.csv")
-    output_df.to_csv(csv_output, index=False)
     xlsx_output = os.path.join(xlsx_dir, "results.xlsx")
+    
+    # Save without Expected_Conflict
+    output_df.to_csv(csv_output, index=False)
     output_df.to_excel(xlsx_output, index=False, engine='openpyxl')
     
     logger.info(f"Initial analysis complete. Results saved to {csv_output} (CSV) and {xlsx_output} (XLSX)")
@@ -353,12 +352,14 @@ def predict_conflicts(args, conflict_type_weights=None):
         new_results = check_new_requirement(new_requirement, all_original_requirements, PREDEFINED_CONFLICTS, checked_pairs, conflict_type_weights)
 
         if new_results is not None and not new_results.empty:
+            # Exclude Expected_Conflict from new_results before saving (though check_new_requirement doesn't include it)
+            new_output_results = new_results.drop(columns=["Expected_Conflict"] if "Expected_Conflict" in new_results.columns else [], errors='ignore')
             new_csv_output = os.path.join(csv_dir, f"new_results_{int(time.time())}.csv")
             new_xlsx_output = os.path.join(xlsx_dir, f"new_results_{int(time.time())}.xlsx")
-            new_results.to_csv(new_csv_output, index=False)
-            new_results.to_excel(new_xlsx_output, index=False, engine='openpyxl')
+            new_output_results.to_csv(new_csv_output, index=False)
+            new_output_results.to_excel(new_xlsx_output, index=False, engine='openpyxl')
             logger.info(f"New conflicts found and saved to {new_csv_output} (CSV) and {new_xlsx_output} (XLSX)")
-            print(new_results)
+            print(new_output_results)
         else:
             logger.info("No conflicts found with existing requirements.")
 
@@ -367,9 +368,9 @@ def predict_conflicts(args, conflict_type_weights=None):
 def main():
     parser = argparse.ArgumentParser(description="Requirements Conflict Detection with Gemini API")
     parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="train")
-    parser.add_argument("--input_file", type=str, default="reduced_requirements.csv")  # from user input file
+    parser.add_argument("--input_file", type=str, default="/workspaces/PC-user-Task3/InputData.csv")  # from user input file
     parser.add_argument("--test_file", type=str, default="/workspaces/PC-user-Task3/reduced_requirements.csv")  # for training the pseudo code
-    parser.add_argument("--output_file", type=str, default="results.csv")
+    parser.add_argument("--output_file", type=str, default="results.csv") # for default output file
     parser.add_argument("--iterations", type=int, default=2, help="Number of pseudo-training iterations")
     
     args = parser.parse_args()
