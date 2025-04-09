@@ -368,9 +368,9 @@ def predict_conflicts(args, conflict_type_weights=None):
 def main():
     parser = argparse.ArgumentParser(description="Requirements Conflict Detection with Gemini API")
     parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="train")
-    parser.add_argument("--input_file", type=str, default="reduced_requirements.csv")  # from user input file
+    parser.add_argument("--input_file", type=str, default="/workspaces/PC-user-Task3/InputData.csv")  # from user input file
     parser.add_argument("--test_file", type=str, default="/workspaces/PC-user-Task3/reduced_requirements.csv")  # for training the pseudo code
-    parser.add_argument("--output_file", type=str, default="results.csv")
+    parser.add_argument("--output_file", type=str, default="results.csv") # for default output file
     parser.add_argument("--iterations", type=int, default=2, help="Number of pseudo-training iterations")
     
     args = parser.parse_args()
