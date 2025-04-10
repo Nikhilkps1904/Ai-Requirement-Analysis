@@ -20,18 +20,23 @@ load_dotenv()
 
 # Configure logging
 logging.basicConfig(
-    level=logging.DEBUG,  # Changed to DEBUG as per your latest code
+    level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler("conflict_detection.log"),
         logging.StreamHandler()
-    ]
+    ],
+    datefmt='%Y-%m-%d %H:%M:%S'  # Specify timestamp format
 )
 logger = logging.getLogger(__name__)
 
 # API setup for Gemini
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")  # Your Gemini API key
-GEMINI_MODEL = "gemini-2.0-flash"  # Model with 15 RPM, 1M TPM, 1500 RPD
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if not GEMINI_API_KEY:
+    logger.error("GEMINI_API_KEY not found in environment variables. Please set it in .env or environment.")
+    sys.exit(1)
+
+GEMINI_MODEL = "gemini-2.0-flash-lite"
 GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
 
 # Global predefined conflict types
@@ -41,33 +46,64 @@ PREDEFINED_CONFLICTS = {
     "Scalability Conflict", "Security Conflict", "Usability Conflict", "Maintenance Conflict", "Weight Conflict",
     "Time-to-Market Conflict", "Compatibility Conflict", "Aesthetic Conflict", "Noise Conflict", "Other Conflict",
     "Sustainability Conflict", "Regulatory Conflict", "Resource Conflict", "Technology Conflict", "Design Conflict", "Contradiction",
-    "No Conflict"  # Added "No Conflict" to the predefined conflicts
+    "No Conflict"
 }
 
-def call_inference_api(prompt, api_key=GEMINI_API_KEY, api_url=GEMINI_API_URL):
-    """Call Gemini API for inference with a delay respecting 15 RPM"""
+def call_inference_api(prompt, api_key=GEMINI_API_KEY, api_url=GEMINI_API_URL, max_retries=5, initial_delay=4):
+    """Call Gemini API for inference with exponential backoff and improved error handling"""
     headers = {"Content-Type": "application/json"}
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
-    try:
-        logger.debug(f"Sending request to {api_url} with prompt: {prompt[:100]}...")
-        response = requests.post(f"{api_url}?key={api_key}", headers=headers, json=payload, timeout=10)
-        response.raise_for_status()
-        result = response.json()
-        logger.debug(f"Raw API response: {json.dumps(result, indent=2)}")
-        
-        if "candidates" in result and len(result["candidates"]) > 0:
-            output = result["candidates"][0]["content"]["parts"][0]["text"]
-            time.sleep(4)  # 4-second delay to respect 15 RPM
-            return output.strip()
-        elif "error" in result:
-            logger.error(f"API error message: {result['error']}")
-            return f"Inference failed: {result['error']}"
-        else:
-            logger.error(f"Unexpected response format: {result}")
-            return "Inference failed: Unexpected response format"
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Request failed: {str(e)}")
-        return f"Inference failed: Request error - {str(e)}"
+    retries = 0
+
+    while retries < max_retries:
+        try:
+            logger.debug(f"Sending request to {api_url} with prompt: {prompt[:100]}...")
+            response = requests.post(f"{api_url}?key={api_key}", headers=headers, json=payload, timeout=30)
+            response.raise_for_status()
+            result = response.json()
+            logger.debug(f"Raw API response: {json.dumps(result, indent=2)[:500]}...")
+
+            if "candidates" in result and len(result["candidates"]) > 0:
+                output = result["candidates"][0]["content"]["parts"][0]["text"].strip()
+                return output
+            else:
+                error_msg = result.get("error", {}).get("message", "Unknown API error")
+                logger.error(f"API error: {error_msg}")
+                return f"Inference failed: {error_msg}"
+
+        except requests.exceptions.HTTPError as e:
+            if response.status_code == 429:
+                delay = initial_delay * (2 ** retries)
+                logger.warning(f"Rate limit exceeded (429). Retrying in {delay} seconds...")
+                time.sleep(delay)
+                retries += 1
+                continue
+            else:
+                logger.error(f"HTTP error: {str(e)}")
+                return f"Inference failed: HTTP error - {str(e)}"
+
+        except requests.exceptions.ConnectionError as e:
+            logger.error(f"Connection error: {str(e)}")
+            delay = initial_delay * (2 ** retries)
+            logger.warning(f"Connection issue. Retrying in {delay} seconds...")
+            time.sleep(delay)
+            retries += 1
+            continue
+
+        except requests.exceptions.Timeout as e:
+            logger.error(f"Request timeout: {str(e)}")
+            delay = initial_delay * (2 ** retries)
+            logger.warning(f"Timeout occurred. Retrying in {delay} seconds...")
+            time.sleep(delay)
+            retries += 1
+            continue
+
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Unexpected request error: {str(e)}")
+            return f"Inference failed: Unexpected error - {str(e)}"
+
+    logger.error("Max retries exceeded for API call.")
+    return "Inference failed: Max retries exceeded"
 
 @lru_cache(maxsize=1000)
 def cached_call_inference_api(prompt):
@@ -80,39 +116,31 @@ def parse_api_output(full_output):
     if not full_output or "Inference failed" in full_output:
         logger.warning(f"Blank or failed output: {full_output}")
         return "Other", full_output or "No response from API", "Not applicable"
-    
+
     full_output = full_output.strip()
     logger.debug(f"Parsing API output: '{full_output}'")
+
+    # Try to match the exact format "Conflict_Type: <type>||Reason: <reason>"
+    if "||" in full_output:
+        parts = [p.strip() for p in full_output.split("||") if p.strip()]
+        if len(parts) >= 2:
+            conflict_type_part = parts[0].replace("Conflict_Type: ", "").strip()
+            conflict_reason = parts[1].replace("Reason: ", "").strip()
+            
+            if conflict_type_part in PREDEFINED_CONFLICTS:
+                return conflict_type_part, conflict_reason, "Not applicable"
+            else:
+                logger.warning(f"Unexpected conflict type '{conflict_type_part}' detected, defaulting to 'Other'")
+                return "Other", full_output, "Not applicable"
     
-    # Split by "||" as per the required format
-    parts = [p.strip() for p in full_output.split("||") if p.strip()]
-    
-    if len(parts) >= 2:
-        # Extract conflict type and reason
-        conflict_type_part = parts[0].replace("Conflict_Type: ", "").strip()
-        conflict_reason = parts[1].replace("Reason: ", "").strip()
-        
-        if conflict_type_part in PREDEFINED_CONFLICTS:
-            conflict_type = conflict_type_part
-            logger.debug(f"Parsed - Type: '{conflict_type}', Reason: '{conflict_reason}'")
-        else:
-            logger.warning(f"Unexpected conflict type '{conflict_type_part}' not in predefined list, defaulting to 'Other'")
-            conflict_type = "Other"
-            conflict_reason = full_output
-    else:
-        logger.warning(f"Malformed output, expected 'Conflict_Type: <type>||Reason: <reason>': '{full_output}'")
-        # Fallback to check if it's a simple "<type>: <reason>" format
-        colon_parts = [p.strip() for p in full_output.split(":", 1) if p.strip()]
-        if len(colon_parts) == 2 and colon_parts[0] in PREDEFINED_CONFLICTS:
-            conflict_type = colon_parts[0]
-            conflict_reason = colon_parts[1]
-            logger.debug(f"Parsed fallback - Type: '{conflict_type}', Reason: '{conflict_reason}'")
-        else:
-            conflict_type = "Other"
-            conflict_reason = full_output or "Malformed or incomplete output"
-    
-    resolution = "Not applicable"
-    return conflict_type, conflict_reason, resolution
+    # Fallback: Check for simple ": " format
+    if ": " in full_output:
+        parts = [p.strip() for p in full_output.split(": ", 1) if p.strip()]
+        if len(parts) == 2 and parts[0] in PREDEFINED_CONFLICTS:
+            return parts[0], parts[1], "Not applicable"
+
+    logger.warning(f"Malformed output: '{full_output}', defaulting to 'Other'")
+    return "Other", full_output, "Not applicable"
 
 def ensure_directories():
     """Create Results directory with CSV and XLSX subdirectories if they don't exist"""
@@ -169,18 +197,17 @@ def api_pseudo_train(args):
         
         prompt_template_iter = prompt_template
         if iteration > 1 and results:
-            # Make sure all results have Expected_Conflict key before calculating accuracy
+            # Ensure all results have Expected_Conflict key before calculating accuracy
             for r in results:
                 if "Expected_Conflict" not in r:
-                    # Find the corresponding row in original_df to get Expected_Conflict
                     matching_row = original_df[(original_df["Requirement_1"] == r["Requirement_1"]) & 
                                              (original_df["Requirement_2"] == r["Requirement_2"])]
                     if not matching_row.empty:
                         r["Expected_Conflict"] = matching_row.iloc[0]["Expected_Conflict"]
                     else:
-                        r["Expected_Conflict"] = "Other"  # Default if not found
-            
-            # Now calculate accuracy
+                        r["Expected_Conflict"] = "Other"
+
+            # Calculate accuracy
             correct = sum(1 for r in results if r["Conflict_Type"] == r["Expected_Conflict"])
             accuracy = correct / len(results) if results else 0
             logger.info(f"Accuracy before iteration {iteration}: {accuracy:.2%}")
@@ -216,8 +243,9 @@ def api_pseudo_train(args):
                 "Conflict_Reason": conflict_reason,
                 "Expected_Conflict": expected_conflict
             })
-        
-        # Now calculate accuracy for this iteration
+            time.sleep(1)  # Add delay between API calls
+
+        # Calculate accuracy for this iteration
         correct = sum(1 for r in results if r["Conflict_Type"] == r["Expected_Conflict"])
         logger.info(f"Iteration {iteration} accuracy: {correct / len(results):.2%}")
         
@@ -231,7 +259,6 @@ def api_pseudo_train(args):
     csv_output = os.path.join(csv_dir, "training_results.csv")
     xlsx_output = os.path.join(xlsx_dir, "training_results.xlsx")
     
-    # Save without Expected_Conflict
     output_df.to_csv(csv_output, index=False)
     output_df.to_excel(xlsx_output, index=False, engine='openpyxl')
     
@@ -242,7 +269,6 @@ def check_new_requirement(new_req, all_existing_requirements, predefined_conflic
     if checked_pairs is None:
         checked_pairs = set()
 
-    results = []
     prompt_template = (
         "Analyze the provided {req1} and {req2} from the uploaded CSV or Excel file. Identify any conflicts between {req1} and {req2}. You MUST choose the conflict type ONLY from the following list: {conflict_types}. For each pair, determine if there is a conflict, and if so, specify the type of conflict and the reason (as a one-line sentence). The output should be in the format: \"Conflict_Type: <type>||Reason: <reason>\" where <type> is exactly one of {conflict_types}, <reason> is a one-line explanation. If no conflict exists, output: \"Conflict_Type: No Conflict||Reason: Requirements are compatible\". Ensure the output is concise and follows the exact format."
     )
@@ -250,12 +276,12 @@ def check_new_requirement(new_req, all_existing_requirements, predefined_conflic
         weighted_conflicts = ', '.join([f"{k} (weight: {v:.2f})" for k, v in sorted(conflict_type_weights.items(), key=lambda x: x[1], reverse=True)])
         prompt_template += f" Prioritize conflict types based on these weights: {weighted_conflicts}."
 
+    results = []
     for existing_req in all_existing_requirements:
         pair_key = f"{new_req}||{existing_req}"
         if pair_key in checked_pairs:
             continue
 
-        pairs_str = f"Requirement 1: \"{new_req}\" - Requirement 2: \"{existing_req}\""
         input_text = prompt_template.format(req1=new_req, req2=existing_req, conflict_types=', '.join(sorted(predefined_conflicts)))
 
         full_output = cached_call_inference_api(input_text)
@@ -273,6 +299,7 @@ def check_new_requirement(new_req, all_existing_requirements, predefined_conflic
                 "Conflict_Reason": conflict_reason
             })
         checked_pairs.add(pair_key)
+        time.sleep(1)  # Add delay between API calls
 
     return pd.DataFrame(results) if results else None
 
@@ -324,16 +351,15 @@ def predict_conflicts(args, conflict_type_weights=None):
                 "Conflict_Reason": conflict_reason
             })
         checked_pairs.add(pair_key)
+        time.sleep(1)  # Add delay between API calls
 
-    # Process results for output, excluding Expected_Conflict
-    output_results = [{k: v for k, v in r.items() if k != "Expected_Conflict"} for r in results]
+    output_results = results  # No Expected_Conflict to exclude here
     output_df = pd.DataFrame(output_results) if output_results else pd.DataFrame(columns=["Requirement_1", "Requirement_2", "Conflict_Type", "Conflict_Reason"])
 
     csv_dir, xlsx_dir = ensure_directories()
     csv_output = os.path.join(csv_dir, "results.csv")
     xlsx_output = os.path.join(xlsx_dir, "results.xlsx")
     
-    # Save without Expected_Conflict
     output_df.to_csv(csv_output, index=False)
     output_df.to_excel(xlsx_output, index=False, engine='openpyxl')
     
@@ -352,37 +378,42 @@ def predict_conflicts(args, conflict_type_weights=None):
         new_results = check_new_requirement(new_requirement, all_original_requirements, PREDEFINED_CONFLICTS, checked_pairs, conflict_type_weights)
 
         if new_results is not None and not new_results.empty:
-            # Exclude Expected_Conflict from new_results before saving (though check_new_requirement doesn't include it)
-            new_output_results = new_results.drop(columns=["Expected_Conflict"] if "Expected_Conflict" in new_results.columns else [], errors='ignore')
             new_csv_output = os.path.join(csv_dir, f"new_results_{int(time.time())}.csv")
             new_xlsx_output = os.path.join(xlsx_dir, f"new_results_{int(time.time())}.xlsx")
-            new_output_results.to_csv(new_csv_output, index=False)
-            new_output_results.to_excel(new_xlsx_output, index=False, engine='openpyxl')
+            new_results.to_csv(new_csv_output, index=False)
+            new_results.to_excel(new_xlsx_output, index=False, engine='openpyxl')
             logger.info(f"New conflicts found and saved to {new_csv_output} (CSV) and {new_xlsx_output} (XLSX)")
-            print(new_output_results)
+            print(new_results)
         else:
             logger.info("No conflicts found with existing requirements.")
 
     return output_df
 
 def main():
-    parser = argparse.ArgumentParser(description="Requirements Conflict Detection with Gemini API")
-    parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="train")
-    parser.add_argument("--input_file", type=str, default="/workspaces/PC-user-Task3/InputData.csv")  # from user input file
-    parser.add_argument("--test_file", type=str, default="/workspaces/PC-user-Task3/reduced_requirements.csv")  # for training the pseudo code
-    parser.add_argument("--output_file", type=str, default="results.csv") # for default output file
-    parser.add_argument("--iterations", type=int, default=2, help="Number of pseudo-training iterations")
-    
-    args = parser.parse_args()
-    
-    conflict_type_weights = None
-    if args.mode in ["train", "both"]:
-        _, conflict_type_weights = api_pseudo_train(args)
-        logger.info("Gemini API pseudo-training completed!")
-    
-    if args.mode in ["predict", "both"]:
-        predict_conflicts(args, conflict_type_weights)
-        logger.info("Prediction and new requirement checking completed!")
+    try:
+        parser = argparse.ArgumentParser(description="Requirements Conflict Detection with Gemini API")
+        parser.add_argument("--mode", type=str, choices=["train", "predict", "both"], default="train")
+        parser.add_argument("--input_file", type=str, default="/workspaces/PC-user-Task3/InputData.csv")
+        parser.add_argument("--test_file", type=str, default="/workspaces/PC-user-Task3/reduced_requirements.csv")
+        parser.add_argument("--output_file", type=str, default="results.csv")
+        parser.add_argument("--iterations", type=int, default=2, help="Number of pseudo-training iterations")
+        
+        args = parser.parse_args()
+        
+        conflict_type_weights = None
+        if args.mode in ["train", "both"]:
+            _, conflict_type_weights = api_pseudo_train(args)
+            logger.info("Gemini API pseudo-training completed!")
+        
+        if args.mode in ["predict", "both"]:
+            predict_conflicts(args, conflict_type_weights)
+            logger.info("Prediction and new requirement checking completed!")
+    except KeyboardInterrupt:
+        logger.warning("Script interrupted by user. Saving progress and exiting...")
+        sys.exit(0)
+    except Exception as e:
+        logger.error(f"Unexpected error in main: {str(e)}", exc_info=True)
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
