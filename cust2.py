@@ -3,14 +3,15 @@ import pandas as pd
 import requests
 import json
 import logging
-from tqdm import tqdm
+from tqdm.contrib.concurrent import thread_map
 import warnings
 from dotenv import load_dotenv
 import itertools
-import time
+import threading
 from functools import lru_cache
-from inputimeout import inputimeout, TimeoutOccurred
 import sys
+import tkinter as tk
+from tkinter import filedialog
 
 # Suppress warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -38,7 +39,7 @@ if not GEMINI_API_KEY:
 GEMINI_MODEL = "gemini-2.0-flash-lite"
 GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
 
-def call_inference_api(prompt, api_key=GEMINI_API_KEY, api_url=GEMINI_API_URL, max_retries=5, initial_delay=4):
+def call_inference_api(prompt, api_key=GEMINI_API_KEY, api_url=GEMINI_API_URL, max_retries=5, initial_delay=2):
     """Call Gemini API for inference with exponential backoff and improved error handling"""
     headers = {"Content-Type": "application/json"}
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
@@ -64,7 +65,6 @@ def call_inference_api(prompt, api_key=GEMINI_API_KEY, api_url=GEMINI_API_URL, m
             if response.status_code == 429:
                 delay = initial_delay * (2 ** retries)
                 logger.warning(f"Rate limit exceeded (429). Retrying in {delay} seconds...")
-                time.sleep(delay)
                 retries += 1
                 continue
             else:
@@ -75,7 +75,6 @@ def call_inference_api(prompt, api_key=GEMINI_API_KEY, api_url=GEMINI_API_URL, m
             logger.error(f"Connection error: {str(e)}")
             delay = initial_delay * (2 ** retries)
             logger.warning(f"Connection issue. Retrying in {delay} seconds...")
-            time.sleep(delay)
             retries += 1
             continue
 
@@ -83,7 +82,6 @@ def call_inference_api(prompt, api_key=GEMINI_API_KEY, api_url=GEMINI_API_URL, m
             logger.error(f"Request timeout: {str(e)}")
             delay = initial_delay * (2 ** retries)
             logger.warning(f"Timeout occurred. Retrying in {delay} seconds...")
-            time.sleep(delay)
             retries += 1
             continue
 
@@ -109,7 +107,6 @@ def parse_api_output(full_output):
     full_output = full_output.strip()
     logger.debug(f"Parsing API output: '{full_output}'")
 
-    # Try standard format: "Conflict_Type: <type>||Reason: <reason>"
     if "||" in full_output:
         parts = [p.strip() for p in full_output.split("||") if p.strip()]
         if len(parts) >= 2:
@@ -127,7 +124,6 @@ def parse_api_output(full_output):
                 logger.warning(f"No 'Conflict_Type:' prefix in: '{full_output}'")
                 return "Unknown", "Requires manual review", "Not applicable"
 
-    # Fallback: Try "<type>: <reason>" format
     if ": " in full_output:
         parts = [p.strip() for p in full_output.split(": ", 1) if p.strip()]
         if len(parts) == 2:
@@ -183,55 +179,45 @@ def api_pseudo_train(test_file, iterations=2):
     )
 
     results = []
-    iteration = 0
-    max_iterations = iterations
     conflict_type_weights = {}
-
+    conflict_type_lock = threading.Lock()
     df_train = original_df.copy()
 
-    for _ in range(max_iterations):
-        iteration += 1
-        logger.info(f"Pseudo-training iteration {iteration}/{max_iterations}")
+    def process_task(task):
+        row, input_text = task
+        full_output = cached_call_inference_api(input_text)
+        predicted_type, predicted_reason, _ = parse_api_output(full_output)
+        with conflict_type_lock:
+            if predicted_type == row["Expected_Conflict"]:
+                conflict_type_weights[row["Expected_Conflict"]] = conflict_type_weights.get(row["Expected_Conflict"], 0) + 1.0
+            elif predicted_type != "Unknown":
+                conflict_type_weights[predicted_type] = conflict_type_weights.get(predicted_type, 0) + 0.5
+        return {
+            "Requirement_1": row["Requirement_1"],
+            "Requirement_2": row["Requirement_2"],
+            "Conflict_Type": predicted_type,
+            "Conflict_Reason": predicted_reason,
+            "Expected_Conflict": row["Expected_Conflict"],
+            "Expected_Reason": row["Expected_Reason"]
+        }
+
+    for iteration in range(1, iterations + 1):
+        logger.info(f"Pseudo-training iteration {iteration}/{iterations}")
         
         prompt_template_iter = prompt_template
         if iteration > 1 and results:
             weighted_conflicts = ', '.join([f"{k} (weight: {v:.2f})" for k, v in sorted(conflict_type_weights.items(), key=lambda x: x[1], reverse=True)])
             prompt_template_iter += f" Consider these previously identified conflict types and their weights for consistency: {weighted_conflicts}."
         
-        results.clear()
-
-        for _, row in tqdm(df_train.iterrows(), total=len(df_train), desc=f"Iteration {iteration}"):
-            req1, req2 = row["Requirement_1"], row["Requirement_2"]
-            expected_conflict = row["Conflict_Type"]
-            expected_reason = row["Conflict_Reason"]
-            
-            input_text = prompt_template_iter.format(req1=req1, req2=req2)
-            
-            full_output = cached_call_inference_api(input_text)
-            predicted_type, predicted_reason, _ = parse_api_output(full_output)
-            
-            # Use expected conflict type as ground truth, update weights based on matches
-            if predicted_type == expected_conflict:
-                conflict_type_weights[expected_conflict] = conflict_type_weights.get(expected_conflict, 0) + 1.0
-            elif predicted_type != "Unknown":
-                conflict_type_weights[predicted_type] = conflict_type_weights.get(predicted_type, 0) + 0.5  # Lower weight for API-derived types
-            
-            results.append({
-                "Requirement_1": req1,
-                "Requirement_2": req2,
-                "Conflict_Type": predicted_type,  # API prediction
-                "Conflict_Reason": predicted_reason,
-                "Expected_Conflict": expected_conflict,  # Ground truth from CSV
-                "Expected_Reason": expected_reason
-            })
-            time.sleep(1)
-
+        tasks = [(row, prompt_template_iter.format(req1=row["Requirement_1"], req2=row["Requirement_2"])) for _, row in df_train.iterrows()]
+        
+        results = thread_map(process_task, tasks, max_workers=10, desc=f"Iteration {iteration}")
+        
         correct = sum(1 for r in results if r["Conflict_Type"] == r["Expected_Conflict"])
         accuracy = correct / len(results) if results else 0
         logger.info(f"Iteration {iteration} accuracy (against Expected_Conflict): {accuracy:.2%}")
         
         df_train = pd.DataFrame(results)
-
         logger.info(f"Learned conflict types after iteration {iteration}: {list(conflict_type_weights.keys())}")
 
     output_results = [
@@ -253,7 +239,7 @@ def api_pseudo_train(test_file, iterations=2):
     output_df.to_csv(csv_output, index=False)
     output_df.to_excel(xlsx_output, index=False, engine='openpyxl')
     
-    logger.info(f"Pseudo-training complete after {max_iterations} iterations. Results saved to {csv_output} (CSV) and {xlsx_output} (XLSX)")
+    logger.info(f"Pseudo-training complete after {iterations} iterations. Results saved to {csv_output} (CSV) and {xlsx_output} (XLSX)")
     return output_df, conflict_type_weights
 
 def check_new_requirement(new_req, all_existing_requirements, checked_pairs=None, conflict_type_weights=None):
@@ -270,27 +256,30 @@ def check_new_requirement(new_req, all_existing_requirements, checked_pairs=None
         weighted_conflicts = ', '.join([f"{k} (weight: {v:.2f})" for k, v in sorted(conflict_type_weights.items(), key=lambda x: x[1], reverse=True)])
         prompt_template += f" Consider these previously identified conflict types and their weights for consistency: {weighted_conflicts}."
 
-    results = []
-    for existing_req in all_existing_requirements:
-        pair_key = f"{new_req}||{existing_req}"
-        if pair_key in checked_pairs:
-            continue
-
-        input_text = prompt_template.format(req1=new_req, req2=existing_req)
-
+    def process_task(task):
+        existing_req, input_text = task
         full_output = cached_call_inference_api(input_text)
         conflict_type, conflict_reason, _ = parse_api_output(full_output)
-
         if conflict_type != "No Conflict":
-            results.append({
+            return {
                 "Requirement_1": new_req,
                 "Requirement_2": existing_req,
                 "Conflict_Type": conflict_type,
                 "Conflict_Reason": conflict_reason
-            })
-        checked_pairs.add(pair_key)
-        time.sleep(1)
+            }
+        return None
 
+    tasks = []
+    for existing_req in all_existing_requirements:
+        pair_key = f"{new_req}||{existing_req}"
+        if pair_key in checked_pairs:
+            continue
+        input_text = prompt_template.format(req1=new_req, req2=existing_req)
+        tasks.append((existing_req, input_text))
+        checked_pairs.add(pair_key)
+
+    results = [res for res in thread_map(process_task, tasks, max_workers=10, desc="Checking new requirement") if res is not None]
+    
     return pd.DataFrame(results) if results else None
 
 def predict_conflicts(input_file, new_requirement=None, conflict_type_weights=None, exhaustive=False):
@@ -328,28 +317,36 @@ def predict_conflicts(input_file, new_requirement=None, conflict_type_weights=No
         if new_results is not None and not new_results.empty:
             results.extend(new_results.to_dict('records'))
     else:
-        baseline_req = all_original_requirements[0]
-        req_pairs = [(baseline_req, req) for req in all_original_requirements[1:]] if not exhaustive else list(itertools.combinations(all_original_requirements, 2))
+        if exhaustive:
+            req_pairs = list(itertools.combinations(all_original_requirements, 2))
+        else:
+            baseline_req = all_original_requirements[0]
+            req_pairs = [(baseline_req, req) for req in all_original_requirements[1:]]
         logger.info(f"Analyzing {len(req_pairs)} pairs (exhaustive={exhaustive})")
 
-        for req1, req2 in tqdm(req_pairs, desc="Analyzing conflicts"):
-            pair_key = f"{req1}||{req2}"
-            if pair_key in checked_pairs:
-                continue
-
-            input_text = prompt_template_single.format(req1=req1, req2=req2)
+        def process_task(task):
+            req1, req2, input_text = task
             full_output = cached_call_inference_api(input_text)
             conflict_type, conflict_reason, _ = parse_api_output(full_output)
-
             if conflict_type != "No Conflict":
-                results.append({
+                return {
                     "Requirement_1": req1,
                     "Requirement_2": req2,
                     "Conflict_Type": conflict_type,
                     "Conflict_Reason": conflict_reason
-                })
+                }
+            return None
+
+        tasks = []
+        for req1, req2 in req_pairs:
+            pair_key = f"{req1}||{req2}"
+            if pair_key in checked_pairs:
+                continue
+            input_text = prompt_template_single.format(req1=req1, req2=req2)
+            tasks.append((req1, req2, input_text))
             checked_pairs.add(pair_key)
-            time.sleep(1)
+
+        results = [res for res in thread_map(process_task, tasks, max_workers=10, desc="Analyzing conflicts") if res is not None]
 
     output_results = results
     output_df = pd.DataFrame(output_results) if output_results else pd.DataFrame(columns=["Requirement_1", "Requirement_2", "Conflict_Type", "Conflict_Reason"])
@@ -364,10 +361,6 @@ def predict_conflicts(input_file, new_requirement=None, conflict_type_weights=No
     
     logger.info(f"Analysis complete. Results saved to {csv_output} (CSV) and {xlsx_output} (XLSX)")
     return output_df
-
-def get_csv_files(directory="/workspaces/PC-user-Task3"):
-    """List all CSV files in the specified directory"""
-    return [f for f in os.listdir(directory) if f.endswith('.csv')]
 
 def display_menu():
     """Display the menu and handle user input"""
@@ -385,27 +378,14 @@ def display_menu():
 
         if choice in ["1", "2"]:
             exhaustive = (choice == "2")
-            csv_files = get_csv_files()
-            if not csv_files:
-                logger.error("No CSV files found in the directory.")
+            root = tk.Tk()
+            root.withdraw()
+            input_file = filedialog.askopenfilename(title="Select CSV file for prediction", filetypes=[("CSV files", "*.csv")])
+            root.destroy()
+            if not input_file:
+                logger.error("No file selected.")
                 continue
-            
-            print(f"\nAvailable CSV files for prediction ({'exhaustive' if exhaustive else 'baseline'} mode):")
-            for i, file in enumerate(csv_files, 1):
-                print(f"{i}. {file}")
-            
-            file_choice = input("Select a file by number (or 'back' to return): ").strip()
-            if file_choice.lower() == 'back':
-                continue
-            try:
-                file_idx = int(file_choice) - 1
-                if 0 <= file_idx < len(csv_files):
-                    input_file = os.path.join("/workspaces/PC-user-Task3", csv_files[file_idx])
-                    predict_conflicts(input_file, conflict_type_weights=conflict_type_weights, exhaustive=exhaustive)
-                else:
-                    logger.error("Invalid file number.")
-            except ValueError:
-                logger.error("Please enter a valid number.")
+            predict_conflicts(input_file, conflict_type_weights=conflict_type_weights, exhaustive=exhaustive)
 
         elif choice == "3":
             new_requirement = input("Enter a new requirement to analyze (or 'back' to return): ").strip()
@@ -414,54 +394,27 @@ def display_menu():
             if not new_requirement:
                 logger.error("Requirement cannot be empty.")
                 continue
-            
-            csv_files = get_csv_files()
-            if not csv_files:
-                logger.error("No CSV files found to compare against.")
+            root = tk.Tk()
+            root.withdraw()
+            input_file = filedialog.askopenfilename(title="Select CSV file to compare against", filetypes=[("CSV files", "*.csv")])
+            root.destroy()
+            if not input_file:
+                logger.error("No file selected.")
                 continue
-            
-            print("\nSelect a file to compare the new requirement against:")
-            for i, file in enumerate(csv_files, 1):
-                print(f"{i}. {file}")
-            
-            file_choice = input("Select a file by number (or 'back' to return): ").strip()
-            if file_choice.lower() == 'back':
-                continue
-            try:
-                file_idx = int(file_choice) - 1
-                if 0 <= file_idx < len(csv_files):
-                    input_file = os.path.join("/workspaces/PC-user-Task3", csv_files[file_idx])
-                    predict_conflicts(input_file, new_requirement=new_requirement, conflict_type_weights=conflict_type_weights)
-                else:
-                    logger.error("Invalid file number.")
-            except ValueError:
-                logger.error("Please enter a valid number.")
+            predict_conflicts(input_file, new_requirement=new_requirement, conflict_type_weights=conflict_type_weights)
 
         elif choice == "4":
-            csv_files = get_csv_files()
-            if not csv_files:
-                logger.error("No CSV files found in the directory.")
+            root = tk.Tk()
+            root.withdraw()
+            test_file = filedialog.askopenfilename(title="Select CSV file for training", filetypes=[("CSV files", "*.csv")])
+            root.destroy()
+            if not test_file:
+                logger.error("No file selected.")
                 continue
-            
-            print("\nAvailable CSV files for training:")
-            for i, file in enumerate(csv_files, 1):
-                print(f"{i}. {file}")
-            
-            file_choice = input("Select a file by number (or 'back' to return): ").strip()
-            if file_choice.lower() == 'back':
-                continue
-            try:
-                file_idx = int(file_choice) - 1
-                if 0 <= file_idx < len(csv_files):
-                    test_file = os.path.join("/workspaces/PC-user-Task3", csv_files[file_idx])
-                    iterations = input("Enter number of training iterations (default is 2): ").strip()
-                    iterations = int(iterations) if iterations.isdigit() else 2
-                    _, conflict_type_weights = api_pseudo_train(test_file, iterations)
-                    logger.info("Training completed. Conflict type weights updated.")
-                else:
-                    logger.error("Invalid file number.")
-            except ValueError:
-                logger.error("Please enter a valid number.")
+            iterations = input("Enter number of training iterations (default is 2): ").strip()
+            iterations = int(iterations) if iterations.isdigit() else 2
+            _, conflict_type_weights = api_pseudo_train(test_file, iterations)
+            logger.info("Training completed. Conflict type weights updated.")
 
         elif choice == "5":
             logger.info("Exiting the program.")
