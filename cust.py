@@ -21,7 +21,7 @@ load_dotenv()
 
 # Configure logging
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler("conflict_detection.log"),
@@ -220,10 +220,10 @@ def check_new_requirement(new_req, all_existing_requirements, checked_pairs=None
                 break
             process_task(task, result_queue)
             task_queue.task_done()
-            time.sleep(0.5)  # 1-second delay to respect rate limits
+            time.sleep(1)  # 1-second delay to respect rate limits
 
     # Use a small number of workers
-    num_workers = 3
+    num_workers = 2
     threads = [Thread(target=worker) for _ in range(num_workers)]
     for t in threads:
         t.daemon = True  # Ensure threads exit when main thread exits
@@ -325,10 +325,10 @@ def predict_conflicts(input_file, new_requirement=None):
                     break
                 process_task(task, result_queue)
                 task_queue.task_done()
-                time.sleep(0.5)  # 1-second delay to respect rate limits
+                time.sleep(1)  # 1-second delay to respect rate limits
 
         # Use a small number of workers
-        num_workers = 3
+        num_workers = 2
         threads = [Thread(target=worker) for _ in range(num_workers)]
         for t in threads:
             t.daemon = True  # Ensure threads exit when main thread exits
