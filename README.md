@@ -1,159 +1,184 @@
-Requirements Conflict Detection Tool
-Overview
-The Requirements Conflict Detection Tool is a Python application that automates the identification of conflicts between system or software requirements using the Gemini API (gemini-1.5-flash). Designed for requirements engineers, project managers, and developers, it processes requirement sets from CSV files, analyzes pairs for conflicts (e.g., "high performance" vs. "low cost"), and outputs results in CSV, XLSX, or console formats. The tool supports both local execution and cloud environments like Google AI Studio, with robust features like multithreading, API rate limit handling, and responsive interrupt handling.
-This tool streamlines requirements analysis, a critical step in system design, by leveraging AI to detect conflicts that could lead to costly design errors. It’s ideal for software engineering, automotive systems, aerospace, or any domain requiring precise requirement validation.
-Features
+🧠 Requirements Conflict Detection Tool
+A Python-powered AI tool for identifying conflicts in system or software requirements using the Gemini 1.5 Flash API. Built for requirements engineers, project managers, and developers, this tool streamlines the requirements analysis process, preventing costly design flaws and ensuring robust, validated specifications across domains such as software engineering, aerospace, and automotive systems.
 
-AI-Powered Conflict Detection: Uses Gemini API to analyze requirement pairs and identify conflicts with descriptive types (e.g., "Performance Conflict") and reasons.
-Scalable Processing: Handles small (≤15 requirements) or large (>15) datasets with baseline or exhaustive pairwise analysis.
-Multithreading: Employs two worker threads for efficient processing, respecting API rate limits (15 requests/minute, 1,500 requests/day).
-Cross-Platform Compatibility: Runs locally with Tkinter GUI or in Google AI Studio with console output.
-Robust Error Handling: Manages API errors (e.g., 429 rate limit), connection issues, and user interrupts (Ctrl+C) with partial result saving.
-Caching: Uses lru_cache to avoid redundant API calls for identical prompts.
-Detailed Logging: Tracks requests, errors, and progress in conflict_detection.log and request_counts.log.
-Flexible Outputs: Saves results to CSV/XLSX files (local) or console (cloud), with UTF-8 support for diverse inputs.
+🚀 Key Features
+AI-Powered Conflict Analysis
+Leverages the Gemini API to detect logical, performance, or cost-based conflicts between requirement pairs. Returns both conflict type (e.g., Performance Conflict) and reasoning.
 
-Prerequisites
+Scalable for Any Dataset
+Automatically switches between baseline and exhaustive pairwise analysis for datasets with ≤15 or >15 requirements.
 
-Python: Version 3.8 or higher.
-Gemini API Key: Obtain a free API key from Google AI Studio.
-Dependencies: Listed in requirements.txt.
-Operating System: Windows, macOS, Linux, or Google AI Studio (cloud).
+Multithreaded for Speed
+Uses two worker threads with intelligent API rate-limit management (15 RPM / 1,500 RPD).
 
-Installation
+Robust Execution
+Supports both local environments (with Tkinter GUI) and cloud execution (e.g., Google AI Studio).
 
-Clone the Repository:
-git clone https://github.com/Nikhilkps1904/Ai-Requirement-Analysis.git
-cd Ai-Requirement-Analysis
+Smart Error Handling
+Handles API throttling, user interrupts (Ctrl+C), and connection issues gracefully, saving partial results automatically.
 
+Caching for Efficiency
+Implements LRU caching to avoid redundant API calls for repeated prompts.
 
-Set Up a Virtual Environment (recommended):
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+Flexible Outputs
+Results are saved in CSV/XLSX formats locally or printed to console in cloud environments. UTF-8 encoding ensures international compatibility.
 
+Detailed Logging
+Tracks progress and usage in conflict_detection.log and request_counts.log.
 
-Install Dependencies:
-pip install -r requirements.txt
+📦 Prerequisites
+Python: Version 3.8+
 
-The requirements.txt should include:
+API Key: Free Gemini API key from Google AI Studio
+
+Dependencies:
+
+nginx
+Copy
+Edit
 pandas
 requests
 python-dotenv
 openpyxl
+Supported OS: Windows, macOS, Linux, or Google AI Studio (cloud)
 
+⚙️ Installation
+bash
+Copy
+Edit
+# Clone the repository
+git clone https://github.com/Nikhilkps1904/Ai-Requirement-Analysis.git
+cd Ai-Requirement-Analysis
 
-Configure the API Key:
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-Create a .env file in the project root:
+# Install dependencies
+pip install -r requirements.txt
+🔑 Configure the API Key
+Create a .env file in the project root.
+
+Add the following line:
+
+ini
+Copy
+Edit
 GEMINI_API_KEY=your_api_key_here
+Validate setup:
 
-
-Replace your_api_key_here with your Gemini API key from Google AI Studio.
-
-
-
-Verify Setup: Ensure Python is installed and the .env file is correctly configured:
+bash
+Copy
+Edit
 python -c "import pandas, requests, dotenv, openpyxl"
+🧪 Usage
+✅ Local Execution
+Prepare Input CSV
+A file named requirements.csv with a column titled Requirements:
 
-
-
-Usage
-Local Execution
-
-Prepare Input CSV: Create a CSV file (e.g., requirements.csv) with a "Requirements" column:
+csv
+Copy
+Edit
 Requirements
 "Fuel efficiency > 50 km/l"
 "Top speed > 120 km/h"
 "Low maintenance cost"
 "Advanced safety features"
+Run the Tool
 
-
-Run the Script:
+bash
+Copy
+Edit
 python cust2.py
+Menu Options
 
+1: Analyze all requirement pairs
 
-Interact with the Menu:
+2: Compare a new requirement against the CSV
 
-Option 1: Analyze Requirements: Select a CSV file to analyze all requirement pairs.
-Option 2: Enter a New Requirement: Input a single requirement and compare it against a CSV’s requirements.
-Option 3: Exit: Close the program.
+3: Exit
 
+View Results
 
-View Outputs:
+CSV: Results/CSV/results.csv
 
-Results: Saved in Results/CSV/results.csv and Results/XLSX/results.xlsx (or with timestamps for new requirements).
-Logs: Check conflict_detection.log for general logs and request_counts.log for API usage (e.g., "Total API requests: 45/1500").
-Console: Displays progress and errors in real-time.
+XLSX: Results/XLSX/results.xlsx
 
+Logs: conflict_detection.log, request_counts.log
 
+☁️ Cloud Execution (Google AI Studio)
+Copy-paste cust2.py into the code editor.
 
-Google AI Studio Execution
+Set GEMINI_API_KEY directly in code if .env is not supported.
 
-Copy the Script: Paste cust2.py into the Google AI Studio code editor.
+Use hardcoded list input if file uploads are unavailable:
 
-Set the API Key: Configure GEMINI_API_KEY directly in the script or via environment settings if supported.
+python
+Copy
+Edit
+all_original_requirements = [
+    "Fuel efficiency > 50 km/l",
+    "Top speed > 120 km/h",
+    "Low maintenance cost"
+]
+📊 Sample Output
+CSV Result
 
-Hardcode Input (Optional): If CSV upload isn’t supported, modify the script to use a list:
-all_original_requirements = ["Fuel efficiency > 50 km/l", "Top speed > 120 km/h", "Low maintenance cost"]
-
-
-Run and Monitor:
-
-Use the console menu (Tkinter is unavailable).
-Results and logs appear in the console.
-Interrupt with Ctrl+C to save partial results.
-
-
-
-Example Output
-For the CSV above (4 requirements, 6 pairs):
-
-results.csv:
+csv
+Copy
+Edit
 Requirement_1,Requirement_2,Conflict_Type,Conflict_Reason
 "Fuel efficiency > 50 km/l","Top speed > 120 km/h","Performance Conflict","High speed increases fuel consumption"
 "Low maintenance cost","Advanced safety features","Cost Conflict","Safety features increase maintenance costs"
+Console/Log
 
-
-Console/Log:
+yaml
+Copy
+Edit
 2025-04-23 10:15:32 - INFO - Analyzing 6 pairs
 2025-04-23 10:15:40 - INFO - Total API requests: 6/1500
-2025-04-23 10:15:40 - INFO - Analysis complete. Results saved to Results/CSV/results.csv
+2025-04-23 10:15:40 - INFO - Analysis complete. Results saved.
+⚠️ Rate Limits
+15 requests/minute
 
+1,500 requests/day
 
+Token usage not tracked (Max: 1,000,000 TPM)
 
-Rate Limits
-The tool respects Gemini API’s free-tier limits:
+For 52 requirements (1,326 pairs), expect ~88 minutes of processing.
 
-15 Requests per Minute (RPM): Enforced with 4-second delays per worker.
-1,500 Requests per Day (RPD): Stops processing if reached, with warnings at 90% (1,350 requests).
-1,000,000 Tokens per Minute (TPM): Not tracked (prompts are typically short).
+🧱 Limitations
+API rate limits restrict throughput for large datasets.
 
-For 52 requirements (1,326 pairs), processing takes ~88 minutes at 15 RPM. Larger datasets may require multiple days or a paid API tier.
-Limitations
+Cloud environments like Google AI Studio do not support file I/O.
 
-API Rate Limits: 1,500 RPD restricts large datasets (e.g., >52 requirements).
-File I/O in Cloud: CSV/XLSX outputs are unavailable in Google AI Studio; results are printed to console.
-Interrupt Delay: Ctrl+C exits in ~1–2 seconds due to API timeouts and thread cleanup.
-Token Limit: 1,000,000 TPM not monitored, which may cause throttling for long prompts.
+Interrupts (Ctrl+C) may be delayed due to API response handling.
 
-Contributing
-Contributions are welcome! To contribute:
+Token limits are not explicitly monitored.
 
-Fork the repository.
-Create a feature branch (git checkout -b feature/your-feature).
-Commit changes (git commit -m "Add your feature").
-Push to the branch (git push origin feature/your-feature).
-Open a pull request.
+🤝 Contributing
+We welcome contributions! To contribute:
 
-Please include tests and update documentation. For major changes, open an issue first to discuss.
-License
+bash
+Copy
+Edit
+# Fork and clone the repo
+git checkout -b feature/your-feature
+# Make your changes, add tests
+git commit -m "Add your feature"
+git push origin feature/your-feature
+# Open a pull request
+For major changes, please open an issue first.
+
+📄 License
 This project is licensed under the MIT License.
-Acknowledgments
 
-Google AI Studio for providing the Gemini API.
-Open-source libraries: pandas, requests, openpyxl, and python-dotenv.
+🙌 Acknowledgments
+Google AI Studio – for the Gemini API.
 
-Contact
-For questions or feedback, open an issue on GitHub or contact nikhilkps7480@gmail.com.
+Open-source libraries: pandas, requests, openpyxl, python-dotenv.
 
-Happy analyzing your requirements!
+📬 Contact
+For feedback, issues, or support, open a GitHub issue or email:
+📧 nikhilkps7480@gmail.com
+
