@@ -1,4 +1,5 @@
-🧠 Requirements Conflict Detection Tool
+🧠 Requirements Conflict Detection Tool.
+
 A Python-powered AI tool for identifying conflicts in system or software requirements using the Gemini 1.5 Flash API. Built for requirements engineers, project managers, and developers, this tool streamlines the requirements analysis process, preventing costly design flaws and ensuring robust, validated specifications across domains such as software engineering, aerospace, and automotive systems.
 
 🚀 Key Features
