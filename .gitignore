@@ -6,3 +6,5 @@ __pycache__/
 *.log
 vers.py
 file_analysis.pkl
+Documentation.docx
+Documentation.pdf
