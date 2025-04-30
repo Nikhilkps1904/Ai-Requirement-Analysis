@@ -1,0 +1,9 @@
+Requirement_1,Requirement_2,Conflict_Type,Conflict_Reason
+the unintended accleration.,Anti-lock braking system (ABS) for improved stopping power,Performance Conflict,Unintended acceleration interferes with the ability of the ABS to effectively control braking and stopping power.
+the unintended accleration.,Top speed of at least 100 km/h for versatility,Performance Conflict,Unintended acceleration is a safety hazard that conflicts with the need for high top speed.
+the unintended accleration.,Fuel efficiency of at least 60 km/l for petrol engines,Performance Conflict,"Achieving high fuel efficiency (60 km/l) may necessitate design choices that compromise acceleration performance, potentially leading to unintended acceleration issues."
+the unintended accleration.,Front and rear disc brakes for reliable performance,Performance Conflict,"Unintended acceleration compromises braking performance and safety, negating the reliability offered by disc brakes."
+the unintended accleration.,Electric motor with a minimum range of 120 km per charge,Performance Conflict,Unintended acceleration is a safety and performance issue that may require design compromises impacting the range of the electric motor.
+the unintended accleration.,Annual maintenance cost below $120,Performance Conflict,"Preventing unintended acceleration may require additional safety features or modifications, increasing maintenance costs above $120."
+the unintended accleration.,Lightweight frame under 150 kg for better handling,Performance Conflict,"A lightweight frame may compromise structural integrity and safety, increasing the risk of unintended acceleration due to frame failure under stress."
+the unintended accleration.,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Performance Conflict,"Addressing unintended acceleration may require design changes that compromise fuel efficiency or emissions control, leading to non-compliance with emission standards."

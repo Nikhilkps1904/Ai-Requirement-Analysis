@@ -5,3 +5,4 @@ trained_model/
 __pycache__/
 *.log
 vers.py
+file_analysis.pkl
