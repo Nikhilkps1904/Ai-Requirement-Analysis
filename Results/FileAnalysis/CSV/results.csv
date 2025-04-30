@@ -1,31 +1,46 @@
 Requirement_1,Requirement_2,Conflict_Type,Conflict_Reason
-Fuel efficiency of at least 60 km/l for petrol engines,Anti-lock braking system (ABS) for improved stopping power,Performance Conflict,"Achieving 60 km/l fuel efficiency may necessitate design choices that compromise braking system weight and performance, potentially hindering the effectiveness of the ABS."
-Fuel efficiency of at least 60 km/l for petrol engines,Top speed of at least 100 km/h for versatility,Performance Conflict,"Achieving high fuel efficiency often necessitates compromises in engine power and performance, hindering the ability to reach high top speeds."
-Fuel efficiency of at least 60 km/l for petrol engines,Digital dashboard with smartphone connectivity,Performance Conflict,Achieving 60 km/l fuel efficiency may require design choices that compromise the space and power needed for a sophisticated digital dashboard with smartphone connectivity.
-Fuel efficiency of at least 60 km/l for petrol engines,Annual maintenance cost below $120,Cost Conflict,"Achieving high fuel efficiency (60 km/l) may require expensive engine technology, increasing maintenance costs beyond $120."
-Fuel efficiency of at least 60 km/l for petrol engines,Front and rear disc brakes for reliable performance,Performance Conflict,"Achieving 60 km/l fuel efficiency may necessitate design choices that compromise braking system weight and performance, making it difficult to also include front and rear disc brakes."
-Fuel efficiency of at least 60 km/l for petrol engines,Lightweight frame under 150 kg for better handling,Performance Conflict,"Achieving high fuel efficiency (60 km/l) often requires heavier engines and components, conflicting with the lightweight frame requirement."
-Fuel efficiency of at least 60 km/l for petrol engines,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Performance Conflict,Achieving 60 km/l fuel efficiency may require significant technological advancements that might conflict with meeting stringent emission standards.
-Anti-lock braking system (ABS) for improved stopping power,Electric motor with a minimum range of 120 km per charge,Performance Conflict,"Adding ABS increases the vehicle's weight and energy consumption, potentially reducing the electric motor's range."
-Anti-lock braking system (ABS) for improved stopping power,Top speed of at least 100 km/h for versatility,Performance Conflict,"Implementing ABS may increase vehicle weight and complexity, potentially reducing top speed."
-Anti-lock braking system (ABS) for improved stopping power,Digital dashboard with smartphone connectivity,Cost Conflict,"Adding a digital dashboard with smartphone connectivity increases the overall vehicle cost, potentially impacting the budget allocated for the ABS system."
-Anti-lock braking system (ABS) for improved stopping power,Annual maintenance cost below $120,Cost Conflict,Implementing and maintaining an ABS system is likely to exceed the specified annual maintenance budget.
-Anti-lock braking system (ABS) for improved stopping power,Lightweight frame under 150 kg for better handling,Performance Conflict,"Adding ABS increases weight, potentially exceeding the 150kg lightweight frame requirement."
-Anti-lock braking system (ABS) for improved stopping power,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Performance Conflict,"Implementing ABS might slightly increase vehicle weight and thus marginally affect fuel efficiency, potentially causing conflict with emission standards."
-Electric motor with a minimum range of 120 km per charge,Top speed of at least 100 km/h for versatility,Performance Conflict,"Achieving a longer range often necessitates design choices that compromise top speed, and vice-versa."
-Electric motor with a minimum range of 120 km per charge,Digital dashboard with smartphone connectivity,Cost Conflict,"Achieving a 120km range requires a larger, more powerful, and thus more expensive battery, potentially increasing the overall cost beyond what is feasible for a model including a digital dashboard with smartphone connectivity."
-Electric motor with a minimum range of 120 km per charge,Annual maintenance cost below $120,Cost Conflict,"Achieving a 120km range requires a larger, more powerful, and potentially more expensive battery and motor, increasing maintenance costs."
-Electric motor with a minimum range of 120 km per charge,Lightweight frame under 150 kg for better handling,Performance Conflict,"Achieving a 120 km range requires a larger, heavier battery which conflicts with the lightweight frame requirement."
-Top speed of at least 100 km/h for versatility,Annual maintenance cost below $120,Cost Conflict,"Achieving a top speed of 100 km/h typically requires a more powerful and complex engine, leading to higher maintenance costs than $120 annually."
-Top speed of at least 100 km/h for versatility,Lightweight frame under 150 kg for better handling,Performance Conflict,"Achieving a top speed of 100 km/h typically requires a heavier frame than 150 kg, creating a trade-off between speed and handling."
-Top speed of at least 100 km/h for versatility,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Performance Conflict,"Achieving a top speed of 100 km/h may require a more powerful engine, potentially leading to higher emissions that may not comply with stringent global emission standards."
-Seat height adjustable between 750-850 mm for rider comfort,Lightweight frame under 150 kg for better handling,Performance Conflict,Achieving a lightweight frame under 150 kg might necessitate using materials that compromise the adjustability and sturdiness needed for a seat height range of 750-850 mm.
-Seat height adjustable between 750-850 mm for rider comfort,Annual maintenance cost below $120,Cost Conflict,"Adjusting the seat height mechanism to achieve a wider range of adjustment may increase manufacturing and maintenance costs, potentially exceeding the $120 annual maintenance budget."
-Digital dashboard with smartphone connectivity,Annual maintenance cost below $120,Cost Conflict,"Smartphone connectivity adds to the initial development and ongoing maintenance costs, potentially exceeding the $120 annual maintenance budget."
-Digital dashboard with smartphone connectivity,Lightweight frame under 150 kg for better handling,Weight vs. Feature Conflict,"Integrating smartphone connectivity and a digital dashboard adds weight, potentially exceeding the 150kg lightweight frame requirement."
-Front and rear disc brakes for reliable performance,Annual maintenance cost below $120,Cost Conflict,"Front and rear disc brakes are typically more expensive to maintain than other braking systems, potentially exceeding the $120 annual maintenance budget."
-Front and rear disc brakes for reliable performance,Lightweight frame under 150 kg for better handling,Performance Conflict,Using heavier disc brakes conflicts with the need for a lightweight frame.
-Annual maintenance cost below $120,Lightweight frame under 150 kg for better handling,Cost Conflict,"Lower maintenance cost may necessitate cheaper, heavier materials, conflicting with the lightweight frame requirement."
-Front and rear disc brakes for reliable performance,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Cost Conflict,"Implementing high-performance disc brakes may increase the overall vehicle cost, potentially impacting compliance with emission standards if it necessitates compromises in other emission-reducing components."
-Annual maintenance cost below $120,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Cost Conflict,"Meeting stringent global emission standards often requires more expensive technology, potentially exceeding the $120 annual maintenance budget."
-Lightweight frame under 150 kg for better handling,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Performance Conflict,"A lightweight frame may necessitate the use of less robust materials, potentially impacting the vehicle's ability to meet stringent emission standards through compromised structural integrity and engine integration."
+Fuel efficiency of at least 60 km/l for petrol engines,Electric motor with a minimum range of 120 km per charge,Unknown,Requires manual review
+Fuel efficiency of at least 60 km/l for petrol engines,Anti-lock braking system (ABS) for improved stopping power,Unknown,Requires manual review
+Fuel efficiency of at least 60 km/l for petrol engines,Top speed of at least 100 km/h for versatility,Unknown,Requires manual review
+Fuel efficiency of at least 60 km/l for petrol engines,Lightweight frame under 150 kg for better handling,Unknown,Requires manual review
+Fuel efficiency of at least 60 km/l for petrol engines,Front and rear disc brakes for reliable performance,Unknown,Requires manual review
+Fuel efficiency of at least 60 km/l for petrol engines,Annual maintenance cost below $120,Unknown,Requires manual review
+Fuel efficiency of at least 60 km/l for petrol engines,Digital dashboard with smartphone connectivity,Unknown,Requires manual review
+Fuel efficiency of at least 60 km/l for petrol engines,Seat height adjustable between 750-850 mm for rider comfort,Unknown,Requires manual review
+Fuel efficiency of at least 60 km/l for petrol engines,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Unknown,Requires manual review
+Anti-lock braking system (ABS) for improved stopping power,Top speed of at least 100 km/h for versatility,Unknown,Requires manual review
+Anti-lock braking system (ABS) for improved stopping power,Front and rear disc brakes for reliable performance,Unknown,Requires manual review
+Anti-lock braking system (ABS) for improved stopping power,Electric motor with a minimum range of 120 km per charge,Unknown,Requires manual review
+Anti-lock braking system (ABS) for improved stopping power,Lightweight frame under 150 kg for better handling,Unknown,Requires manual review
+Anti-lock braking system (ABS) for improved stopping power,Digital dashboard with smartphone connectivity,Unknown,Requires manual review
+Anti-lock braking system (ABS) for improved stopping power,Seat height adjustable between 750-850 mm for rider comfort,Unknown,Requires manual review
+Anti-lock braking system (ABS) for improved stopping power,Annual maintenance cost below $120,Unknown,Requires manual review
+Anti-lock braking system (ABS) for improved stopping power,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Unknown,Requires manual review
+Electric motor with a minimum range of 120 km per charge,Top speed of at least 100 km/h for versatility,Unknown,Requires manual review
+Electric motor with a minimum range of 120 km per charge,Seat height adjustable between 750-850 mm for rider comfort,Unknown,Requires manual review
+Electric motor with a minimum range of 120 km per charge,Digital dashboard with smartphone connectivity,Unknown,Requires manual review
+Electric motor with a minimum range of 120 km per charge,Lightweight frame under 150 kg for better handling,Unknown,Requires manual review
+Electric motor with a minimum range of 120 km per charge,Annual maintenance cost below $120,Unknown,Requires manual review
+Electric motor with a minimum range of 120 km per charge,Front and rear disc brakes for reliable performance,Unknown,Requires manual review
+Electric motor with a minimum range of 120 km per charge,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Unknown,Requires manual review
+Top speed of at least 100 km/h for versatility,Seat height adjustable between 750-850 mm for rider comfort,Unknown,Requires manual review
+Top speed of at least 100 km/h for versatility,Annual maintenance cost below $120,Unknown,Requires manual review
+Top speed of at least 100 km/h for versatility,Digital dashboard with smartphone connectivity,Unknown,Requires manual review
+Top speed of at least 100 km/h for versatility,Lightweight frame under 150 kg for better handling,Unknown,Requires manual review
+Top speed of at least 100 km/h for versatility,Front and rear disc brakes for reliable performance,Unknown,Requires manual review
+Top speed of at least 100 km/h for versatility,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Unknown,Requires manual review
+Seat height adjustable between 750-850 mm for rider comfort,Digital dashboard with smartphone connectivity,Unknown,Requires manual review
+Seat height adjustable between 750-850 mm for rider comfort,Front and rear disc brakes for reliable performance,Unknown,Requires manual review
+Seat height adjustable between 750-850 mm for rider comfort,Annual maintenance cost below $120,Unknown,Requires manual review
+Digital dashboard with smartphone connectivity,Front and rear disc brakes for reliable performance,Unknown,Requires manual review
+Seat height adjustable between 750-850 mm for rider comfort,Lightweight frame under 150 kg for better handling,Unknown,Requires manual review
+Seat height adjustable between 750-850 mm for rider comfort,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Unknown,Requires manual review
+Digital dashboard with smartphone connectivity,Annual maintenance cost below $120,Unknown,Requires manual review
+Digital dashboard with smartphone connectivity,Lightweight frame under 150 kg for better handling,Unknown,Requires manual review
+Digital dashboard with smartphone connectivity,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Unknown,Requires manual review
+Front and rear disc brakes for reliable performance,Annual maintenance cost below $120,Unknown,Requires manual review
+Front and rear disc brakes for reliable performance,Lightweight frame under 150 kg for better handling,Unknown,Requires manual review
+Front and rear disc brakes for reliable performance,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Unknown,Requires manual review
+Annual maintenance cost below $120,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Unknown,Requires manual review
+Annual maintenance cost below $120,Lightweight frame under 150 kg for better handling,Unknown,Requires manual review
+Lightweight frame under 150 kg for better handling,"Compliance with global emission standards (e.g., BS6 or Euro 5)",Unknown,Requires manual review

@@ -1,15 +1,3 @@
-'''
-In this version there is implementation of the new api and removed all the constraints which was using
-in gemini api config and new logging system the script takes around 5mins to for 1346 pairs to analyse.
-
-IMPROVEMENTS:-
-1.Command Line interface should be improved.
-2.new Logic need to be added properly.
-3.Implementation proper guideline interface.
-4.Logic of interface should be changed.
-'''
-
-
 import os
 import pandas as pd
 import logging
