@@ -4,3 +4,4 @@ trained_model/
 **/*.log
 __pycache__/
 *.log
+vers.py

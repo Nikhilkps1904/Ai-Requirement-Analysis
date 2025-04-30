@@ -1,7 +1,7 @@
 from functools import lru_cache
 import os
-import pandas as pd
-import requests
+import pandas as pd # type: ignore
+import requests # type: ignore
 import json
 import logging
 from queue import Queue, Empty
@@ -201,13 +201,7 @@ def call_inference_api(prompt, api_key=GEMINI_API_KEY, api_url=GEMINI_API_URL, m
             if response.status_code == 429:
                 consecutive_429_count += 1
                 logger.warning(f"Rate limit exceeded (429). Consecutive 429 count: {consecutive_429_count}")
-                
-                if consecutive_429_count >= 3:
-                    delay = 30
-                    logger.warning(f"Three consecutive 429 errors. Pausing for {delay} seconds...")
-                    time.sleep(delay)
-                    consecutive_429_count = 0
-                
+
                 delay = initial_delay * (2 ** retries)
                 logger.warning(f"Retrying in {delay} seconds...")
                 retries += 1
