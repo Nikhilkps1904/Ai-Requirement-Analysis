@@ -9,3 +9,23 @@ Front and rear disc brakes for reliable performance
 Annual maintenance cost below $120
 Lightweight frame under 150 kg for better handling
 "Compliance with global emission standards (e.g., BS6 or Euro 5)"
+The MCU shall support a minimum operating voltage range of 5V to 48V to accommodate varied EV power rail conditions.
+The MCU shall operate within an ambient temperature range of -40°C to +125°C to ensure reliability in automotive-grade environments.
+"The MCU shall feature a minimum of 3 CAN FD interfaces to support high-speed communication with Battery Management System (BMS), motor controller, and VCU."
+The MCU shall support ISO 26262 ASIL-B compliance to meet functional safety standards for electric vehicle control modules.
+The MCU firmware shall be updatable over-the-air (OTA) via a secure bootloader to support lifecycle updates and bug fixes.
+"The MCU shall feature an integrated hardware security module (HSM) to enable secure key storage, encryption, and secure boot."
+The MCU shall support at least 2 LIN interfaces to enable cost-efficient communication with peripheral actuators and sensors.
+"The MCU shall provide a minimum of 12 ADC channels with 12-bit resolution for analog sensor integration, including temperature, voltage, and current sensors."
+The MCU shall integrate PWM channels with dead-time insertion and fault protection to drive and control electric motors efficiently.
+The MCU shall have a watchdog timer with configurable timeout intervals to ensure system recovery from software faults.
+The MCU shall support dual-core operation with lock-step mode for high-reliability applications such as torque vectoring and regenerative braking logic.
+The MCU shall be capable of executing control algorithms with a minimum cycle time of 1 ms to meet real-time control loop demands.
+The MCU shall support sleep and deep sleep modes with wake-up-on-CAN and wake-up-on-interrupt features to reduce power consumption during vehicle idle states.
+The MCU shall provide SPI and I2C interfaces with at least 10 Mbps throughput to enable fast communication with external sensors and modules.
+"The MCU shall include integrated diagnostics and self-test features for memory, CPU core, and peripheral units to support health monitoring."
+The MCU shall support fault-tolerant operation by enabling ECC (Error-Correcting Code) on internal SRAM and Flash memory.
+"The MCU shall include a minimum of 1 MB Flash and 256 KB RAM to accommodate control logic, diagnostics, and communication stacks."
+The MCU shall support flexible I/O remapping to simplify PCB routing and reduce BOM cost.
+"The MCU shall integrate a high-resolution timer module for synchronization with power electronics switches (e.g., SiC or GaN-based inverters)."
+The MCU shall support real-time clock (RTC) with battery backup to maintain timekeeping during power-off conditions.

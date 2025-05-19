@@ -2,33 +2,29 @@ import os
 import pandas as pd
 import logging
 import sys
-import tkinter as tk
-from tkinter import filedialog
+import streamlit as st
 import concurrent.futures
 import itertools
-import pickle
 from dotenv import load_dotenv
 from openai import OpenAI
+import signal
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+logger = logging.getLogger(__name__)
 
 # Check if file system access is available
 try:
     with open("conflict_detection.log", "a"):
         pass
     use_file_logging = True
-except Exception as e:
-    logger.warning(f"File system access unavailable: {e}. Using console logging only.")
+except:
+    logger.warning("File system access unavailable. Using console logging only.")
     use_file_logging = False
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler("conflict_detection.log") if use_file_logging else logging.NullHandler(),
-        logging.StreamHandler(sys.stdout)
-    ]
-)
-logger = logging.getLogger(__name__)
 
 # Load environment variables
 load_dotenv()
@@ -40,31 +36,6 @@ client = OpenAI(
     default_headers={"genaiplatform-farm-subscription-key": "dummy"}
 )
 
-# File to store file analysis requirements
-FILE_ANALYSIS_FILE = "file_analysis.pkl"
-
-def save_file_analysis(requirements, results):
-    """Save file-based requirements and analysis results"""
-    if use_file_logging:
-        try:
-            with open(FILE_ANALYSIS_FILE, "wb") as f:
-                pickle.dump({"requirements": requirements, "results": results}, f)
-            logger.info(f"Saved file analysis to {FILE_ANALYSIS_FILE}")
-        except Exception as e:
-            logger.error(f"Failed to save file analysis: {e}")
-
-def load_file_analysis():
-    """Load file-based requirements and analysis results"""
-    if use_file_logging and os.path.exists(FILE_ANALYSIS_FILE):
-        try:
-            with open(FILE_ANALYSIS_FILE, "rb") as f:
-                data = pickle.load(f)
-            logger.info(f"Loaded file analysis from {FILE_ANALYSIS_FILE}")
-            return data.get("requirements", []), data.get("results", [])
-        except Exception as e:
-            logger.error(f"Failed to load file analysis: {e}")
-    return [], []
-
 def call_inference_api(prompt):
     """Call API using OpenAI client"""
     try:
@@ -72,7 +43,7 @@ def call_inference_api(prompt):
             model="gemini-1.5-flash",
             n=1,
             messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "system", "content": "You are a highly knowledgeable assistant with expertise in physics, mathematics, logic, and engineering."},
                 {"role": "user", "content": prompt}
             ]
         )
@@ -123,15 +94,11 @@ def parse_api_output(full_output):
     logger.warning(f"Malformed output, unable to parse: '{full_output}'")
     return "Unknown", "Requires manual review", "Not applicable"
 
-def ensure_directories(is_new_requirement=False):
-    """Create results directories for file or new requirement analysis"""
+def ensure_directories():
+    """Create Results directory with CSV and XLSX subdirectories"""
     base_dir = "Results"
-    if is_new_requirement:
-        results_dir = os.path.join(base_dir, "NewRequirementAnalysis")
-    else:
-        results_dir = os.path.join(base_dir, "FileAnalysis")
-    csv_dir = os.path.join(results_dir, "CSV")
-    xlsx_dir = os.path.join(results_dir, "XLSX")
+    csv_dir = os.path.join(base_dir, "CSV")
+    xlsx_dir = os.path.join(base_dir, "XLSX")
     
     if use_file_logging:
         os.makedirs(csv_dir, exist_ok=True)
@@ -142,12 +109,25 @@ def check_requirements_batch(req_pairs):
     """Process requirement pairs using ThreadPoolExecutor"""
     results = []
     
-    prompt_template = (
-        "Analyze the following requirements: Requirement 1: '{req1}' and Requirement 2: '{req2}'. Identify any conflicts between them. Always give a Engineering reason."
-        "For each pair, determine if there is a conflict, and if so, specify a descriptive conflict type and the reason (as a one-line sentence). "
-        "The output should be in the format: \"Conflict_Type: <type>||Reason: <reason>\" where <type> is your determined conflict type, and <reason> is a one-line explanation. "
-        "If no conflict exists, output: \"Conflict_Type: No Conflict||Reason: Requirements are compatible\". Ensure the output is concise and follows the exact format."
-    )
+    prompt_template = """
+You are an expert in embedded systems, microcontroller (MCU) architecture, electrical engineering, and logical reasoning. Analyze the following technical requirements for conflicts, particularly in the context of MCU design, power systems, and electronic equipment integration.
+
+Instructions:
+1. Identify the domain of each requirement (e.g., embedded hardware, electrical interfaces, firmware behavior, timing, power management, communication protocols).
+2. Apply relevant engineering and scientific principles (e.g., Kirchhoff’s laws, voltage/current compatibility, thermal limits, signal integrity, real-time constraints, logic consistency).
+3. Use chain-of-thought reasoning: decompose each requirement, compare their implications, and verify design feasibility or detect logical inconsistencies.
+4. Flag any ambiguous requirement for manual review and explain the ambiguity (e.g., undefined parameters, vague constraints, or missing units).
+5. Determine if a conflict exists. If so, specify the conflict type and a one-line explanation grounded in system-level design principles.
+6. Use the following format:
+   "Conflict_Type: <type>||Reason: <reason>"
+   You may define the conflict type as appropriate to the context. There are no restrictions on accepted types.
+7. If no conflict exists, respond with:
+   "Conflict_Type: No Conflict||Reason: Requirements are compatible in electronic system design context"
+
+Ensure the output is concise, technically grounded, and follows the exact format.
+Now analyze: Requirement 1: '{req1}' and Requirement 2: '{req2}'.
+"""
+
     
     def process_pair(pair_data):
         req1, req2 = pair_data
@@ -181,44 +161,28 @@ def check_new_requirement(new_req, all_existing_requirements):
         return pd.DataFrame(results)
     return pd.DataFrame(columns=["Requirement_1", "Requirement_2", "Conflict_Type", "Conflict_Reason"])
 
-def predict_conflicts(input_file=None, new_requirement=None):
+def predict_conflicts(input_file, new_requirement=None):
     """Analyze requirements for conflicts"""
-    # Delete old log file if it exists
-    if use_file_logging and os.path.exists("conflict_detection.log"):
-        try:
-            os.remove("conflict_detection.log")
-            logger.info("Deleted old log file: conflict_detection.log")
-        except Exception as e:
-            logger.error(f"Failed to delete old log file: {e}")
-
-    # Load requirements
-    all_original_requirements = []
-    previous_results = []
-    if new_requirement and not input_file:
-        # Try loading from file analysis
-        all_original_requirements, previous_results = load_file_analysis()
-        if not all_original_requirements:
-            logger.warning("No previous file analysis found. Please provide a requirements file.")
-            return pd.DataFrame(columns=["Requirement_1", "Requirement_2", "Conflict_Type", "Conflict_Reason"])
-    elif input_file:
-        if not os.path.exists(input_file):
-            logger.error(f"Input file {input_file} not found. Exiting.")
-            sys.exit(1)
+    try:
         try:
             df_input = pd.read_csv(input_file, encoding='utf-8')
-            if "Requirements" not in df_input.columns:
-                logger.error("Input file must contain a 'Requirements' column")
-                sys.exit(1)
-            logger.info(f"Loaded {len(df_input)} requirements from {input_file}")
-            all_original_requirements = df_input["Requirements"].tolist()
-        except Exception as e:
-            logger.error(f"Error reading input file: {e}")
-            sys.exit(1)
+        except UnicodeDecodeError:
+            logger.warning("UTF-8 decoding failed. Trying ISO-8859-1 encoding.")
+            df_input = pd.read_csv(input_file, encoding='ISO-8859-1')
+        
+        if "Requirements" not in df_input.columns:
+            logger.error("Input file must contain a 'Requirements' column")
+            return None
+        logger.info(f"Loaded {len(df_input)} requirements from input file")
+    except Exception as e:
+        logger.error(f"Error reading input file: {e}")
+        return None
     
+    all_original_requirements = df_input["Requirements"].tolist()
     if not all_original_requirements:
-        logger.error("No requirements found.")
-        sys.exit(1)
-
+        logger.error("No requirements found in the input file.")
+        return None
+    
     results = []
     if new_requirement:
         new_results = check_new_requirement(new_requirement, all_original_requirements)
@@ -227,15 +191,14 @@ def predict_conflicts(input_file=None, new_requirement=None):
     else:
         req_pairs = list(itertools.combinations(all_original_requirements, 2))
         results = check_requirements_batch(req_pairs)
-        # Save file analysis for reuse
-        save_file_analysis(all_original_requirements, results)
 
     output_df = pd.DataFrame(results) if results else pd.DataFrame(columns=["Requirement_1", "Requirement_2", "Conflict_Type", "Conflict_Reason"])
     
+    csv_dir, xlsx_dir = ensure_directories()
+    csv_output = os.path.join(csv_dir, "results.csv")
+    xlsx_output = os.path.join(xlsx_dir, "results.xlsx")
+    
     if use_file_logging:
-        csv_dir, xlsx_dir = ensure_directories(is_new_requirement=bool(new_requirement))
-        csv_output = os.path.join(csv_dir, "results.csv")
-        xlsx_output = os.path.join(xlsx_dir, "results.xlsx")
         try:
             output_df.to_csv(csv_output, index=False)
             output_df.to_excel(xlsx_output, index=False, engine='openpyxl')
@@ -244,119 +207,103 @@ def predict_conflicts(input_file=None, new_requirement=None):
             logger.error(f"Failed to save results to files: {e}")
             logger.info("Results (not saved to file):\n" + output_df.to_string())
     else:
-        logger.info("File saving skipped (no file system access). Results:\n" + output_df.to_string())
-    
-    # Ensure logs are flushed to file
-    if use_file_logging:
-        for handler in logger.handlers:
-            if isinstance(handler, logging.FileHandler):
-                handler.flush()
-        logger.info("Execution completed. Logs saved to conflict_detection.log")
+        logger.info("Results:\n" + output_df.to_string())
     
     return output_df
 
-def display_menu():
-    """Display the menu"""
-    try:
-        root = tk.Tk()
-        root.withdraw()
-    except:
-        logger.warning("Tkinter unavailable. Using console input.")
-        return console_menu()
-
-    while True:
-        print("\n=== Requirements Conflict Detection Menu ===")
-        print("1. Analyze Requirements")
-        print("2. Enter a new requirement")
-        print("3. Exit")
-        
-        choice = input("Enter your choice (1-3): ").strip()
-
-        if choice == "1":
-            input_file = filedialog.askopenfilename(title="Select CSV file", filetypes=[("CSV files", "*.csv")])
-            if not input_file:
-                logger.error("No file selected.")
-                continue
-            predict_conflicts(input_file=input_file)
-
-        elif choice == "2":
-            new_requirement = input("Enter a new requirement (or 'back' to return): ").strip()
-            if new_requirement.lower() == 'back':
-                continue
-            if not new_requirement:
-                logger.error("Requirement cannot be empty.")
-                continue
-            # Try using file analysis; prompt for file if none exists
-            requirements, _ = load_file_analysis()
-            if requirements:
-                logger.info("Using requirements from previous file analysis.")
-                predict_conflicts(new_requirement=new_requirement)
-            else:
-                input_file = filedialog.askopenfilename(title="Select CSV file", filetypes=[("CSV files", "*.csv")])
-                if not input_file:
-                    logger.error("No file selected.")
-                    continue
-                predict_conflicts(input_file=input_file, new_requirement=new_requirement)
-
-        elif choice == "3":
-            logger.info("Exiting the program.")
-            sys.exit(0)
-
-        else:
-            logger.error("Invalid choice. Please enter a number between 1 and 3.")
-
-def console_menu():
-    """Fallback menu for environments without Tkinter"""
-    while True:
-        print("\n=== Requirements Conflict Detection Menu ===")
-        print("1. Analyze Requirements")
-        print("2. Enter a new requirement")
-        print("3. Exit")
-        
-        choice = input("Enter your choice (1-3): ").strip()
-
-        if choice == "1":
-            input_file = input("Enter the path to the CSV file: ").strip()
-            if not os.path.exists(input_file):
-                logger.error("File not found.")
-                continue
-            predict_conflicts(input_file=input_file)
-
-        elif choice == "2":
-            new_requirement = input("Enter a new requirement (or 'back' to return): ").strip()
-            if new_requirement.lower() == 'back':
-                continue
-            if not new_requirement:
-                logger.error("Requirement cannot be empty.")
-                continue
-            requirements, _ = load_file_analysis()
-            if requirements:
-                logger.info("Using requirements from previous file analysis.")
-                predict_conflicts(new_requirement=new_requirement)
-            else:
-                input_file = input("Enter the path to the CSV file: ").strip()
-                if not os.path.exists(input_file):
-                    logger.error("File not found.")
-                    continue
-                predict_conflicts(input_file=input_file, new_requirement=new_requirement)
-
-        elif choice == "3":
-            logger.info("Exiting the program.")
-            sys.exit(0)
-
-        else:
-            logger.error("Invalid choice. Please enter a number between 1 and 3.")
-
 def main():
-    """Main function"""
-    try:
-        display_menu()
-    except KeyboardInterrupt:
-        logger.warning("Script interrupted by user.")
-        sys.exit(0)
-    except Exception as e:
-        logger.error(f"Unexpected error: {e}")
-        sys.exit(1)
+    """Main Streamlit app"""
+    st.set_page_config(page_title="Requirements Conflict Detection", layout="wide")
+    
+    st.title("Requirements Conflict Detection")
+    st.markdown("""
+    ### Instructions
+    - **Analyze Requirements**: Upload a CSV file containing a "Requirements" column to check for conflicts between all pairs.
+    - **Check New Requirement**: Enter a new requirement and upload a CSV file to check it against existing requirements.
+    - The CSV file must have a column named "Requirements" with the requirements to analyze.
+    - Results are saved in `Results/CSV/results.csv` and `Results/XLSX/results.xlsx` if file system access is available.
+    - Conflicts are displayed in a table below.
+    - Use the **Exit** button in the sidebar to stop the application, or press **Ctrl+C** in the terminal.
+    """)
+
+    # Sidebar for mode selection and exit button
+    st.sidebar.header("Options")
+    mode = st.sidebar.selectbox("Select Mode", ["Analyze Requirements", "Check New Requirement"])
+    
+    # Exit button with confirmation
+    st.sidebar.markdown("### Exit Application")
+    if st.sidebar.button("Exit"):
+        confirm_exit = st.sidebar.checkbox("Confirm Exit (check to proceed)")
+        if confirm_exit:
+            st.sidebar.success("Exiting application...")
+            pid = os.getpid()
+            os.kill(pid, signal.SIGINT)  # Send SIGINT to kill Streamlit process
+
+    # Initialize session state for results
+    if 'results' not in st.session_state:
+        st.session_state.results = None
+
+    if mode == "Analyze Requirements":
+        st.subheader("Analyze All Requirements")
+        uploaded_file = st.file_uploader("Upload CSV file", type=["csv"])
+        
+        if uploaded_file:
+            # Save uploaded file temporarily
+            with open("temp.csv", "wb") as f:
+                f.write(uploaded_file.getvalue())
+            
+            if st.button("Analyze"):
+                with st.spinner("Analyzing requirements..."):
+                    st.session_state.results = predict_conflicts("temp.csv")
+                if st.session_state.results is not None:
+                    if not st.session_state.results.empty:
+                        st.success("Analysis complete!")
+                        st.dataframe(st.session_state.results, use_container_width=True)
+                    else:
+                        st.info("No conflicts found.")
+                else:
+                    st.error("Failed to process the file. Check logs for details.")
+            
+            # Clean up temp file
+            if os.path.exists("temp.csv"):
+                os.remove("temp.csv")
+
+    elif mode == "Check New Requirement":
+        st.subheader("Check New Requirement")
+        new_requirement = st.text_area("Enter New Requirement", height=100)
+        uploaded_file = st.file_uploader("Upload CSV file", type=["csv"], key="new_req_uploader")
+        
+        if uploaded_file and new_requirement:
+            # Save uploaded file temporarily
+            with open("temp.csv", "wb") as f:
+                f.write(uploaded_file.getvalue())
+            
+            if st.button("Check"):
+                with st.spinner("Checking new requirement..."):
+                    st.session_state.results = predict_conflicts("temp.csv", new_requirement=new_requirement)
+                if st.session_state.results is not None:
+                    if not st.session_state.results.empty:
+                        st.success("Analysis complete!")
+                        st.dataframe(st.session_state.results, use_container_width=True)
+                    else:
+                        st.info("No conflicts found with the new requirement.")
+                else:
+                    st.error("Failed to process the file or requirement. Check logs for details.")
+            
+            # Clean up temp file
+            if os.path.exists("temp.csv"):
+                os.remove("temp.csv")
+        elif not new_requirement and uploaded_file:
+            st.warning("Please enter a new requirement.")
+        elif new_requirement and not uploaded_file:
+            st.warning("Please upload a CSV file.")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        logger.info("Application terminated by user.")
+        sys.exit(0)
+    except Exception as e:
+        logger.error(f"Unexpected error: {str(e)}")
+        sys.exit(1)
